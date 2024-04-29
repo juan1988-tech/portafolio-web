@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles/main.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Russo+One&display=swap" rel="stylesheet">
+    <title>Juan David Franco Desarrollador web</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="title-logo">JD <span>CODE</span></h1>
+        <section class="button-burguer" onclick="toggleButtonBurguer()">
+            <article class="first-line" id="first-line"></article>
+            <article class="second-line" id="second-line"></article>
+            <article class="third-line" id="third-line"></article>
+        </section>
+    </header>
+    <section class="navbar" id="navbar">
+        <article class="navbar-global-settings" id="navbar-global-settings">
+         <ul class="navbar-list" id="navbar-list">
+            <li>
+                <a href="#jd-coder">JD CODE</a>
+            </li>
+            <li>
+                <a>Acerca de</a>
+            </li>
+            <li>
+                <a>Proyectos</a>
+            </li>
+            <li>
+                <a>Competencias</a>
+            </li>
+            <li>
+                <a>Contacto</a>
+            </li>     
+        </ul> 
+        <ul class="navbar-customization">
+            <h4>Lenguaje</h4>
+            <li>
+                <span class="setting-english"></span><p> ENG</p>
+            </li>
+            <li>
+                <span class="setting-spanish"></span><p> ESP</p>
+            </li>
+            
+            <h4>Temas</h4>
+            <li>
+                <span class="violet-icon"></span><p>Violeta</p>
+            </li>
+            <li>
+                <span class="blue-waves"></span><p>Olas Azules</p>
+            </li>
+            <li>
+                <span class="light"></span><p>Claro</p>
+            </li>
+        </ul>    
+        </article>
+        <p class="navbar-settings" onclick="toggleGear()">Ajustes <span class="navbar-gear" id="navbar-gear"></span></p>
+    </section>
+    <main class="main-content">
+        <section class="introduction" id="jd-coder">
+            <h3 class="first-greeting">Hola, Soy</h3>
+            <h1 class="name-developer">Juan David Franco</h1>
+            <h3 class="name-label">Desarrollador web y diseñador de interfaces</h3>
+            <figure class="image-container">
+                <img class="name-image" src="./assets/images/juancho-header.png"/>
+            </figure>
+            <button class="cv-downloader">Descargar CV</button>
+            <article class="social-media">
+                <a class="linkedin-first-link" target="_blank" href="https://www.linkedin.com/in/jfranco-webdev/"></a>
+                <a class="github-first-link" target="_blank" href="https://github.com/juan1988-tech"></a>
+            </article>
+        </section>
+        <section class="about-me">
+            <h3 class="about-me-title">Acerca de mí</h3>
+            <div class="provisional-iage"></div>
+            <h3 class="about-me-role">Programo y diseño páginas estáticas y aplicaciones web</h3>
+            <p>Busco unir mis conocimientos en desarrollo web y diseño de interfaces para realizar productos tecnológicos con un alto nivel de detalle.</p>
+            <p>Tengo conocimientos en HTML, CSS, JavaScript, Git, React; y por el lado del diseño de interfaces domino Figma, Adobe XD, y conocimientos en UX/UI y arquitectura de la información</p>
+        </section>
+        <section class="projects"> 
+            <h3 class="projects-title">Proyectos</h3>
+            <article class="project-app-temp" onmouseover="addClassInformation('#project-title-information','#project-title-delay','project-title-information-change','project-title-delay-change')"
+             onmouseleave="removeClassInformation('#project-title-information','#project-title-delay','project-title-information-change',
+             'project-title-information','project-title-delay-change','project-title-delay')">
+                <div class="project-app-temp-stack">
+                    <img alt="vite-developer-juan-franco" src="./assets/icons/devicon_vitejs.svg"/>
+                    <img alt="react-developer-juan-franco" src="./assets/icons/logos_react.svg"/>
+                    <img alt="css-developer-juan-franco" src="./assets/icons/vscode-icons_file-type-css.svg"/>
+                    <img alt="javascript-developer-juan-franco" src="./assets/icons/skill-icons_javascript.svg"/>
+                    <img alt="figma-developer-juan-franco" src="./assets/icons/logos_figma-light.svg"/>
+                </div>
+                <div class="project-title-information" id="project-title-information">
+                    <section class="project-title-delay" id="project-title-delay">
+                        <h4>Aplicación del clima React</h4>
+                        <p>Aplicación del clima que usa una API para ofrecer los datos del clima</p>
+                        <div class="project-links">
+                             <a href="https://app-temp-alpha.vercel.app/">LINK <span class="image-link"></span></a>
+                             <a href="https://github.com/juan1988-tech/app-temp">GIT HUB <span class="image-github"></span></a>
+                        </div>
+                    </section>
+                </div>
+            </article>
+            <article class="project-public-library" onmouseover="addClassInformation('#project-library-information','#project-library-delay','project-library-information-change','project-library-delay-change')"
+            onmouseleave="removeClassInformation('#project-library-information','#project-library-delay','project-library-information-change',
+            'project-library-information','project-library-delay-change','project-library-delay')">
+                <div class="project-app-temp-stack">
+                    <img alt="html-developer-juan-franco" src="./assets/icons/skill-icons_html.svg"/>
+                    <img alt="css-developer-juan-franco" src="./assets/icons/vscode-icons_file-type-css.svg"/>
+                    <img alt="javascript-developer-juan-franco" src="./assets/icons/skill-icons_javascript.svg"/>
+                    <img alt="figma-developer-juan-franco" src="./assets/icons/logos_figma-light.svg"/>
+                </div>
+                <div class="project-library-information" id="project-library-information">
+                    <section class="project-library-delay" id="project-library-delay">
+                    <h4>Página estática Biblioteca Comunitaria</h4>
+                    <p>Página de Biblioteca Comunitaria, hecha con html, css y Javascript</p>
+                    <div class="project-links">
+                        <a href="https://juan1988-tech.github.io/public-library/index.html">LINK <span class="image-link"></span></a>
+                        <a href="https://github.com/juan1988-tech/public-library">GIT HUB <span class="image-github"></span></a>
+                   </div>
+                   </section>
+                </div>
+            </article>
+            <article class="project-aranda-proof" onmouseover="addClassInformation('#project-aranda-information','#project-aranda-delay','project-aranda-information-change','project-aranda-delay-change')"
+            onmouseleave="removeClassInformation('#project-aranda-information','#project-aranda-delay','project-aranda-information-change',
+            'project-aranda-information','project-aranda-delay-change','project-aranda-delay')">
+                <div class="project-aranda-proof-stack">
+                    <img alt="react-developer-juan-franco" src="./assets/icons/logos_react.svg"/>
+                    <img alt="javascript-developer-juan-franco" src="./assets/icons/skill-icons_javascript.svg"/>
+                    <img alt="css-developer-juan-franco" src="./assets/icons/vscode-icons_file-type-css.svg"/>
+                    <img alt="webpack-developer-juan-franco" src="./assets/icons/logos_webpack.svg"/>
+                </div>
+                <div class="project-aranda-information" id="project-aranda-information">
+                    <section class="project-aranda-delay" id="project-aranda-delay">
+                        <h4>Prueba técnica React</h4>
+                        <p>Prueba técnica de landing page donde implemento hooks, states en React.js</p>
+                        <div class="project-aranda-links">
+                            <a href="https://juan1988-tech.github.io/prueba-tecnica-aranda/">LINK <span class="image-link"></span></a>
+                            <a href="https://github.com/juan1988-tech/prueba-tecnica-aranda">GIT HUB <span class="image-github"></span></a>
+                       </div>
+                    </section>    
+                </div>
+            </article>
+        </section>
+        <section class="skills">
+            <h4>Competencias</h4>
+            <section class="stack-container">
+            <article class="stack">
+                <div class="stack-item">
+                    <img src="./assets/icons/big-html.svg"/>
+                    <p>HTML</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-css.svg"/>
+                    <p>CSS</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big_javascript.svg" class="stack-item-javascript"/>
+                    <p>JAVASCRIPT</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-logos_react.svg"/>
+                    <p>REACT</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-devicon_git.svg"/>
+                    <p>GIT</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-logos_github-octocat.svg"/>
+                    <p>GIT HUB</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-devicon_vitejs.svg"/>
+                    <p>VITE</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-logos_figma.svg"/>
+                    <p>FIGMA</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-html.svg"/>
+                    <p>HTML</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-css.svg"/>
+                    <p>CSS</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big_javascript.svg" class="stack-item-javascript"/>
+                    <p>JAVASCRIPT</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-logos_react.svg"/>
+                    <p>REACT</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-devicon_git.svg"/>
+                    <p>GIT</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-logos_github-octocat.svg"/>
+                    <p>GIT HUB</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-devicon_vitejs.svg"/>
+                    <p>VITE</p>
+                </div>
+                <div class="stack-item">
+                    <img src="./assets/icons/big-logos_figma.svg"/>
+                    <p>FIGMA</p>
+                </div>
+            </article>
+        </section>
+        </section>  
+    </main>
+    <footer class="footer">
+        <h1>Contáctame</h1>
+        <p>Puedes contactarme por número de celular o mediante sociales</p>
+        <section class="social-media-grid">
+            <span class="whatsapp-white"></span> <a class="footer-whatsapp">3142366069</a>
+            <span class="linkedin-white"></span> <a class="footer-linkedin">Linkedin </a>
+            <span class="github-white"></span> <a class="footer-github">Github</a>
+        </section>
+        <p class="footer-dev">© Juan David Franco, Bogotá Colombia</p>
+    </footer>
+    <script src="./styles/styles.js"></script>
+</body>
+</html>    
