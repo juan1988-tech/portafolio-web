@@ -422,7 +422,7 @@ body{
     color: var(--blue-light-font);
 }
 
-.about-me .provisional-iage{
+.about-me .provisional-image{
     width: 18rem;
     height: 18rem;
     margin-top: 1.6rem;
@@ -618,7 +618,7 @@ body{
 .projects .project-library-delay-change{
     display: flex;
     flex-direction: column;
-    transform: translateY(5rem);
+    transform: translateY(3rem);
     transition-duration: .8s;
     transition-timing-function: ease;
 }
@@ -648,7 +648,6 @@ body{
     width: calc( 13.8rem * 16);
     margin-top: 1.6rem;
     animation: onleftmove 16s linear infinite;
-
 }
 
 @keyframes onleftmove {
@@ -685,6 +684,9 @@ body{
     width: 8rem;
 }
 
+.skills .stack-item .stack-item-javascript + p{
+    margin-top: .8rem;
+}
 
 .footer{
     background-color: var(--violet-dark);
@@ -705,18 +707,12 @@ body{
     margin-top: .8rem;
 }
 
-.footer span{
-    display: block;
-    width: 1.6rem;
-    height: 1.6rem;
-}
-
 .footer .social-media-grid{
     display: grid;
-    grid-template: repeat(3, 1fr)/2.4rem auto;
-    grid-template-areas: "whatsapp-white footer-whatsapp"
-                        "linkedin-white footer-linkedin"
-                        "github-white footer-github";
+    grid-template: repeat(3, 1fr)/ auto;
+    grid-template-areas: "footer-whatsapp"
+                        "footer-linkedin"
+                        "footer-github";
     width: 13.8rem;
     height: 10.4rem;
     font-size: 1.6rem;
@@ -727,40 +723,67 @@ body{
     column-gap: .8rem;
 }
 
+.footer .social-media-grid a{
+    text-decoration: none;
+}
+
 .whatsapp-white{
-    grid-area: whatsapp-white;
     background-image: url('../assets/icons/ri_whatsapp-line.svg');
     background-size: cover;
     align-self: center;
+    width: 1.6rem;
+    height: 1.6rem;
 }
 
+.whatsapp-white + span{
+    margin-left: 1.2rem;
+    text-decoration: none;
+    color: var(--white-background)
+}
 .footer-whatsapp{
     grid-area: footer-whatsapp;
-    justify-self: left;    
+    justify-self: left;
+    display: flex;   
 }
 
 .linkedin-white{
-    grid-area: linkedin-white;
     background-image: url('../assets/icons/linkedin-footer.svg');
     background-size: cover;
     align-self: center;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.linkedin-white + span{
+    margin-left: 1.2rem;
+    text-decoration: none;
+    color: var(--white-background)
 }
 
 .footer-linkedin{
     grid-area: footer-linkedin;
     justify-self: left;
+    display: flex;
 }
 
 .github-white{
-    grid-area: github-white;
     background-image: url('../assets/icons/github-footer.svg');
     background-size: cover;
     align-self: center;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.github-white + span{
+    margin-left: 1.2rem;
+    text-decoration: none;
+    color: var(--white-background)
 }
 
 .footer-github{
     grid-area: footer-github;
     justify-self: left;
+    display: flex;
 }
 
 .footer .footer-dev{

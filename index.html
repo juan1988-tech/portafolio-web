@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./styles/main.css" rel="stylesheet"/>
+    <link href="./styles/tablet.css" rel="stylesheet" media="( min-width: 584px)"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Russo+One&display=swap" rel="stylesheet">
@@ -76,10 +77,10 @@
         </section>
         <section class="about-me">
             <h3 class="about-me-title">Acerca de mí</h3>
-            <div class="provisional-iage"></div>
+            <div class="provisional-image"></div>
             <h3 class="about-me-role">Programo y diseño páginas estáticas y aplicaciones web</h3>
-            <p>Busco unir mis conocimientos en desarrollo web y diseño de interfaces para realizar productos tecnológicos con un alto nivel de detalle.</p>
-            <p>Tengo conocimientos en HTML, CSS, JavaScript, Git, React; y por el lado del diseño de interfaces domino Figma, Adobe XD, y conocimientos en UX/UI y arquitectura de la información</p>
+            <p class="about-first-p">Busco unir mis conocimientos en desarrollo web y diseño de interfaces para realizar productos tecnológicos con un alto nivel de detalle.</p>
+            <p class="about-second-p">Tengo conocimientos en HTML, CSS, JavaScript, Git, React; y por el lado del diseño de interfaces domino Figma, Adobe XD, y conocimientos en UX/UI y arquitectura de la información</p>
         </section>
         <section class="projects"> 
             <h3 class="projects-title">Proyectos</h3>
@@ -115,7 +116,7 @@
                 </div>
                 <div class="project-library-information" id="project-library-information">
                     <section class="project-library-delay" id="project-library-delay">
-                    <h4>Página estática Biblioteca Comunitaria</h4>
+                    <h4>Página Biblioteca Comunitaria</h4>
                     <p>Página de Biblioteca Comunitaria, hecha con html, css y Javascript</p>
                     <div class="project-links">
                         <a href="https://juan1988-tech.github.io/public-library/index.html">LINK <span class="image-link"></span></a>
@@ -162,23 +163,23 @@
                     <p>JAVASCRIPT</p>
                 </div>
                 <div class="stack-item">
-                    <img src="./assets/icons/big-logos_react.svg"/>
+                    <img src="./assets/icons/big-logos_react.svg" class="stack-item-react"/>
                     <p>REACT</p>
                 </div>
                 <div class="stack-item">
-                    <img src="./assets/icons/big-devicon_git.svg"/>
+                    <img src="./assets/icons/big-devicon_git.svg" class="stack-item-git"/>
                     <p>GIT</p>
                 </div>
                 <div class="stack-item">
-                    <img src="./assets/icons/big-logos_github-octocat.svg"/>
+                    <img src="./assets/icons/big-logos_github-octocat.svg" class="stack-item-octocat"/>
                     <p>GIT HUB</p>
                 </div>
                 <div class="stack-item">
-                    <img src="./assets/icons/big-devicon_vitejs.svg"/>
+                    <img src="./assets/icons/big-devicon_vitejs.svg" class="stack-item-vite"/>
                     <p>VITE</p>
                 </div>
                 <div class="stack-item">
-                    <img src="./assets/icons/big-logos_figma.svg"/>
+                    <img src="./assets/icons/big-logos_figma.svg" class="stack-item-figma"/>
                     <p>FIGMA</p>
                 </div>
                 <div class="stack-item">
@@ -221,9 +222,9 @@
         <h1>Contáctame</h1>
         <p>Puedes contactarme por número de celular o mediante sociales</p>
         <section class="social-media-grid">
-            <span class="whatsapp-white"></span> <a class="footer-whatsapp">3142366069</a>
-            <span class="linkedin-white"></span> <a class="footer-linkedin">Linkedin </a>
-            <span class="github-white"></span> <a class="footer-github">Github</a>
+             <a class="footer-whatsapp"><span class="whatsapp-white"></span> <span>3142366069</span></a>
+             <a class="footer-linkedin" target="_blank" href="https://www.linkedin.com/in/jfranco-webdev/"><span class="linkedin-white"></span> <span>Linkedin</span></a>
+             <a class="footer-github" target="_blank" href="https://github.com/juan1988-tech"><span class="github-white"></span> <span>Github</span></a>
         </section>
         <p class="footer-dev">© Juan David Franco, Bogotá Colombia</p>
     </footer>
