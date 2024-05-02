@@ -1,6 +1,6 @@
 :root{
     /*colors*/
-    --white-background: #FEFEFE;
+   /*  --white-background: #FEFEFE;
     --slight-gray: #EEEDED;
     --soft-gray: #D8D6D6;
     --medium-gray: #C4C3C3;
@@ -9,8 +9,7 @@
     --violet-dark: #2A093C;
     --blue-light-font: #00D8FF;
     --violet-background: linear-gradient(90deg, rgb(57, 12, 81) 0%, rgb(81.86, 38.13, 105.19) 50%, rgb(57, 12, 81) 100%); 
-    --black-project: rgba(0,0,0,0.8);
-    --purple-light-form: #37134A;
+    
     --blue-background: linear-gradient(90deg, #0C0F51 0%, #22256D 50%, #0C0F51 100%);
     --blue-dark: #090B36;
     --green-light-form: #8FFF00;
@@ -18,9 +17,18 @@
     --blue-font: #0D16D9;
     --light-background: linear-gradient(90deg, #F7F7F7 0%, #E4E2E1 50%, #F7F7F7 100%);
     --gray-slight-form: #E2E2E2;
-    --black-dark: #1E1E1E;
-    /*fonts bai jamjuree pesos 400, 500, font-style: normal
-    russo one font-size*/
+    --black-dark: #1E1E1E; */
+    /*variables para el tema violeta provisional*/
+    --black-project: rgba(0,0,0,0.8);
+    --font-principal-letter: #FEFEFE;
+    --font-principal-title: #00D8FF;
+    --dark-principal-background: #2A093C;
+    --main-body-background: linear-gradient(90deg, rgb(57, 12, 81) 0%, rgb(81.86, 38.13, 105.19) 50%, rgb(57, 12, 81) 100%); 
+    /*estilos light*/
+    /* --font-principal-letter: #2C2B2B;
+    --font-principal-title: #0D16D9;
+    --dark-principal-background: #1E1E1E;
+    --main-body-background: linear-gradient(90deg, #F7F7F7 0%, #E4E2E1 50%, #F7F7F7 100%); */
     --bai-jamjure: "Bai Jamjuree", sans-serif;
     --russo-one: "Russo One", sans-serif;
 }
@@ -36,17 +44,27 @@ html{
     font-family: var(--bai-jamjure);
     font-weight: 400;
     font-style: normal;
-    color: var(--white-background);    
+    color: var(--font-principal-letter);    
 }
 
 body{
-    background: var(--violet-background);
+    background: var(--main-body-background);
     scroll-behavior: smooth;
 }
 
+@keyframes setOpacity {
+    from{
+        opacity: .5;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
 /*header*/
 .header{
-    background: var(--violet-dark);
+    background: var(--dark-principal-background);
     height: 6rem;
     display: flex;
     align-items: center;
@@ -80,7 +98,7 @@ body{
 }
 
 .header .title-logo span{
-    color: var(--blue-light-font);
+    color: var(--font-principal-title);
 }
 
 .header .button-burguer{
@@ -96,7 +114,7 @@ body{
 .button-burguer .second-line,
 .button-burguer .third-line{
     width: 1.5rem;
-    background-color: var(--white-background);
+    background-color: var(--font-principal-letter);
     width: 100%;
     height: .3rem;
     border-radius: .15rem;
@@ -107,7 +125,7 @@ body{
 .button-burguer .second-line-change,
 .button-burguer .third-line-change{
     width: 1.5rem;
-    background-color: var(--white-background);
+    background-color: var(--font-principal-letter);
     width: 100%;
     height: .3rem;
     border-radius: .15rem;
@@ -143,7 +161,7 @@ body{
 }
 
 .button-burguer .first-line-change{
-    background-color: var(--white-background);
+    background-color: var(--font-principal-letter);
     top: -2px;
     width: 2.5rem;
     height: .3rem;
@@ -166,7 +184,7 @@ body{
 
 
 .button-burguer .third-line-change{
-    background-color: var(--white-background);
+    background-color: var(--font-principal-letter);
     width: 2.5rem;
     height: .3rem;
     border-radius: .15rem;  
@@ -183,9 +201,9 @@ body{
 .navbar{
     width: 19.2rem;
     height: 27.4rem;
-    border: 1px solid var(--white-background);
+    border: 1px solid var(--font-principal-letter);
     border-radius: .4rem;
-    background-color: var(--violet-dark);
+    background-color: var(--dark-principal-background);
     left: 100%;
     position: fixed;
     top: 6rem;
@@ -203,9 +221,9 @@ body{
 .navbar-change{
     width: 19.2rem;
     height: 27.4rem;
-    border: 1px solid var(--white-background);
+    border: 1px solid var(--font-principal-letter);
     border-radius: .4rem;
-    background-color: var(--violet-dark);
+    background-color: var(--dark-principal-background);
     left: 100%;
     position: fixed;
     top: 6rem;
@@ -254,14 +272,14 @@ body{
 .navbar .navbar-list li a{
     display: block;
     text-decoration: none;
-    color: var(--white-background);
+    color: var(--font-principal-letter);
 }
 
 .navbar .navbar-list li:nth-child(5){
-    color: var(--blue-light-font);
+    color: var(--font-principal-title);
     width: 10.4rem;
     height: 3rem;
-    border: 1px solid var(--blue-light-font);
+    border: 1px solid var(--font-principal-title);
     border-radius: .4rem;
     display: flex;
     justify-content: center;
@@ -307,7 +325,7 @@ body{
 }
 
 .navbar .navbar-customization h4{
-    color: var(--blue-light-font);
+    color: var(--font-principal-title);
     font-weight: 400
 }
 
@@ -316,6 +334,7 @@ body{
     list-style: none;
     display: inline-flex;
     align-items: center;
+    cursor: pointer;
 }
 
 
@@ -366,7 +385,7 @@ body{
 
 .introduction .first-greeting, .introduction .name-label{
     font-size: 2rem;
-    color: var(--blue-light-font);
+    color: var(--font-principal-title);
     font-weight: 400;  
     margin-top: .8rem; 
 }
@@ -392,14 +411,14 @@ body{
 
 .introduction .cv-downloader{
     display: block;
-    border: 1px solid var(--white-background);
+    border: 1px solid var(--font-principal-letter);
     height: 3rem;
     width: 14.3rem;
     border-radius: .4rem;
-    background: var(--violet-dark);
+    background: var(--dark-principal-background);
     margin: 0 auto;
     margin-top: 0.8rem;
-    color: var(--white-background);
+    color: var(--font-principal-letter);
 }
 
 .introduction .social-media{
@@ -438,7 +457,7 @@ body{
 .about-me .about-me-title{
     font-size: 2.4rem;
     font-weight: 500;
-    color: var(--blue-light-font);
+    color: var(--font-principal-title);
 }
 
 .about-me .provisional-image{
@@ -454,7 +473,7 @@ body{
 .about-me .about-me-role{
     font-size: 2rem;
     font-weight: 500;
-    color: var(--blue-light-font);
+    color: var(--font-principal-title);
     margin-top: 1.6rem;
 }
 
@@ -472,7 +491,7 @@ body{
 .projects .projects-title{
     font-size: 2.4rem;
     font-weight: 500;
-    color: var(--blue-light-font);
+    color: var(--font-principal-title);
     margin-top: 1.6rem;
 }
 
@@ -561,7 +580,7 @@ body{
 .projects .project-aranda-delay h4,
 .projects .project-library-information h4{
     font-size: 1.6rem;
-    color: var(--blue-light-font);
+    color: var(--font-principal-title);
     font-weight: 500;
 }
 
@@ -586,7 +605,7 @@ body{
 .projects .project-links a,
 .projects .project-aranda-links a{
     text-decoration: none;
-    color: var(--white-background);
+    color: var(--font-principal-letter);
     display: flex;
 }
 
@@ -647,7 +666,7 @@ body{
 }
 
 .skills h4{
-    color: var(--blue-light-font);
+    color: var(--font-principal-title);
     font-size: 2.4rem;
     font-weight: 500;
 }
@@ -683,7 +702,7 @@ body{
 .skills .stack-item{
     height: 14.8rem;
     width: 12.2rem;
-    border: 1px solid var(--white-background);
+    border: 1px solid var(--font-principal-letter);
     margin-right: 1.6rem;
     border-radius: 1.6rem;
     display: flex;
@@ -708,14 +727,14 @@ body{
 }
 
 .footer{
-    background-color: var(--violet-dark);
+    background-color: var(--dark-principal-background);
     height: 30rem;
     padding: 1.6rem 2.4rem;
     margin-top: 1.6rem;
 }
 
 .footer h1{
-    color: var(--blue-light-font);
+    color: var(--font-principal-title);
     font-size: 2.4rem;
     font-weight: 500;
     text-align: center;
@@ -757,7 +776,7 @@ body{
 .whatsapp-white + span{
     margin-left: 1.2rem;
     text-decoration: none;
-    color: var(--white-background)
+    color: var(--font-principal-letter)
 }
 .footer-whatsapp{
     grid-area: footer-whatsapp;
@@ -776,7 +795,7 @@ body{
 .linkedin-white + span{
     margin-left: 1.2rem;
     text-decoration: none;
-    color: var(--white-background)
+    color: var(--font-principal-letter)
 }
 
 .footer-linkedin{
@@ -796,7 +815,7 @@ body{
 .github-white + span{
     margin-left: 1.2rem;
     text-decoration: none;
-    color: var(--white-background)
+    color: var(--font-principal-letter)
 }
 
 .footer-github{

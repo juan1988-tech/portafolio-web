@@ -23,14 +23,14 @@
 }
 
 .header .ul-header a{
-    color: var(--white-background);
+    color: var(--font-principal-letter);
     text-decoration: none;
 }
 
 .header .ul-header a:nth-child(1):hover,
 .header .ul-header a:nth-child(2):hover,
 .header .ul-header a:nth-child(3):hover{
-    color: var(--blue-light-font);
+    color: var(--font-principal-title);
     transition-duration: .8s;
 }
 
@@ -75,9 +75,9 @@
     flex-direction: column;
     width: 19.2rem;
     height: 27.4rem;
-    border: 1px solid var(--white-background);
+    border: 1px solid var(--font-principal-letter);
     border-radius: .4rem;
-    background-color: var(--violet-dark);
+    background-color: var(--dark-principal-background);
     left: 100%;
     position: fixed;
     top: 6rem;
@@ -96,9 +96,9 @@
     flex-direction: column;
     width: 19.2rem;
     height: 27.4rem;
-    border: 1px solid var(--white-background);
+    border: 1px solid var(--font-principal-letter);
     border-radius: .4rem;
-    background-color: var(--violet-dark);
+    background-color: var(--dark-principal-background);
     left: 100%;
     position: fixed;
     top: 6rem;
@@ -156,7 +156,7 @@
     margin-left: 1.6rem;
 }
 .general-settings .navbar-customization h4{
-    color: var(--blue-light-font);
+    color: var(--font-principal-title);
     font-weight: 400;
     font-size: 2rem;
 }
@@ -165,6 +165,7 @@
     list-style: none;
     display: inline-flex;
     align-items: center;
+    cursor: pointer;
 }
 
 /*introduction*/
