@@ -58,6 +58,21 @@ body{
     z-index: 1;
 }
 
+.header .ul-header{
+    display: none;
+}
+
+.header .header-settings{
+    display: none;
+}
+
+.header .header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 .header .title-logo{
     font-size: 2.4rem;
     font-style: normal;
@@ -271,7 +286,7 @@ body{
     transition-timing-function: ease;    
 }
 
-.navbar .navbar-settings:hover .navbar-gear-change{
+.navbar .navbar-settings .navbar-gear-change{
     background-image: url('../assets/icons/gear.svg');
     width: 1.3rem;
     height: 1.3rem;
@@ -334,6 +349,10 @@ body{
 
 .navbar-customization .light{
     background-image: url('../assets/icons/light.svg');
+}
+
+.general-settings{
+    display: none;
 }
 /*estilos main content principal*/
 .main-content{

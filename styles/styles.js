@@ -27,6 +27,20 @@ const toggleGear = () =>{
      navbarGlobalSettings.classList.toggle('navbar-global-settings-change')
 }
 
+const toggleHeaderGear = () =>{
+    const nabvarListSettings = {
+        generalSettings: document.querySelector('#general-settings'),
+        navbarGear: document.querySelector('#header-settings-gear')
+
+     }
+
+     const { generalSettings,navbarGear } = nabvarListSettings;
+     navbarGear.classList.toggle('header-settings-gear-change')
+     generalSettings.classList.toggle('general-settings-change')
+}
+
+
+
 const addClassInformation = (projectTitleInfo,projectTitleD,projectTitleInformationChanger,projectTitleDelayChanger) =>{
     const projectAppTemp = {
         projectTitleInformation: document.querySelector(projectTitleInfo),

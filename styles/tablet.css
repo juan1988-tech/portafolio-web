@@ -1,0 +1,233 @@
+@import url('../styles/main.css');
+
+.main-content{
+    width: 33.9rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .main-content{
+        width: 93.75%;
+    }
+
+    .header .ul-header{
+        display: none;
+    }   
+
+    .introduction{
+        display: grid;
+        grid-template: 6.9rem 5rem 6.6rem 7.4rem/15.7rem 12.2rem auto;
+        grid-template-areas: "first-greeting first-greeting image-container"
+                             "name-developer name-developer image-container"
+                             "name-label name-label image-container"
+                             "cv-downloader social-media image-container";
+    }               
+
+    .introduction .first-greeting{
+        grid-area: first-greeting;
+        margin: 0;
+        align-self: flex-end;
+        font-size: 2.8rem;;
+    }
+
+    .introduction .name-image{
+        object-fit: contain;
+    }
+
+    .introduction .image-container{
+        grid-area: image-container;
+        margin: 0;
+        justify-self: center;
+        align-self: center;
+        width: 34.4rem;
+        height: 25rem;
+    }
+
+    .introduction .name-developer{
+        grid-area: name-developer;
+        margin: 0;
+        align-self: center;
+        font-size: 3.2rem;
+    }
+
+    .introduction .name-label{
+        grid-area: name-label;
+        margin: 0;
+        align-self: flex-start;
+        font-size: 2.4rem;
+    }
+
+    .introduction .cv-downloader{
+        grid-area: cv-downloader;
+        margin: 0;
+        align-self: center;
+    }
+
+    .introduction .social-media{
+        grid-area: social-media;
+        align-self: center;
+        margin: 0;
+        margin-left: 1rem;
+    }
+
+    .general-settings{
+        display: none;
+    }
+    
+    /*about me*/
+
+    .about-me{
+        margin-top: 1.6rem;
+        display: grid;
+        grid-template: 2.8rem 7.1rem 8.4rem 8.1rem/15.7rem 16.2rem auto;
+        grid-template-areas: "about-me-title about-me-title ."
+                             "provisional-image provisional-image about-me-role"
+                             "provisional-image provisional-image about-first-p"
+                             "provisional-image provisional-image about-second-p";
+    }
+
+    .about-me .about-me-title{
+        grid-area: about-me-title;
+    }
+
+    .about-me .provisional-image{
+        grid-area: provisional-image;
+        align-self: center;
+        justify-self: center;
+        margin: 0;
+    }
+
+    .about-me .about-me-role{
+        grid-area: about-me-role;
+        margin: 0;
+        align-self: center;
+    }
+    .about-me .about-first-p{
+        grid-area: about-first-p;
+        align-self: center;
+        margin: 0;
+    }
+
+    .about-me .about-second-p{
+        grid-area: about-second-p;
+        align-self: center;
+        margin: 0;
+    }
+
+
+    /*projects*/
+    .projects .project-app-temp,
+    .projects .project-aranda-proof,
+    .projects .project-public-library{
+    width: 41.4rem;
+    height: 28.4rem;
+    margin: 0 auto;
+    }
+
+    
+    .projects .project-title-information h4,
+    .projects .project-aranda-delay h4,
+    .projects .project-library-information h4{
+        font-size: 2rem;
+    }
+
+.projects .project-title-information,
+.projects .project-aranda-information,
+.projects .project-library-information{
+    top: 22.6rem;
+    } 
+
+    .projects .project-title-information-change,
+    .projects .project-aranda-information-change, 
+    .projects .project-library-information-change{
+        transform: translateY(-22.7rem);
+        height: 105rem;
+    } 
+    
+    .projects .project-title-delay-change,
+    .projects .project-aranda-delay-change,
+    .projects .project-library-delay-change{
+        transform: translateY(6rem);
+    }
+
+    .projects .project-title-information h4 + p,
+    .projects .project-aranda-delay h4 + p,
+    .projects .project-library-information h4 + p{
+        font-size: 2rem;
+    }
+
+
+    .skills .stack-container{
+        height: 20.1rem;
+    }
+
+    .skills .stack{
+        display: flex;
+        height: 20.1rem;
+        justify-content: space-between;
+        width: calc( 17.3rem * 16);
+        margin-top: 1.6rem;
+        animation: onleftmove 16s linear infinite;
+    }
+
+    .skills .stack-item{
+        width: 16.3rem;
+        height: 18rem;
+    }
+
+    .skills .stack-item img{
+        width: 13.7rem;
+        height: 13.7rem;
+    }
+
+    .skills .stack-item .stack-item-javascript{
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .skills .stack-item .stack-item-react{
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .skills .stack-item .stack-item-git{
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .skills .stack-item .stack-item-octocat{
+        width: 13rem;
+        height: 13rem;
+    }
+
+    .skills .stack-item .stack-item-vite{
+        width: 12rem;
+        height: 12rem;
+    } 
+
+    .skills .stack-item .stack-item-figma{
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .footer{
+        height: 16rem;
+    }
+
+    .footer h1 + p{
+        text-align: center;
+    }
+
+    .footer .social-media-grid{
+        display: flex;
+        justify-content: space-between;
+        width: 41.7rem;
+        height: 2.4rem;
+        margin-top: 1.6rem;
+    }
+
+    .footer .footer-dev{
+        width: 25.9rem;
+        margin-top: 1.6rem;
+        font-size: 1.4rem;
+    }
+}

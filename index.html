@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./styles/main.css" rel="stylesheet"/>
-    <link href="./styles/tablet.css" rel="stylesheet" media="( min-width: 584px)"/>
+    <link href="./styles/tablet.css" rel="stylesheet" media="( min-width: 584px )"/>
+    <link href="./styles/desktop.css" rel="stylesheet" media="( min-width: 1280px )"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Russo+One&display=swap" rel="stylesheet">
@@ -12,18 +13,38 @@
 </head>
 <body>
     <header class="header">
+        <section class="header-container">
         <h1 class="title-logo">JD <span>CODE</span></h1>
         <section class="button-burguer" onclick="toggleButtonBurguer()">
             <article class="first-line" id="first-line"></article>
             <article class="second-line" id="second-line"></article>
             <article class="third-line" id="third-line"></article>
         </section>
+        <ul class="ul-header">
+            <li>
+                <a>Acerca de</a>
+            </li>
+            <li>
+                <a>Proyectos</a>
+            </li>
+            <li>
+                <a>Competencias</a>
+            </li>
+            <li>
+                <a>Contacto</a>
+            </li>     
+        </ul>
+        <article class="header-settings" onclick="toggleHeaderGear()">
+            <p>Ajustes</p>
+            <span class="header-settings-gear" id="header-settings-gear"></span>
+        </article>
+        </section>
     </header>
     <section class="navbar" id="navbar">
-        <article class="navbar-global-settings" id="navbar-global-settings">
+        <article class="navbar-global-settings" id="navbar-header-settings">
          <ul class="navbar-list" id="navbar-list">
             <li>
-                <a href="#jd-coder">JD CODE</a>
+                <a>JD CODE</a>
             </li>
             <li>
                 <a>Acerca de</a>
@@ -60,6 +81,28 @@
         </ul>    
         </article>
         <p class="navbar-settings" onclick="toggleGear()">Ajustes <span class="navbar-gear" id="navbar-gear"></span></p>
+    </section>
+    <section class="general-settings" id="general-settings">
+        <ul class="navbar-customization">
+            <h4>Lenguaje</h4>
+            <li>
+                <span class="setting-english"></span><p> ENG</p>
+            </li>
+            <li>
+                <span class="setting-spanish"></span><p> ESP</p>
+            </li>
+            
+            <h4>Temas</h4>
+            <li>
+                <span class="violet-icon"></span><p>Violeta</p>
+            </li>
+            <li>
+                <span class="blue-waves"></span><p>Olas Azules</p>
+            </li>
+            <li>
+                <span class="light"></span><p>Claro</p>
+            </li>
+        </ul>    
     </section>
     <main class="main-content">
         <section class="introduction" id="jd-coder">

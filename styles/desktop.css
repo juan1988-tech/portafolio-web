@@ -1,0 +1,238 @@
+@import url('../styles/main.css');
+@import url('../styles/tablet.css');
+
+
+.main-content{
+    width: 66%;
+}
+
+.header .button-burguer{
+    display: none;
+}
+
+.navbar, .navbar-chnage{
+    display: none;
+}
+
+.header .ul-header{
+    display: flex;
+    justify-content: space-between;
+    width: 41.8rem;
+    font-size: 1.6rem;
+    margin-left: 22.8rem;
+}
+
+.header .ul-header a{
+    color: var(--white-background);
+    text-decoration: none;
+}
+
+.header .ul-header a:nth-child(1):hover,
+.header .ul-header a:nth-child(2):hover,
+.header .ul-header a:nth-child(3):hover{
+    color: var(--blue-light-font);
+    transition-duration: .8s;
+}
+
+.header .title-logo{
+    width: 14.8rem;
+}
+
+.header .header-container{
+    width: 84.125%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .ul-header li{
+    list-style: none;
+}
+
+.header .title-logo{
+    font-size: 3.2rem;
+}
+
+.header .header-settings{
+    font-size: 1.6rem;
+    display: flex;
+    width: 8rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-settings .header-ssettings-gear{
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url('../assets/icons/gear.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+.general-settings{
+    display: flex;
+    flex-direction: column;
+    width: 19.2rem;
+    height: 27.4rem;
+    border: 1px solid var(--white-background);
+    border-radius: .4rem;
+    background-color: var(--violet-dark);
+    left: 100%;
+    position: fixed;
+    top: 6rem;
+    transform: translateX(0rem);
+    transition-delay: .2s;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    font-size: 1.6rem;
+    padding-left: 3rem;
+    padding-top: 2.3rem;
+    z-index: 1
+}
+
+.general-settings-change{
+    display: flex;
+    flex-direction: column;
+    width: 19.2rem;
+    height: 27.4rem;
+    border: 1px solid var(--white-background);
+    border-radius: .4rem;
+    background-color: var(--violet-dark);
+    left: 100%;
+    position: fixed;
+    top: 6rem;
+    transform: translateX(-19.3rem);
+    transition-delay: .2s;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    font-size: 1.6rem;
+    padding-left: 3rem;
+    padding-top: 2.3rem;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+.header-settings .header-settings-gear{
+    background-image: url('../assets/icons/gear.svg');
+    width: 1.6rem;
+    height: 1.6rem;
+    background-size: cover;
+    display: block;
+    margin-left: .8rem;
+    transform: rotate(180deg);
+    transition-duration: 1s;
+    transition-timing-function: ease;    
+}
+
+.header-settings .header-settings-gear-change{
+    background-image: url('../assets/icons/gear.svg');
+    width: 1.6rem;
+    height: 1.6rem;
+    background-size: cover;
+    display: block;
+    margin-left: .8rem;
+    transform: rotate(-180deg);
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+.general-settings .navbar-customization{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 15.4rem;
+}
+
+.general-settings .navbar-customization span{
+    display: block;
+    width: 2.1rem;
+    height: 1.5rem;
+    background-size: cover;
+}
+
+.general-settings .navbar-customization p {
+    margin-left: 1.6rem;
+}
+.general-settings .navbar-customization h4{
+    color: var(--blue-light-font);
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.general-settings .navbar-customization li{
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+/*introduction*/
+
+.introduction {
+    display: grid;
+    height: 31rem;
+    width: 100%;
+    grid-template: 10.6rem 5rem 7.7rem auto / 15.9rem 24.9rem auto;
+    grid-template-areas:
+"first-greeting first-greeting image-container"
+"name-developer name-developer image-container"
+"name-label name-label image-container"
+"cv-downloader social-media image-container";
+}
+
+.introduction .first-greeting{
+    font-size: 2.8rem;
+}
+
+.introduction .name-developer{
+    font-size: 4rem;
+}
+
+.introduction .name-label{
+    font-size: 2.8rem;
+}
+
+.introduction .image-container{
+    width: 43.2rem;
+    height: 31rem;
+}
+
+/*about-me*/
+
+.about-me{
+    height: 32rem;
+    display: grid;
+            grid-template: 5rem 8.9rem auto / auto 44.2rem;
+            grid-template-areas:
+        "about-me-title ."
+        "provisional-image about-me-role"
+        "provisional-image about-first-p"
+        "provisional-image about-second-p";
+}
+
+
+.about-me .about-me-title{
+    font-size: 3.2rem;
+}
+
+.about-me .provisional-image{
+    width: 23.8rem;
+    height: 23.8rem;
+}
+
+.about-me .about-me-role{
+    font-size: 2.8rem;
+}
+
+/*projects*/
+
+.projects .projects-title{
+    font-size: 3.2rem;
+}
+
+.projects .project-app-temp,
+.projects .project-aranda-proof,
+.projects .project-public-library{
+    margin: 0;
+}
