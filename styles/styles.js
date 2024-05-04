@@ -64,58 +64,114 @@ const removeClassInformation = (projectTitleInfo,projectTitleDelayer,projectTitl
 }
 
 /*funciones de cambio de los estilos*/ 
+
+/*funcion para modificar el header*/
+const modifyHeader = (bgDark,fontPrincipalLetter,fonPrincipalTitle) =>{
+    let header = document.querySelector('.header');
+    let titleLogo = document.querySelector('.title-logo');
+    let titleLogoSpan = document.querySelector('.title-logo span');
+    let ulHeaderas = document.querySelectorAll('.ul-header a')
+    let extractulHeaderas = [...ulHeaderas]
+    let headerSettings = document.querySelector('.header-settings');
+    let generalSettingsChange = document.querySelector('.general-settings-change');
+    let navbarCustomizationP = document.querySelectorAll('.navbar-customization p');
+    let extractNavbarCustomizationP = [...navbarCustomizationP];
+    let navbarCustomizationH4 = document.querySelectorAll('.navbar-customization h4');
+    let extractnavbarCustomizationH4 = [...navbarCustomizationH4];
+    let navbarChange = document.querySelector('.navbar-change');
+    let navbarSettings = document.querySelector('.navbar-settings');
+    let navbarListLiA = document.querySelectorAll('.navbar-list li a')
+    let extractNavbarListLiA = [...navbarListLiA]
+
+    header.style.setProperty('background-color',bgDark)
+    titleLogo.style.setProperty('color',fontPrincipalLetter)
+    titleLogoSpan.style.setProperty('color',fonPrincipalTitle)
+    extractulHeaderas.map((item)=>{
+        item.style.setProperty('color',fontPrincipalLetter)
+    })
+    headerSettings.style.setProperty('color',fontPrincipalLetter)
+
+    if(document.body.clientWidth >=768){
+        generalSettingsChange.style.setProperty('background-color',bgDark)
+    }
+
+    extractNavbarCustomizationP.map((item)=>{
+        item.style.setProperty('color','#FEFEFE')
+    })
+
+    extractnavbarCustomizationH4.map((item)=>{
+        item.style.setProperty('color',fonPrincipalTitle)
+    })
+
+    extractNavbarListLiA.map((item)=>{
+        item.style.setProperty('color',fontPrincipalLetter)
+    })
+
+    navbarChange.style.setProperty('background-color',bgDark)
+    navbarSettings.style.setProperty('color','#FEFEFE')
+}
+
+const modifyFooter = (bgDark,fonPrincipalTitle,fontPrincipalLetter) =>{
+    let footer = document.querySelector('.footer');
+    let footerH1 = document.querySelector('.footer h1');
+    let footerP = document.querySelector('.footer h1 + p');
+    let footerSpan = document.querySelectorAll('.social-media-grid span + span');
+    let extractFooterSpan = [...footerSpan];
+    let footerDev = document.querySelector('.footer-dev')
+
+
+    footer.style.setProperty('background-color',bgDark);
+    footerH1.style.setProperty('color',fonPrincipalTitle);
+    footerP.style.setProperty('color',fontPrincipalLetter);
+    extractFooterSpan.map((item)=>{
+        item.style.setProperty('color',fontPrincipalLetter);
+    })
+    footerDev.style.setProperty('color',fontPrincipalLetter)
+}
+
 const addPruprleTheme = () =>{
     /*identificar al selector de los estilos*/ 
     let theme = document.querySelector(':root');
-    let header = document.querySelector('.header');
-    let spanTitleLogo = document.querySelector('.title-logo span')
-    let spanTitle = document.querySelector('.title-logo')
-    let navbarCustomizationTitle = document.querySelector('.navbar-customization h4')
 
+    modifyHeader('#2A093C','#FEFEFE','#00D8FF');
+    modifyFooter('#2A093C','#00D8FF','#FEFEFE');
     /*cambiar el selector de estilos*/
     theme.style.setProperty('--main-body-background','linear-gradient(90deg, rgb(57, 12, 81) 0%, rgb(81.86, 38.13, 105.19) 50%, rgb(57, 12, 81) 100%)')
     theme.style.setProperty('--font-principal-letter','#FEFEFE')
     theme.style.setProperty('--font-principal-title','#00D8FF')
     theme.style.setProperty('--dark-principal-background','#2A093C')
-    header.style.setProperty('background-color','#2A093C')
-    spanTitle.style.setProperty('color','#FEFEFE')
-    spanTitleLogo.style.setProperty('color','#00D8FF')
-    navbarCustomizationTitle.style.setProperty('color','#00D8FF')
 }
 
 const addBlueTheme = () =>{
     /*identificar al selector de los estilos*/ 
     let theme = document.querySelector(':root');
-    let spanTitleLogo = document.querySelector('.title-logo span')
-    let spanTitle = document.querySelector('.title-logo')
-    let header = document.querySelector('.header')
-    let navbarCustomizationTitle = document.querySelector('.navbar-customization h4')
 
+    modifyHeader('#090B36','#FEFEFE','#8FFF00');
+    modifyFooter('#090B36','#8FFF00','#FEFEFE');
     /*cambiar el selector de estilos*/
     theme.style.setProperty('--main-body-background','linear-gradient(90deg, #0C0F51 0%, #22256D 50%, #0C0F51 100%)')
     theme.style.setProperty('--font-principal-letter','#FEFEFE')
     theme.style.setProperty('--font-principal-title','#8FFF00')
     theme.style.setProperty('--dark-principal-background','#090B36')
-    header.style.setProperty('background-color','#090B36')
-    generalSettingChange.style.setProperty('background-color','#090B36')
-    navbarCustomizationTitle.setProperty('color','#8FFF00')
-    spanTitleLogo.style.setProperty('color','#8FFF00')
 }
 
 const addLightTheme = () =>{
     let theme = document.querySelector(':root');
-    let spanTitleLogo = document.querySelector('.title-logo span')
-    let spanTitle = document.querySelector('.title-logo')
-    let header = document.querySelector('.header')
-    let generalSettingChange = document.querySelector('.general-settings-change')
-    let navbarCustomizationTitle = document.querySelectorAll('.general-settings h4')
+    let buttonBurguer = {
+        firstLine: document.querySelector('.first-line-change'),
+        secondLine: document.querySelector('.second-line-change'),
+        thirdLine: document.querySelector('.third-line-change'),
+    }
+    console.log(buttonBurguer)
+    modifyHeader('#1E1E1E','#FEFEFE','#00D8FF');
+    modifyFooter('#1E1E1E','#00D8FF','#FEFEFE');
+    const { firstLine, secondLine, thirdLine} = buttonBurguer;
 
-
+    /*cambio de estilos generales*/
+    firstLine.style.setProperty('background-color','#FEFEFE')
+    thirdLine.style.setProperty('background-color','#FEFEFE')
     theme.style.setProperty('--main-body-background','linear-gradient(90deg, #F7F7F7 0%, #E4E2E1 50%, #F7F7F7 100%)')
-    header.style.setProperty('background-color','#1E1E1E')
-    spanTitleLogo.style.setProperty('color','#00D8FF')
-    
-    spanTitle.style.setProperty('color','#FEFEFE')
-    generalSettingChange.style.setProperty('background-color','#1E1E1E')
-    navbarCustomizationTitle.style.setProperty('color','#00D8FF')
+    theme.style.setProperty('--font-principal-letter','#2C2B2B')
+    theme.style.setProperty('--font-principal-title','#0D16D9')
+    theme.style.setProperty('--dark-principal-background','#090B36')
 }
