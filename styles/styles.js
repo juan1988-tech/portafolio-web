@@ -107,8 +107,10 @@ const modifyHeader = (bgDark,fontPrincipalLetter,fonPrincipalTitle) =>{
         item.style.setProperty('color',fontPrincipalLetter)
     })
 
-    navbarChange.style.setProperty('background-color',bgDark)
-    navbarSettings.style.setProperty('color','#FEFEFE')
+    if(document.body.clientWidth <=768){
+        navbarChange.style.setProperty('background-color',bgDark)
+        navbarSettings.style.setProperty('color','#FEFEFE')
+    }
 }
 
 const modifyFooter = (bgDark,fonPrincipalTitle,fontPrincipalLetter) =>{
@@ -162,14 +164,18 @@ const addLightTheme = () =>{
         secondLine: document.querySelector('.second-line-change'),
         thirdLine: document.querySelector('.third-line-change'),
     }
-    console.log(buttonBurguer)
+    
     modifyHeader('#1E1E1E','#FEFEFE','#00D8FF');
     modifyFooter('#1E1E1E','#00D8FF','#FEFEFE');
     const { firstLine, secondLine, thirdLine} = buttonBurguer;
 
     /*cambio de estilos generales*/
-    firstLine.style.setProperty('background-color','#FEFEFE')
-    thirdLine.style.setProperty('background-color','#FEFEFE')
+    if(document.body.clientWidth <=768){
+        firstLine.style.setProperty('background-color','#FEFEFE')
+        secondLine.style.setProperty('background-color','#FEFEFE')
+        thirdLine.style.setProperty('background-color','#FEFEFE')    
+    }
+    
     theme.style.setProperty('--main-body-background','linear-gradient(90deg, #F7F7F7 0%, #E4E2E1 50%, #F7F7F7 100%)')
     theme.style.setProperty('--font-principal-letter','#2C2B2B')
     theme.style.setProperty('--font-principal-title','#0D16D9')
