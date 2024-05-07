@@ -138,6 +138,29 @@ const modiftyButton = (bgDark,fontPrincipalLetter) =>{
     cvDownloader.style.setProperty('border',`1px solid ${fontPrincipalLetter}`);
 }
 
+const modifyProjectApp = (fontPrincipalTitle,fontPrincipalLetter,fontPrincipalAncle) =>{
+    let projectTitleInformation = document.querySelectorAll('.projects h4');
+    let extractProjectTitle = [...projectTitleInformation];
+    
+    let projectTitleP = document.querySelectorAll('.projects h4 + p');
+    let extractProjectP = [...projectTitleP];    
+    
+    let projectTitleA = document.querySelectorAll('.projects a');
+    let extractProjectTitleA = [...projectTitleA]
+
+    extractProjectTitle.map((item)=>{
+        item.style.setProperty('color',fontPrincipalTitle)
+    })    
+
+    extractProjectP.map((item)=>{
+        item.style.setProperty('color',fontPrincipalLetter)
+    })
+
+    extractProjectTitleA.map((item)=>{
+        item.style.setProperty('color',fontPrincipalAncle)
+    })
+}
+
 const addPruprleTheme = () =>{
     /*identificar al selector de los estilos*/ 
     let theme = document.querySelector(':root');
@@ -145,6 +168,7 @@ const addPruprleTheme = () =>{
     modifyHeader('#2A093C','#FEFEFE','#00D8FF');
     modifyFooter('#2A093C','#00D8FF','#FEFEFE');
     modiftyButton('#2A093C','#FEFEFE');
+    modifyProjectApp('#00D8FF','#FEFEFE','#FEFEFE');
     /*cambiar el selector de estilos*/
     theme.style.setProperty('--main-body-background','linear-gradient(90deg, rgb(57, 12, 81) 0%, rgb(81.86, 38.13, 105.19) 50%, rgb(57, 12, 81) 100%)')
     theme.style.setProperty('--font-principal-letter','#FEFEFE')
@@ -159,6 +183,7 @@ const addBlueTheme = () =>{
     modifyHeader('#090B36','#FEFEFE','#8FFF00');
     modifyFooter('#090B36','#8FFF00','#FEFEFE');
     modiftyButton('#090B36','#FEFEFE');
+    modifyProjectApp('#8FFF00','#FEFEFE','#FEFEFE');
     /*cambiar el selector de estilos*/
     theme.style.setProperty('--main-body-background','linear-gradient(90deg, #0C0F51 0%, #22256D 50%, #0C0F51 100%)')
     theme.style.setProperty('--font-principal-letter','#FEFEFE')
@@ -176,7 +201,8 @@ const addLightTheme = () =>{
     
     modifyHeader('#0A0A0A','#FEFEFE','#00D8FF');
     modifyFooter('#0A0A0A','#00D8FF','#FEFEFE');
-    modiftyButton('#D8D6D6','#0A0A0A')
+    modiftyButton('#D8D6D6','#0A0A0A');
+    modifyProjectApp('#00D8FF','#FEFEFE','#FEFEFE');
     const { firstLine, secondLine, thirdLine } = buttonBurguer;
 
     /*cambio de estilos generales*/
