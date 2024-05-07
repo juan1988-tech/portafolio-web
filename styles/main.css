@@ -1,34 +1,10 @@
 :root{
-    /*colors*/
-   /*  --white-background: #FEFEFE;
-    --slight-gray: #EEEDED;
-    --soft-gray: #D8D6D6;
-    --medium-gray: #C4C3C3;
-    --medium-dark-gray: #A8A8A8;
-    --black-p-font: #2C2B2B;
-    --violet-dark: #2A093C;
-    --blue-light-font: #00D8FF;
-    --violet-background: linear-gradient(90deg, rgb(57, 12, 81) 0%, rgb(81.86, 38.13, 105.19) 50%, rgb(57, 12, 81) 100%); 
-    
-    --blue-background: linear-gradient(90deg, #0C0F51 0%, #22256D 50%, #0C0F51 100%);
-    --blue-dark: #090B36;
-    --green-light-form: #8FFF00;
-    --blue-slight-form: #0F1145;
-    --blue-font: #0D16D9;
-    --light-background: linear-gradient(90deg, #F7F7F7 0%, #E4E2E1 50%, #F7F7F7 100%);
-    --gray-slight-form: #E2E2E2;
-    --black-dark: #1E1E1E; */
-    /*variables para el tema violeta provisional*/
     --black-project: rgba(0,0,0,0.8);
     --font-principal-letter: #FEFEFE;
     --font-principal-title: #00D8FF;
     --dark-principal-background: #2A093C;
     --main-body-background: linear-gradient(90deg, rgb(57, 12, 81) 0%, rgb(81.86, 38.13, 105.19) 50%, rgb(57, 12, 81) 100%); 
-    /*estilos light*/
-    /* --font-principal-letter: #2C2B2B;
-    --font-principal-title: #0D16D9;
-    --dark-principal-background: #1E1E1E;
-    --main-body-background: linear-gradient(90deg, #F7F7F7 0%, #E4E2E1 50%, #F7F7F7 100%); */
+
     --bai-jamjure: "Bai Jamjuree", sans-serif;
     --russo-one: "Russo One", sans-serif;
 }
@@ -45,22 +21,12 @@ html{
     font-weight: 400;
     font-style: normal;
     color: var(--font-principal-letter);    
+    scroll-behavior: smooth;
 }
 
 body{
     background: var(--main-body-background);
-    scroll-behavior: smooth;
 }
-
-@keyframes setOpacity {
-    from{
-        opacity: .5;
-    }
-    to{
-        opacity: 1;
-    }
-}
-
 
 /*header*/
 .header{

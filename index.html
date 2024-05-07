@@ -14,7 +14,7 @@
 <body>
     <header class="header">
         <section class="header-container">
-        <h1 class="title-logo">JD <span>CODE.</span></h1>
+        <h1 class="title-logo" onclick="scrollToIntroduction(event)">JD <span>CODE.</span></h1>
         <section class="button-burguer" onclick="toggleButtonBurguer()">
             <article class="first-line" id="first-line"></article>
             <article class="second-line" id="second-line"></article>
@@ -22,13 +22,13 @@
         </section>
         <ul class="ul-header">
             <li>
-                <a>Acerca de</a>
+                <a onclick="scrollToAboutMe(event)">Acerca de</a>
             </li>
             <li>
-                <a>Proyectos</a>
+                <a onclick="scrollToProjects(event)">Proyectos</a>
             </li>
             <li>
-                <a>Competencias</a>
+                <a onclick="scrollToSkills(event)">Competencias</a>
             </li>
             <li>
                 <a>Contacto</a>
@@ -119,14 +119,14 @@
             </article>
         </section>
         <section class="about-me">
-            <h3 class="about-me-title">Acerca de mí</h3>
+            <h3 class="about-me-title" id="about-me">Acerca de mí</h3>
             <div class="provisional-image"></div>
             <h3 class="about-me-role">Programo y diseño páginas estáticas y aplicaciones web</h3>
             <p class="about-first-p">Busco unir mis conocimientos en desarrollo web y diseño de interfaces para realizar productos tecnológicos con un alto nivel de detalle.</p>
             <p class="about-second-p">Tengo conocimientos en HTML, CSS, JavaScript, Git, React; y por el lado del diseño de interfaces domino Figma, Adobe XD, y conocimientos en UX/UI y arquitectura de la información</p>
         </section>
         <section class="projects"> 
-            <h3 class="projects-title">Proyectos</h3>
+            <h3 class="projects-title" id="projects">Proyectos</h3>
             <article class="project-app-temp" onmouseover="addClassInformation('#project-title-information','#project-title-delay','project-title-information-change','project-title-delay-change')"
              onmouseleave="removeClassInformation('#project-title-information','#project-title-delay','project-title-information-change',
              'project-title-information','project-title-delay-change','project-title-delay')">
@@ -189,7 +189,7 @@
                 </div>
             </article>
         </section>
-        <section class="skills">
+        <section class="skills" id="skills">
             <h4>Competencias</h4>
             <section class="stack-container">
             <article class="stack">

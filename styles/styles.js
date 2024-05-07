@@ -91,7 +91,7 @@ const modifyHeader = (bgDark,fontPrincipalLetter,fonPrincipalTitle) =>{
     })
     headerSettings.style.setProperty('color',fontPrincipalLetter)
 
-    if(document.body.clientWidth >=768){
+    if(document.body.clientWidth >768){
         generalSettingsChange.style.setProperty('background-color',bgDark)
     }
 
@@ -165,8 +165,8 @@ const addLightTheme = () =>{
         thirdLine: document.querySelector('.third-line-change'),
     }
     
-    modifyHeader('#1E1E1E','#FEFEFE','#00D8FF');
-    modifyFooter('#1E1E1E','#00D8FF','#FEFEFE');
+    modifyHeader('#0A0A0A','#FEFEFE','#00D8FF');
+    modifyFooter('#0A0A0A','#00D8FF','#FEFEFE');
     const { firstLine, secondLine, thirdLine} = buttonBurguer;
 
     /*cambio de estilos generales*/
@@ -179,5 +179,32 @@ const addLightTheme = () =>{
     theme.style.setProperty('--main-body-background','linear-gradient(90deg, #F7F7F7 0%, #E4E2E1 50%, #F7F7F7 100%)')
     theme.style.setProperty('--font-principal-letter','#2C2B2B')
     theme.style.setProperty('--font-principal-title','#0D16D9')
-    theme.style.setProperty('--dark-principal-background','#090B36')
+    theme.style.setProperty('--dark-principal-background','#1E1E1E')
+}
+
+/*funciones del header scrollIntoView()*/ 
+
+const scrollToIntroduction = (event) =>{
+    event.preventDefault()
+    const element = document.getElementById('jd-coder');
+    element.scrollIntoView({behavior: "smooth", block: "center", inline: "center"})
+}
+
+const scrollToAboutMe = (event) =>{
+    event.preventDefault()
+    const element = document.getElementById('about-me');
+    element.scrollIntoView({behavior: "smooth", block: "center", inline: "center"})
+}
+
+const scrollToProjects = (event) =>{
+    event.preventDefault()
+    const element = document.getElementById('projects');
+    element.scrollIntoView({behavior: "smooth", block: "center", inline: "center"})
+}
+
+
+const scrollToSkills = (event) =>{
+    event.preventDefault()
+    const element = document.getElementById('skills');
+    element.scrollIntoView({behavior: "smooth", block: "center", inline: "center"})
 }

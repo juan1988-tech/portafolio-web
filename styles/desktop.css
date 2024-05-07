@@ -25,11 +25,10 @@
 .header .ul-header a{
     color: var(--font-principal-letter);
     text-decoration: none;
+    cursor: pointer;
 }
 
-.header .ul-header a:nth-child(1):hover,
-.header .ul-header a:nth-child(2):hover,
-.header .ul-header a:nth-child(3):hover{
+.header .ul-header a:hover{
     color: var(--font-principal-title);
     transition-duration: .8s;
 }
