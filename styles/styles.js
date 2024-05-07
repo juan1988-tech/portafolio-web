@@ -131,12 +131,20 @@ const modifyFooter = (bgDark,fonPrincipalTitle,fontPrincipalLetter) =>{
     footerDev.style.setProperty('color',fontPrincipalLetter)
 }
 
+const modiftyButton = (bgDark,fontPrincipalLetter) =>{
+    const cvDownloader = document.querySelector('.cv-downloader')
+    cvDownloader.style.setProperty('background-color',bgDark);
+    cvDownloader.style.setProperty('color',fontPrincipalLetter);
+    cvDownloader.style.setProperty('border',`1px solid ${fontPrincipalLetter}`);
+}
+
 const addPruprleTheme = () =>{
     /*identificar al selector de los estilos*/ 
     let theme = document.querySelector(':root');
 
     modifyHeader('#2A093C','#FEFEFE','#00D8FF');
     modifyFooter('#2A093C','#00D8FF','#FEFEFE');
+    modiftyButton('#2A093C','#FEFEFE');
     /*cambiar el selector de estilos*/
     theme.style.setProperty('--main-body-background','linear-gradient(90deg, rgb(57, 12, 81) 0%, rgb(81.86, 38.13, 105.19) 50%, rgb(57, 12, 81) 100%)')
     theme.style.setProperty('--font-principal-letter','#FEFEFE')
@@ -150,6 +158,7 @@ const addBlueTheme = () =>{
 
     modifyHeader('#090B36','#FEFEFE','#8FFF00');
     modifyFooter('#090B36','#8FFF00','#FEFEFE');
+    modiftyButton('#090B36','#FEFEFE');
     /*cambiar el selector de estilos*/
     theme.style.setProperty('--main-body-background','linear-gradient(90deg, #0C0F51 0%, #22256D 50%, #0C0F51 100%)')
     theme.style.setProperty('--font-principal-letter','#FEFEFE')
@@ -167,7 +176,8 @@ const addLightTheme = () =>{
     
     modifyHeader('#0A0A0A','#FEFEFE','#00D8FF');
     modifyFooter('#0A0A0A','#00D8FF','#FEFEFE');
-    const { firstLine, secondLine, thirdLine} = buttonBurguer;
+    modiftyButton('#D8D6D6','#0A0A0A')
+    const { firstLine, secondLine, thirdLine } = buttonBurguer;
 
     /*cambio de estilos generales*/
     if(document.body.clientWidth <=768){
@@ -206,5 +216,11 @@ const scrollToProjects = (event) =>{
 const scrollToSkills = (event) =>{
     event.preventDefault()
     const element = document.getElementById('skills');
+    element.scrollIntoView({behavior: "smooth", block: "center", inline: "center"})
+}
+
+const scrollToContact = () =>{
+    event.preventDefault()
+    const element = document.getElementById('contact');
     element.scrollIntoView({behavior: "smooth", block: "center", inline: "center"})
 }
