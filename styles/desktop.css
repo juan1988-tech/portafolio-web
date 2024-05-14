@@ -4,6 +4,7 @@
 
 .main-content{
     width: 66%;
+    max-width: 85.9rem;
 }
 
 .header .button-burguer{
@@ -212,6 +213,10 @@
 }
 
 
+.about-me .about-first-p{
+    font-size: 1.8rem;
+}
+
 .about-me .about-me-title{
     font-size: 3.2rem;
 }
@@ -227,12 +232,44 @@
 
 /*projects*/
 
+.projects{
+    display: grid;
+    grid-template: 6.5rem repeat(2,1fr)/ repeat(2,1fr);
+    grid-template-areas: "projects-title projects-title"
+                         "app-temp public-library"
+                         "aranda-proof aranda-proof";
+    height: 67.9rem;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
 .projects .projects-title{
     font-size: 3.2rem;
+    grid-area: projects-title;
+    margin-top: 0;
+    align-self: center;
+    width: 100%;
 }
 
 .projects .project-app-temp,
 .projects .project-aranda-proof,
 .projects .project-public-library{
     margin: 0;
+}
+
+.projects .project-app-temp{
+    grid-area: app-temp;
+}
+
+.projects .project-public-library{
+    grid-area: public-library;
+}
+
+.projects .project-aranda-proof{
+    grid-area: aranda-proof;
+}
+
+.skills h4{
+    font-size: 3.2rem;
 }

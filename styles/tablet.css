@@ -121,6 +121,7 @@
     width: 41.4rem;
     height: 28.4rem;
     margin: 0 auto;
+    margin-top: 1.6rem;
     }
 
     
@@ -155,6 +156,19 @@
         font-size: 2rem;
     }
 
+    .projects .project-app-temp-stack,
+    .projects .project-aranda-proof-stack{
+        width: 18.4rem;
+        height: 3.5rem;
+    }
+
+    .projects .project-app-temp-stack img,
+    .projects .project-aranda-proof-stack img{
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    /*skills section*/
 
     .skills .stack-container{
         height: 20.1rem;
@@ -163,7 +177,7 @@
     .skills .stack{
         display: flex;
         height: 20.1rem;
-        justify-content: space-between;
+        justify-content: space-between;    
         width: calc( 17.3rem * 16);
         margin-top: 1.6rem;
         animation: onleftmove 16s linear infinite;
