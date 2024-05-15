@@ -527,7 +527,7 @@ body{
 .projects .project-aranda-information-change,
 .projects .project-library-information-change{
     width: 100%;
-    height: 100%;
+    height: 105%;
     margin-top: auto;
     background: var(--black-project);
     border-bottom-left-radius: .4rem;

@@ -245,8 +245,16 @@ const scrollToSkills = (event) =>{
     element.scrollIntoView({behavior: "smooth", block: "center", inline: "center"})
 }
 
-const scrollToContact = () =>{
+const scrollToContact = (event) =>{
     event.preventDefault()
     const element = document.getElementById('contact');
     element.scrollIntoView({behavior: "smooth", block: "center", inline: "center"})
+}
+
+/*funciones para el cambio de idiomas*/
+
+const changeEnglishIdiom = (flag) =>{
+    const engLanguage = document.querySelector(`#${flag}`);
+    const jsonData = require('../languages/en.json');
+    console.log(jsonData);
 }

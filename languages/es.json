@@ -1,0 +1,45 @@
+{
+    "nabvar-list":{
+        "navbar-list-a-about-me":"Acerca de",
+        "navbar-list-a-projects":"Proyectos",
+        "navbar-list-a-skills":"Competencias",
+        "navbar-list-a-contact":"Contacto",
+        "navbar-list-a-settings":"Ajustes"
+    },
+    "themes":{
+        "Violet-theme":"Violeta",
+        "Blue-waves-theme":"Olas Azules",
+        "Light-theme":"Claro"
+    },
+    "introduction":{
+        "first-greeting":"Hola, soy",
+        "name-developer":"Juan David Franco",
+        "name-label":"Desarrollador web y Diseñador de Interfaces",
+        "cv-downloader":"Descargar CV"
+    },
+    "about-me":{
+        "about-me-tittle":"Acerca de mí",
+        "about-me-role":"Programo y diseño páginas estáticas y aplicaciones web",
+        "about-me-p-first":"Busco unir mis conocimientos en desarrollo web y diseño de interfaces para realizar productos tecnológicos con un alto nivel de detalle.",
+        "about-me-p-second":"Tengo conocimientos en HTML, CSS, JavaScript, Git, React; y por el lado del diseño de interfaces domino Figma, Adobe XD, y conocimientos en UX/UI y arquitectura de la información"
+    },
+    "projects":{
+        "projects-title":"Proyectos",
+        "project-wather-app":{
+            "project-title-h4-weather-app":"Aplicación del clima React",
+            "project-title-weather-description":"Aplicación del clima que usa una API para ofrecer los datos del clima"
+        },
+        "library-static-page":{
+            "project-title-h4-library":"Página biblioteca comunitaria",
+            "project-title-library-description":"Página de Emprendimiento Social de Biblioteca Comunitaria, hecha con html, css y Javascript"
+        },
+        "react-technical-proof":{
+            "project-title-h4-react-proof":"Prueba técnica React",
+            "project-title-react--proof-description":"Landing Page donde implemento hooks, states, y demás conceptos de React"
+        }      
+    },
+    "contact":{
+        "contact-tittle":"Contáctame",
+        "contact-p":"Puedes contactarme por número de celular o mediante redes sociales"
+    }
+}
