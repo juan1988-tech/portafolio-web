@@ -1,0 +1,45 @@
+{
+    "nabvar-list":{
+        "navbar-list-a-about-me":"About me",
+        "navbar-list-a-projects":"Projects",
+        "navbar-list-a-skills":"Skills",
+        "navbar-list-a-contact":"Contact",
+        "navbar-list-a-settings":"Settings"
+    },
+    "themes":{
+        "Violet-theme":"Violet",
+        "Blue-waves-theme":"Blue waves",
+        "Light-theme":"Light"
+    },
+    "introduction":{
+        "first-greeting":"Hello, I'm",
+        "name-developer":"Juan David Franco",
+        "name-label":"Web Developer and Interaces Designer",
+        "cv-downloader":"Download CV"
+    },
+    "about-me":{
+        "about-me-tittle":"About me",
+        "about-me-role":" I program and design static pages as well as web applications",
+        "about-me-p-first":"I seek to combine my knowledge in web development and interface design to create technological products with a high level of detail.",
+        "about-me-p-second":"I have knowledge in HTML, CSS, JavaScript, Git, React; and on the interface design side, I am proficient in Figma, Adobe XD, and knowledge in UX/UI and information architecture."
+    },
+    "projects":{
+        "projects-title":"Projects",
+        "project-wather-app":{
+            "project-title-h4-weather-app":"Weather Application with React.js",
+            "project-title-weather-description":"Weather Applications that uses an API for showing the weather database for each city"
+        },
+        "library-static-page":{
+            "project-title-h4-library":"Web Page of Communal Library",
+            "project-title-library-description":"Static Web Page maded with HTML, CSS and Javascript"
+        },
+        "react-technical-proof":{
+            "project-title-h4-react-proof":"Technical Proof",
+            "project-title-react--proof-description":"Landing page where I implement hooks, states and other concepts of React.js"
+        }      
+    },
+    "contact":{
+        "contact-tittle":"Contact me",
+        "contact-p":"You can contact me through my phone number or my social media"
+    }  
+}
