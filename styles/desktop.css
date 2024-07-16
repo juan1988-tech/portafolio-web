@@ -57,7 +57,7 @@
 .header .header-settings{
     font-size: 1.6rem;
     display: flex;
-    width: 8rem;
+    width: 10rem;
     justify-content: space-between;
     align-items: center;
 }
