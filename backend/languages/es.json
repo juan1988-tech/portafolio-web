@@ -25,7 +25,7 @@
         "about_me_p_second":"Tengo conocimientos en HTML, CSS, JavaScript, Git, React; y por el lado del diseño de interfaces domino Figma, Adobe XD, y conocimientos en UX/UI y arquitectura de la información"
     },
     "projects":{
-        "projects_title":"Proyectos",
+        "projects_tittle":"Proyectos",
         "project_wather_app":{
             "project_title_h4_weather_app":"Aplicación del clima React",
             "project_title_weather_description":"Aplicación del clima que usa una API para ofrecer los datos del clima"
@@ -34,11 +34,12 @@
             "project_title_h4_library":"Página biblioteca comunitaria",
             "project_title_library_description":"Página de Emprendimiento Social de Biblioteca Comunitaria, hecha con html, css y Javascript"
         },
-        "react-technical-proof":{
+        "react_technical_proof":{
             "project_title_h4_react_proof":"Prueba técnica React",
-            "project_title_react__proof_description":"Landing Page donde implemento hooks, states, y demás conceptos de React"
+            "project_title_react__proof_description":"Landing Page donde implemento hooks, states, y demás conceptos de React.js"
         }      
     },
+    "skills":"Competencias",
     "contact":{
         "contact_tittle":"Contáctame",
         "contact_p":"Puedes contactarme por número de celular o mediante redes sociales"

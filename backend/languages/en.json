@@ -25,7 +25,7 @@
         "about_me_p_second":"I have knowledge in HTML, CSS, JavaScript, Git, React; and on the interface design side, I am proficient in Figma, Adobe XD, and knowledge in UX/UI and information architecture."
     },
     "projects":{
-        "projects_title":"Projects",
+        "projects_tittle":"Projects",
         "project_wather_app":{
             "project_title_h4_weather_app":"Weather Application with React.js",
             "project_title_weather_description":"Weather Applications that uses an API for showing the weather database for each city"
@@ -35,10 +35,11 @@
             "project_title_library_description":"Static Web Page maded with HTML, CSS and Javascript"
         },
         "react_technical_proof":{
-            "project_title_h4_react_proof":"Technical Proof",
+            "project_title_h4_react_proof":"React Technical Proof",
             "project_title_react__proof_description":"Landing page where I implement hooks, states and other concepts of React.js"
         }      
     },
+    "skills":"Skills",
     "contact":{
         "contact_tittle":"Contact me",
         "contact_p":"You can contact me through my phone number or my social media"
