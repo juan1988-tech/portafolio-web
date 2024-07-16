@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/styles/main.css" rel="stylesheet"/>
+    <link href="./styles/main.css" rel="stylesheet"/>
     <link href="./styles/tablet.css" rel="stylesheet" media="( min-width: 584px )"/>
     <link href="./styles/desktop.css" rel="stylesheet" media="( min-width: 1280px )"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
             <article class="second-line" id="second-line"></article>
             <article class="third-line" id="third-line"></article>
         </section>
-        <ul class="ul-header">
+        <ul class="ul-header" id="navbar_list">
             <li>
                 <a onclick="scrollToAboutMe(event)">Acerca de</a>
             </li>
@@ -42,7 +42,7 @@
     </header>
     <section class="navbar" id="navbar">
         <article class="navbar-global-settings" id="navbar-global-settings">
-         <ul class="navbar-list" id="navbar-list">
+         <ul class="navbar-list" id="navbar-list-cellphone">
             <li>
                 <a onclick="scrollToIntroduction(event)">JD CODE</a>
             </li>
@@ -61,10 +61,10 @@
         </ul> 
         <ul class="navbar-customization">
             <h4>Lenguaje</h4>
-            <li data-language="en" id="en-language" onclick="changeEnglishIdiom('en-language')">
+            <li onclick="englishCall()">
                 <span class="setting-english"></span><p> ENG</p>
             </li>
-            <li data-language="es">
+            <li onclick="spanishCall()">
                 <span class="setting-spanish"></span><p> ESP</p>
             </li>
             
@@ -85,10 +85,10 @@
     <section class="general-settings" id="general-settings">
         <ul class="navbar-customization">
             <h4>Lenguaje</h4>
-            <li id="en-language-nav" onclick="changeEnglishIdiom('en-language-nav')">
+            <li onclick="englishCall()">
                 <span class="setting-english"></span><p> ENG</p>
             </li>
-            <li>
+            <li onclick="spanishCall()">
                 <span class="setting-spanish"></span><p> ESP</p>
             </li>
             
@@ -272,5 +272,6 @@
         <p class="footer-dev">© Juan David Franco, Bogotá Colombia</p>
     </footer>
     <script src="./styles/styles.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>    

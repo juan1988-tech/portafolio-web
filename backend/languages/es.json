@@ -1,45 +1,47 @@
 {
-    "nabvar-list":{
-        "navbar-list-a-about-me":"Acerca de",
-        "navbar-list-a-projects":"Proyectos",
-        "navbar-list-a-skills":"Competencias",
-        "navbar-list-a-contact":"Contacto",
-        "navbar-list-a-settings":"Ajustes"
+    "nabvar_list":{
+        "navbar_list_a_about_me":"Acerca de",
+        "navbar_list_a_projects":"Proyectos",
+        "navbar_list_a_skills":"Competencias",
+        "navbar_list_a_contact":"Contacto",
+        "navbar_list_p_settings":"Ajustes"
     },
     "themes":{
-        "Violet-theme":"Violeta",
-        "Blue-waves-theme":"Olas Azules",
-        "Light-theme":"Claro"
+        "language":"Lenguaje",
+        "themes":"Temas",
+        "Violet_theme":"Violeta",
+        "Blue_waves_theme":"Olas Azules",
+        "Light_theme":"Claro"
     },
     "introduction":{
-        "first-greeting":"Hola, soy",
-        "name-developer":"Juan David Franco",
-        "name-label":"Desarrollador web y Diseñador de Interfaces",
-        "cv-downloader":"Descargar CV"
+        "first_greeting":"Hola, soy",
+        "name_developer":"Juan David Franco",
+        "name_label":"Desarrollador web y Diseñador de Interfaces",
+        "cv_downloader":"Descargar CV"
     },
-    "about-me":{
-        "about-me-tittle":"Acerca de mí",
-        "about-me-role":"Programo y diseño páginas estáticas y aplicaciones web",
-        "about-me-p-first":"Busco unir mis conocimientos en desarrollo web y diseño de interfaces para realizar productos tecnológicos con un alto nivel de detalle.",
-        "about-me-p-second":"Tengo conocimientos en HTML, CSS, JavaScript, Git, React; y por el lado del diseño de interfaces domino Figma, Adobe XD, y conocimientos en UX/UI y arquitectura de la información"
+    "about_me":{
+        "about_me_tittle":"Acerca de mí",
+        "about_me_role":"Programo y diseño páginas estáticas y aplicaciones web",
+        "about_me_p_first":"Busco unir mis conocimientos en desarrollo web y diseño de interfaces para realizar productos tecnológicos con un alto nivel de detalle.",
+        "about_me_p_second":"Tengo conocimientos en HTML, CSS, JavaScript, Git, React; y por el lado del diseño de interfaces domino Figma, Adobe XD, y conocimientos en UX/UI y arquitectura de la información"
     },
     "projects":{
-        "projects-title":"Proyectos",
-        "project-wather-app":{
-            "project-title-h4-weather-app":"Aplicación del clima React",
-            "project-title-weather-description":"Aplicación del clima que usa una API para ofrecer los datos del clima"
+        "projects_title":"Proyectos",
+        "project_wather_app":{
+            "project_title_h4_weather_app":"Aplicación del clima React",
+            "project_title_weather_description":"Aplicación del clima que usa una API para ofrecer los datos del clima"
         },
-        "library-static-page":{
-            "project-title-h4-library":"Página biblioteca comunitaria",
-            "project-title-library-description":"Página de Emprendimiento Social de Biblioteca Comunitaria, hecha con html, css y Javascript"
+        "library_static_page":{
+            "project_title_h4_library":"Página biblioteca comunitaria",
+            "project_title_library_description":"Página de Emprendimiento Social de Biblioteca Comunitaria, hecha con html, css y Javascript"
         },
         "react-technical-proof":{
-            "project-title-h4-react-proof":"Prueba técnica React",
-            "project-title-react--proof-description":"Landing Page donde implemento hooks, states, y demás conceptos de React"
+            "project_title_h4_react_proof":"Prueba técnica React",
+            "project_title_react__proof_description":"Landing Page donde implemento hooks, states, y demás conceptos de React"
         }      
     },
     "contact":{
-        "contact-tittle":"Contáctame",
-        "contact-p":"Puedes contactarme por número de celular o mediante redes sociales"
+        "contact_tittle":"Contáctame",
+        "contact_p":"Puedes contactarme por número de celular o mediante redes sociales"
     }
 }
