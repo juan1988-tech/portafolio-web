@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles/index.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Russo+One&display=swap" rel="stylesheet">
+    <title>Juan David Franco Desarrollador web</title>
+    <script defer src="./scripts/main.js"></script>
+</head>
+<body>
+    <header class="header">
+        <section class="header-container">
+        <h1 class="title-logo" onclick="scrollToIntroduction(event)">JD <span>CODE.</span></h1>
+        <section class="button-burguer" onclick="toggleButtonBurguer()">
+            <article class="first-line" id="first-line"></article>
+            <article class="second-line" id="second-line"></article>
+            <article class="third-line" id="third-line"></article>
+        </section>
+        <ul class="ul-header">
+            <li>
+                <a onclick="scrollToAboutMe(event)">Acerca de</a>
+            </li>
+            <li>
+                <a onclick="scrollToProjects(event)">Proyectos</a>
+            </li>
+            <li>
+                <a onclick="scrollToSkills(event)">Competencias</a>
+            </li>
+            <li class="contact-li">
+                <a onclick="scrollToContact(event)">Contacto</a>
+                <img src="./assets/icons/new-icons/phone-enabled-sharp-blue.svg" alt="Juan David Franco - Desarrollador web / diseñador UX/UI"/>
+            </li>     
+        </ul>
+        <article class="header-settings" onclick="toggleHeaderGear()">
+            <p>Ajustes</p>
+            <span class="header-settings-gear" id="header-settings-gear"></span>
+        </article>
+        </section>
+    </header> 
+    <section class="navbar" id="navbar">
+        <article class="navbar-global-settings" id="navbar-global-settings">
+         <ul class="navbar-list" id="navbar-list">
+            <li>
+                <a onclick="scrollToIntroduction(event)">JD CODE</a>
+            </li>
+            <li>
+                <a onclick="scrollToAboutMe(event)">Acerca de</a>
+            </li>
+            <li>
+                <a onclick="scrollToProjects(event)">Proyectos</a>
+            </li>
+            <li>
+                <a onclick="scrollToSkills(event)">Competencias</a>
+            </li>
+            <li>
+                <a href="https://wa.me/message/IOGFO3KG42ELH1" target="_blank"><span>3142366069</span> &nbsp;<img src="./assets/icons/new-icons/phone-enabled-sharp-blue.svg"  alt="phone-contact-number"/></a>
+            </li>     
+        </ul> 
+        <ul class="navbar-customization">
+            <h4>Lenguaje</h4>
+            <li data-language="en" id="en-language" onclick="changeEnglishIdiom('en-language')">
+                <span class="setting-english"></span><p> ENG</p>
+            </li>
+            <li data-language="es">
+                <span class="setting-spanish"></span><p> ESP</p>
+            </li>
+            
+            <h4>Temas</h4>
+            <li onclick="addPruprleTheme()">
+                <span class="violet-icon"></span><p>Violeta</p>
+            </li>
+            <li onclick="addBlueTheme()">
+                <span class="blue-waves"></span><p>Olas Azules</p>
+            </li>
+            <li onclick="addLightTheme()">
+                <span class="light"></span><p>Claro</p>
+            </li>
+        </ul>    
+        </article>
+        <p class="navbar-settings" onclick="toggleGear()">Ajustes <span class="navbar-gear" id="navbar-gear"></span></p>
+    </section>
+    <section class="general-settings" id="general-settings">
+        <ul class="navbar-customization">
+            <h4>Lenguaje</h4>
+            <li id="en-language-nav" onclick="changeEnglishIdiom('en-language-nav')">
+                <span class="setting-english"></span><p> ENG</p>
+            </li>
+            <li>
+                <span class="setting-spanish"></span><p> ESP</p>
+            </li>
+            
+            <h4>Temas</h4>
+            <li onclick="addPruprleTheme()">
+                <span class="violet-icon"></span><p>Violeta</p>
+            </li>
+            <li onclick="addBlueTheme()">
+                <span class="blue-waves"></span><p>Olas Azules</p>
+            </li>
+            <li onclick="addLightTheme()">
+                <span class="light"></span><p>Claro</p>
+            </li>
+        </ul>    
+    </section>
+    <!-- Sección principal -->
+    <main class="main-content">
+        <section class="introduction" id="jd-coder">
+            <h3 class="first-greeting">Hola, Soy</h3>
+            <h1 class="name-developer">Juan David Franco</h1>
+            <h3 class="name-label">Desarrollador web y diseñador de interfaces</h3>
+            <figure class="image-container">
+                <img class="name-image" src="./assets/images/juancho-header.png" alt="Juan David Franco - Desarrollador web / Diseñador UX/UI"/>
+            </figure>
+            <article class="available-to-work">
+                <span class="light-button"></span>
+                <p>disponible para trabajar</p>
+            </article>
+            <button class="cv-downloader">Descargar CV</button>
+            <article class="social-media">
+                <a class="linkedin-first-link" target="_blank" href="https://www.linkedin.com/in/jfranco-webdev/">
+                    <span></span>
+                </a>
+                <a class="github-first-link" target="_blank" href="https://github.com/juan1988-tech">
+                    <span></span>
+                </a>
+            </article>
+        </section>
+        <section class="about-me">
+            <div class="about-me-container">
+                <h3 class="about-me-title" id="about-me">Acerca de mí</h3>
+                <figure class="about-me-profile">
+                    <img src="./assets/images/perfil-portafolio.png"/>
+                </figure>
+                <h3 class="about-me-role">Programo y diseño páginas estáticas y aplicaciones web</h3>
+                <p class="about-first-p">Software Developer y Diseñador UX/UI. Cuento con experiencia en el desarrollo de aplicaciones web. Domino tecnologías Frontend como HTML, CSS, JavaScript y React.js; y tecnologías Backend como Node.js, Express.js y MongoDB. </p>
+                <p class="about-second-p">Cuento con conocimiento en diseño UX/UI, usando tecnologías cómo metodología agile, UX Research (Entrevistas, Encuestas, User Persona), creación de sistemas de diseño, prototipado con Figma, Adobe Photoshop e Illustrator.</p>
+                <p class="about-third-p">Me enfoco en la mejora continua y en la implementación de soluciones escalables. Busco unir mis conocimientos en Programación y Diseño de Producto para crear aplicaciones con los más eficientes estándares de rendimiento, accesibilidad y usabilidad</p>
+            </div>
+        </section>
+        <section class="projects">
+            <div class="projects-container"  id="projects-container">
+                <h3 class="projects-title" id="projects">Proyectos</h3>
+                <article class="projects-container-card" id="projects-container-card">
+                    <div class="projects-container-card-delay-first" id="projects-container-card-delay">
+                        <figure class="projects-container-card-image">
+                            <img src="./assets/images/projects/proyecto-portafolio.jpg" alt="Futbol Legends - Proyecto de portafolio - Hecho por Juan David Franco"/>
+                        </figure>
+                        <figure class="projects-container-card-image">
+                            <img src="./assets/images/projects/proyecto-portafolio-2.jpg" alt="Todo se vale - Proyecto de portafolio - Hecho por Juan David Franco"/>
+                        </figure>
+                        <figure class="projects-container-card-image">
+                            <img src="./assets/images/projects/proyecto-portafolio-3.jpg" alt="Sienna Walks - Proyecto de portafolio - Hecho por Juan David Franco"/>
+                        </figure>
+                        <figure class="projects-container-card-image">
+                            <img src="./assets/images/projects/proyecto-portafolio-4.jpg" alt="La Montaña Magica - Proyecto de portafolio - Hecho por Juan David Franco"/>
+                        </figure>
+                    </div>
+                </article>
+                <!-- Botón del carrusel -->
+                <article class="project-carousel-indicator" >
+                    <button class="outlined"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                </article>    
+            </div>
+        </section>
+        <section class="stack">
+            <article class="stack-container">
+            <h1>Stack tecnológico</h1>    
+                <section class="stack-container-delay">
+                    <div class="stack-container-grid">
+                        <img src="./assets/icons/new-icons/dark-screen-icons/devicon-plain_mongodb-wordmark.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/simple-icons_express.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/uil_react.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/fa-brands_node.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/catppuccin_typescript.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/streamline-logos_adobe-photoshop-logo-solid.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/streamline-logos_adobe-illustrator-logo-solid.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/solar_figma-broken.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/devicon-plain_trello-wordmark.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/devicon-plain_mongodb-wordmark.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/simple-icons_express.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/uil_react.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/fa-brands_node.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/catppuccin_typescript.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/streamline-logos_adobe-photoshop-logo-solid.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/streamline-logos_adobe-illustrator-logo-solid.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/solar_figma-broken.svg"/>
+                        <img src="./assets/icons/new-icons/dark-screen-icons/devicon-plain_trello-wordmark.svg"/>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <section class="services">
+            <article class="services-container">
+            <h1>Puedo ayudarte con</h1>    
+            <article class="service-target-container" id="service-target-container">
+                <section class="service-target-grid-first" id="service-target-grid">
+                <div class="service-target">
+                    <header class="service-header-image">
+                        <img src="./assets/icons/new-icons/dark-screen-icons/coding.skill 1.svg"/>
+                        <div class="service-logo-shadow"></div>
+                    </header>
+                    <h2>Desarrollo Web Fullstack</h2>
+                    <p>Desarrollo de aplicaciones web, landing page, y páginas estáticas responsivas, funcionales y escalables</p>
+                </div>
+                <div class="service-target">
+                    <header class="service-header-image">
+                        <img src="./assets/icons/new-icons/dark-screen-icons/ux-ui-skill 1.svg"/>
+                        <div class="service-logo-shadow"></div>
+                    </header>
+                    <h2>Diseño UX/UI</h2>
+                    <p>Diseño de interfaces, creación de sistemas de diseño, investigación de usuario, arquitectura de la información, prototipado</p>
+                </div>
+                </section>
+             </article>
+             <article class="service-carousel-indicator" id="service-carousel-indicator">
+                    <button class="service-outlined"></button>
+                    <button class="service-indicator"></button>
+            </article>   
+            </article>  
+        </section>
+    </main>    
+</body>
+</html>
