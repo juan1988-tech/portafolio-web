@@ -180,6 +180,12 @@ let startServiceTouch:number = 0;
 //crear la variable del toque final
 let endServiceTouch:number =  0;
 
+//identificar a los botones de carrusel de la sección proyectos
+const serviceCarouselIndicator:HTMLButtonElement= document.querySelector('.service-carousel-indicator') as HTMLButtonElement;
+
+const serviceCarouselCircles = serviceCarouselIndicator.children;
+
+
 //hacer una tupla para determinar los tipos de estilo de movimiento
 enum serviceContainerDelay {
     'service-target-grid-first',
@@ -214,14 +220,15 @@ serviceTargetContainer.addEventListener('touchmove',(event:TouchEvent)=>{
 
 serviceTargetContainer.addEventListener('touchend',()=>{
     const { initTouchX,secondTouchX } = touchServiceMatrix;
-    console.log(touchServiceMovement);
 
      if(initTouchX>secondTouchX){
-        touchServiceMovement = touchServiceMovement + 1;   
+        touchServiceMovement = touchServiceMovement + 1;
+
         }
 
     if(initTouchX<secondTouchX){
         touchServiceMovement = touchServiceMovement - 1;
+
         }   
 
     if (touchServiceMovement > 1) {
@@ -234,12 +241,16 @@ serviceTargetContainer.addEventListener('touchend',()=>{
     switch (touchServiceMovement) {
         case 0:
             //cambio de estilos para la tarjeta de servicios
-            serviceTargetGrid.classList.replace('service-target-grid-second','service-target-grid-first');
+            serviceTargetGrid.classList.replace(serviceContainerDelay[1],serviceContainerDelay[0]);
+            serviceCarouselCircles[0].classList.replace('service-indicator','service-outlined');
+            serviceCarouselCircles[1].classList.replace('service-outlined','service-indicator');
             break;
         
         case 1:
             //cambio de estilos para la tarjeta de servicios
-            serviceTargetGrid.classList.replace('service-target-grid-first','service-target-grid-second');
+            serviceTargetGrid.classList.replace(serviceContainerDelay[0],serviceContainerDelay[1]);
+            serviceCarouselCircles[0].classList.replace('service-outlined','service-indicator');
+            serviceCarouselCircles[1].classList.replace('service-indicator','service-outlined');
             break;
 
         default:0
