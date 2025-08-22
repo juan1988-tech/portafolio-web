@@ -6,6 +6,7 @@
     --service-shadow: #1572B6;
     /*colores grises*/
     --medium-dark-gray: #A8A8A8;
+    --soft-gray: #D8D6D6;
 
     /*tipogrfía*/
     --bai-jamjure: "Bai Jamjuree", sans-serif;
@@ -784,3 +785,97 @@ body{
     transform: scale(1); 
     transition-duration: .6s;
 }
+
+/*footer*/
+.footer-section{
+    background: var(--main-second-background);
+    margin-top: 1.6rem;
+}
+
+.footer-section .footer-section-container{
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 1.6rem;
+}
+
+.footer-section .footer-initial-label h1{
+   font-size: 2.4rem;
+   font-weight: 500;
+   color: var(--font-principal-title);
+   text-align: center;    
+}
+
+.footer-section .footer-initial-label h1 + p{
+   margin-top: .8rem;
+   text-align: center;
+   font-size: 1.6rem; 
+}
+
+.footer-section-links{
+    margin-top: 2.4rem;
+}
+
+.footer-section-links ul{
+    padding-left: 1.6rem;
+}
+
+.footer-section-links ul li{
+    list-style: none;
+    font-size: 1.6rem;
+}
+
+.footer-section-links ul li:not(:first-child){
+    margin-top: 3.2rem;
+}
+
+.footer-section-links ul li a{
+    display: flex;
+    height: 4.2rem;
+    align-items: center;
+    text-decoration: none;
+    color: var(--font-principal-letter);
+}
+
+.footer-section-links ul .footer-section-icon{
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    border: 1px solid var(--font-principal-letter);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-section-links ul .footer-section-icon img{
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.footer-section-links ul .footer-section-icon + p{
+    margin-left: 1.2rem;
+}
+
+.footer-section .footer-main-form{
+    width: 100%;
+    border: 1px solid var(--soft-gray);
+    border-radius: .6rem;
+    background: var(--main-body-background);
+    padding: 1.6rem;
+}
+
+.footer-section .footer-main-form p{
+    font-size: 1.6rem;
+}
+
+.footer-section .footer-main-form input[type="text"],
+.footer-section .footer-main-form input[type="tel"]{
+    width: 100%;
+    background: var(--main-second-background);
+    height: 3.2rem;
+    margin-top: 1.2rem;
+    border: 1px solid var(--soft-gray);
+    border-radius: .6rem;
+}
+
+
+
