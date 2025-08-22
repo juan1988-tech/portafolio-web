@@ -1,0 +1,73 @@
+.introduction{
+    margin: 0 auto;
+    display: grid;
+    width: 52rem;
+    grid-template: 14.4rem 5rem 6.7rem/24.8rem 27.2rem;
+    grid-template-areas:"introduction-tittle-label image-container"
+                        "introduction-links image-container"
+                        " . available-to-work";
+}
+
+.introduction .introduction-tittle-label{
+    grid-area: introduction-tittle-label;
+}
+
+.introduction .first-greeting{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.introduction .name-developer{
+    font-size: 2.4rem;
+}    
+
+.introduction .image-container{
+    grid-area: image-container;
+    width: 22rem;
+    height: 15.6rem;
+    margin: 0;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduction .introduction-links{
+    grid-area: introduction-links;
+    display: flex;
+    align-items: center;
+}
+
+
+.introduction .cv-downloader{
+    margin: 0;
+}
+
+.introduction .social-media{
+    margin: 0;
+    margin-left: 2rem;
+}
+
+.introduction .available-to-work{
+    grid-area: available-to-work;
+    margin: 0;
+    justify-self: center;
+}
+
+/*about me*/
+
+/*projects*/
+.projects .projects-container{
+    width: 52rem;
+}
+
+.projects .projects-container-card{
+    width: 52.1rem;
+    height: 21.5rem;
+}
+
+.projects .projects-container-card-delay-first{
+    width: 400%;
+    height: 21.5rem;
+}
