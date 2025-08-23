@@ -877,6 +877,13 @@ body{
     margin-top: 1.2rem;
     border: 1px solid var(--soft-gray);
     border-radius: .6rem;
+    color: var(--font-principal-letter);
+    padding: 0 1.6rem;
+}
+
+.footer-section .footer-main-form{
+    width: 80%;
+    margin: 0 auto;
 }
 
 .footer-section .footer-main-form button[type="submit"]{
@@ -912,3 +919,18 @@ body{
 }
 
 
+.footer-section .footer-main-form label:first-child{
+    margin-top: 0;
+}
+
+.footer-section .footer-final-credits p:first-child{
+    margin-top: .8rem;
+}
+
+.footer-section .footer-final-credits p:first-child + p{
+    margin-top: .8rem;
+}
+
+.footer-section .footer-final-credits{
+    padding-bottom: 1.6rem;
+}
