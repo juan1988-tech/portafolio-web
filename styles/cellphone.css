@@ -1,8 +1,29 @@
+.header{
+    background: transparent;
+    z-index: 2;
+}
+
+.main-content{
+    margin-top: 4rem;
+}
+
+.header .title-logo{
+    display: none;
+}
+
+.header .button-burguer{
+    margin-left: auto;
+}
+
+.navbar, .navbar-change{
+    top: 0;
+}
+
 .introduction{
     margin: 0 auto;
     display: grid;
     width: 52rem;
-    grid-template: 14.4rem 5rem 6.7rem/24.8rem 27.2rem;
+    grid-template: 14.4rem 5rem 8.7rem/24.8rem 27.2rem;
     grid-template-areas:"introduction-tittle-label image-container"
                         "introduction-links image-container"
                         " . available-to-work";
@@ -70,4 +91,66 @@
 .projects .projects-container-card-delay-first{
     width: 400%;
     height: 21.5rem;
+}
+
+/*abput-me*/
+.about-me{
+    margin-top: 0;
+}
+
+
+/*stack*/
+.stack .stack-container-delay{
+    width: 100%;
+}
+
+/*services*/
+.services .service-target-container{
+    width: 40rem;
+    height: 20rem;
+}
+
+.services-container .service-target{
+    width: 36rem;
+    height: 20rem;
+    padding: 1rem 1.6rem;
+}
+
+.services .service-target-grid-first,
+.services .service-target-grid-second{
+    margin-top: 0;
+    width: 210%;
+}
+
+.services-container h2{
+    width: 100%;
+    margin-top: .8rem;
+    font-size: 2rem;
+}
+
+.services-container h2 + p{
+    margin-top: .4rem;
+}
+
+/*footer*/
+.footer-section .footer-initial-label h1{
+    font-size: 2rem;
+}
+
+.footer-section-links ul{
+    padding: 0;
+    display: grid;
+    grid-template: repeat(2,1fr)/repeat(2,1fr);
+    height: 12.8rem;
+}
+
+.footer-section-links ul li:not(:first-child){
+    margin-top: 0;
+}
+
+
+.footer-section .footer-main-form input[type="tel"]{
+    width: 50%;
+    text-align: center;
+    padding: 0 1.6rem; 
 }
