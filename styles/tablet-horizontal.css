@@ -1,0 +1,120 @@
+.introduction{
+    width: 108.5rem;
+    margin: 0 auto;
+    grid-template: 34.7rem 16rem 17.3rem/repeat(2,1fr);
+    grid-template-areas:"introduction-tittle-label image-container"
+                        "introduction-links image-container"
+                        " . available-to-work";
+}
+
+
+.introduction .first-greeting{
+    font-size: 2.4rem;
+}
+
+.introduction .name-developer{
+    font-size: 4rem;
+}
+
+.introduction .first-greeting, .introduction .name-label{
+    font-size: 3.2rem;
+}
+
+.introduction .image-container{
+    width: 46rem;
+    height: 35rem;
+}
+
+.introduction .available-to-work{
+    margin-top: 0;
+}
+
+/*about-me*/
+.about-me-container{
+    width: 108.5rem;
+}
+
+.about-me .about-me-title{
+    padding-top: 1.6rem;
+    font-size: 3.6rem;
+}
+
+.about-me .about-me-grid{
+    grid-template-columns: repeat(2,1fr);
+    padding-bottom: 3.2rem;
+}
+
+.about-me .about-me-profile{
+    width: 36.5rem;
+    height: 29.6rem;
+    justify-self: center;
+}
+
+.about-me .about-me-role{
+    font-size: 2.8rem;
+}
+
+.about-me p{
+    font-size: 2rem;
+}
+
+/*pprojects*/
+.projects .projects-title{
+    font-size: 3.6rem;
+}
+
+.projects .projects-container, .projects .projects-container-card{
+    margin-top: 3.2rem;
+    width: 72rem;
+    height: 72rem;
+}
+
+/*stack*/
+.stack{
+    margin-top: 10.6rem;
+    height: 24.6rem;
+}
+
+.stack h1{
+    font-size: 3.6rem;
+}
+
+.stack .stack-container-grid{
+    height: 13rem;
+}
+
+
+.stack img:first-child,
+.stack img:not(:first-child){
+    height: 12rem;
+    width: 12rem;
+}
+
+.stack .stack-container-delay{
+    height: 13rem;
+}
+
+/*services*/
+.services h1{
+    font-size: 3.6rem;
+}
+
+/*footer*/
+.footer-section .footer-initial-label h1{
+    font-size: 3.6rem;
+}
+
+.footer-section .footer-initial-label h1 + p{
+    font-size: 2.4rem;
+    width: 47.1rem;
+}
+
+.footer-section-links ul{
+    width: 65.4rem;
+    margin: 0 auto;
+    margin-top: 3.6rem;
+}
+
+.footer-section .footer-main-form p{
+    font-size: 2rem;
+}

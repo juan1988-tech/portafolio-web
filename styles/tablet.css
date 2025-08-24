@@ -1,0 +1,249 @@
+.navbar, .navbar-change{
+    margin-top: 6.1rem;
+}
+
+/*header*/
+.header{
+    background: var(--main-second-background);
+}
+
+
+.header .title-logo{
+    display: block;
+}
+
+.header .button-burguer{
+    margin-left: 0;
+}
+
+.main-content{
+    margin-top: 6rem;
+}
+
+/*introduction*/
+.introduction{
+    width: 69.4rem;
+    grid-template: 25.2rem 9.7rem 17.3rem/1fr 34.4rem;
+    grid-template-areas:"introduction-tittle-label image-container"
+                        "introduction-links image-container"
+                        " . available-to-work";
+}
+
+.introduction .introduction-tittle-label{
+    align-self: flex-end;
+}
+
+.introduction .name-developer{
+    font-size: 3.2rem;
+}
+
+.introduction .image-container{
+    width: 34.4rem;
+    height: 25rem;
+    align-self: flex-end;
+}
+
+.introduction .available-to-work{
+    margin-top: 2.4rem;
+}
+
+/*about me*/
+.about-me .about-me-title{
+    font-size: 2.8rem;
+    padding-top: 6.7rem;
+}
+
+.about-me-container{
+    width: 69.4rem;
+}
+
+.about-me .about-me-profile{
+    width: 29.5rem;
+    height: 24.4rem;
+    align-self: center;
+    margin: 0;
+}
+
+.about-me .about-me-grid{
+    display: grid;
+    grid-template-columns: 29.5rem 1fr;
+    margin-top: 2.4rem;
+    column-gap: 1.6rem;
+    padding-bottom: 10.5rem;
+}
+
+.about-me .about-me-role{
+    margin-top: 0;
+}
+
+/*projects*/
+
+.projects .projects-container,
+.projects .projects-container-card{
+    width: 68.6rem;
+    height: 68.6rem;
+}
+
+.projects .projects-container-card-delay-first{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template:repeat(2,1fr)/repeat(2,1fr);
+    overflow: hidden;
+}
+
+.projects .project-carousel-indicator{
+    display: none;
+}
+
+/*stack*/
+.stack{
+    margin-top: 6.6rem;
+    height: 18.2rem;
+}
+
+.stack .stack-container{
+    padding: 0;
+}
+
+
+.stack .stack-container-grid{
+    height: 9rem;
+}
+
+.stack h1{
+    font-size: 2.8rem;
+    padding-top: 2rem;
+}
+
+
+.stack img:first-child{
+    margin-left: 0;
+    width: 9rem;
+    height: 9rem;
+}
+
+.stack img:not(:first-child){
+    margin-left: 0;
+    width: 9rem;
+    height: 8rem;
+}
+
+/*services*/
+.services .services-container{
+    width: 69.4rem;
+}
+
+.services .service-target-container{
+    width: 100%;
+    height: 34rem;
+}
+
+.services .service-target-grid-first{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.services-container .service-target{
+    width: 32rem;
+    height: 32rem;
+    padding: 2rem;
+}
+
+.services-container .service-header-image{
+    width: 7.2rem;
+    height: 7.2rem;
+}
+
+.services-container .service-header-image img{
+    height: 6.4rem;
+    width: 6rem;
+}
+
+.services-container h2{
+    font-size: 2.4rem;
+    width: 17rem;
+    height: 6rem;
+    margin: 0 auto;
+    margin-top: .8rem;
+}
+
+.services-container h2 + p{
+    font-size: 2rem;
+    margin-top: 1.2rem;
+}
+
+.services .service-carousel-indicator{
+    display: none;
+}
+
+/*footer*/
+.footer-section .footer-initial-label h1{
+    font-size: 2.8rem;
+}
+
+.footer-section .footer-initial-label h1 + p{
+    font-size: 2rem;
+    width: 41.1rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.footer-section-links ul .footer-section-icon{
+    width: 5.6rem;
+    height: 5.6rem;
+}
+
+.footer-section-links ul .footer-section-icon + p{
+    font-size: 2rem;
+}
+
+.footer-section-links ul .footer-section-icon img{
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+
+.footer-section-links ul li a{
+    height: 5.6rem;
+}
+
+.footer-section-links ul{
+    height: 16.6rem;
+}
+
+.footer-section .footer-main-form{
+    width: 44.4rem;
+    margin: 0 auto;
+    margin-top: 3.2rem;
+}
+
+.footer-section .footer-final-credits{
+    display: flex;
+    width: 60rem;
+    margin: 0 auto;
+    margin-top: 1.6rem;
+    justify-content: space-between;
+} 
+
+.footer-section .footer-main-form input[type="text"],
+.footer-section .footer-main-form input[type="tel"]{
+    font-size: 2rem;
+    height: 3.6rem;
+}
+
+.footer-section .footer-main-form label{
+    height: 7.4rem;
+}
+
+.footer-section .footer-label-credits{
+    width: 29rem;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.footer-section .footer-main-form button[type="submit"]{
+    height: 3.6rem;
+}
