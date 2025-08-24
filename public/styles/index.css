@@ -1,7 +1,7 @@
 :root{
     --font-principal-letter: #FEFEFE;
     --font-principal-title: #00D8FF;
-    --main-body-background: #4D126C;
+    --main-body-background: #502766;
     --main-second-background: #3C1751;
     --service-shadow: #1572B6;
     /*colores grises*/
@@ -399,7 +399,7 @@ body{
     object-fit: cover;
 }
 
-.introduction .cv-downloader{
+.introduction button{
     display: block;
     border: 1px solid var(--font-principal-letter);
     height: 3rem;
@@ -409,20 +409,21 @@ body{
     margin: 0 auto;
     margin-top: 1.2rem;
     color: var(--font-principal-letter);
+    font-style: var(--bai-jamjure);
 }
 
 .introduction .social-media{
     display: flex;
-    width: 8.1rem;
-    height: 3rem;
+    width: 10.3rem;
+    height: 4.2rem;
     margin: 0 auto;
-    margin-top: 0.8rem; 
+    margin-top: 1.6rem; 
     justify-content: space-between;      
 }
 
 .introduction .linkedin-first-link{
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 4.2rem;
+    height: 4.2rem;
     background-color: var(--main-second-background);
     border-radius: 50%;
     border: 1px solid #FEFEFE;
@@ -432,15 +433,17 @@ body{
 }
 
 .introduction .linkedin-first-link span{
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2.4rem;
+    height: 2.4rem;
     background-image: url('../assets/icons/new-icons/dark-screen-icons/la_linkedin-in.svg');
     display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .introduction .github-first-link{
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 4.2rem;
+    height: 4.2rem;
     background-color: var(--main-second-background);
     border-radius: 50%;
     border: 1px solid #FEFEFE;
@@ -450,16 +453,18 @@ body{
 }
 
 .introduction .github-first-link span{
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2.4rem;
+    height: 2.4rem;
     background-image: url('../assets/icons/new-icons/dark-screen-icons/line-md_github.svg');
     display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /*about me*/
 .about-me{
     background: var(--main-second-background);
-    margin-top: 1.2rem;
+    margin-top: 2.2rem;
 }
 
 
@@ -879,11 +884,6 @@ body{
     border-radius: .6rem;
     color: var(--font-principal-letter);
     padding: 0 1.6rem;
-}
-
-.footer-section .footer-main-form{
-    width: 80%;
-    margin: 0 auto;
 }
 
 .footer-section .footer-main-form button[type="submit"]{

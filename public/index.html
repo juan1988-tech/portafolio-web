@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./styles/index.css" rel="stylesheet"/>
     <link href="./styles/cellphone.css" rel="stylesheet" media="( min-width: 584px )"/>
+    <link href="./styles/tablet.css" rel="stylesheet" media="( min-width: 744px )"/>
+    <link href="./styles/tablet-horizontal.css" rel="stylesheet" media="(min-width: 1133px)"/>
+    <link href="./styles/desktop-1280.css" rel="stylesheet" media="(min-width: 1280px)"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Russo+One&display=swap" rel="stylesheet">
@@ -22,17 +25,17 @@
         </section>
         <ul class="ul-header">
             <li>
-                <a onclick="scrollToAboutMe(event)">Acerca de</a>
+                <a onclick="scrollToAboutMe(event)">Acerca de mí</a>
             </li>
             <li>
                 <a onclick="scrollToProjects(event)">Proyectos</a>
             </li>
             <li>
-                <a onclick="scrollToSkills(event)">Competencias</a>
+                <a onclick="scrollToSkills(event)">Stack técnológico</a>
             </li>
             <li class="contact-li">
-                <a onclick="scrollToContact(event)">Contacto</a>
                 <img src="./assets/icons/new-icons/phone-enabled-sharp-blue.svg" alt="Juan David Franco - Desarrollador web / diseñador UX/UI"/>
+                <a onclick="scrollToContact(event)" href="https://wa.me/message/IOGFO3KG42ELH1" target="_blank">Contacto</a>
             </li>     
         </ul>
         <article class="header-settings" onclick="toggleHeaderGear()">
@@ -48,13 +51,13 @@
                 <a onclick="scrollToIntroduction(event)">JD CODE</a>
             </li>
             <li>
-                <a onclick="scrollToAboutMe(event)">Acerca de</a>
+                <a onclick="scrollToAboutMe(event)">Acerca de mí</a>
             </li>
             <li>
                 <a onclick="scrollToProjects(event)">Proyectos</a>
             </li>
             <li>
-                <a onclick="scrollToSkills(event)">Competencias</a>
+                <a onclick="scrollToSkills(event)">Stack tecnológico</a>
             </li>
             <li>
                 <a href="https://wa.me/message/IOGFO3KG42ELH1" target="_blank"><span>3142366069</span> &nbsp;<img src="./assets/icons/new-icons/phone-enabled-sharp-blue.svg"  alt="phone-contact-number"/></a>
@@ -111,7 +114,7 @@
             <article class="introduction-tittle-label">
                 <h3 class="first-greeting">Hola, Soy</h3>
                 <h1 class="name-developer">Juan David Franco</h1>
-                <h3 class="name-label">Desarrollador web y diseñador de interfaces</h3>
+                <h3 class="name-label">Desarrollador web,<br> Diseñador de interfaces</h3>
             </article>
             <figure class="image-container">
                 <img class="name-image" src="./assets/images/juancho-header.png" alt="Juan David Franco - Desarrollador web / Diseñador UX/UI"/>
@@ -135,13 +138,17 @@
         <section class="about-me">
             <div class="about-me-container">
                 <h3 class="about-me-title" id="about-me">Acerca de mí</h3>
-                <figure class="about-me-profile">
-                    <img src="./assets/images/perfil-portafolio.png" alt="Juan David Franco - Desarrollador Web / Diseador UX/UI"/>
-                </figure>
-                <h3 class="about-me-role">Programo y diseño páginas estáticas y aplicaciones web</h3>
-                <p class="about-first-p">Software Developer y Diseñador UX/UI. Cuento con experiencia en el desarrollo de aplicaciones web. Domino tecnologías Frontend como HTML, CSS, JavaScript y React.js; y tecnologías Backend como Node.js, Express.js y MongoDB. </p>
-                <p class="about-second-p">Cuento con conocimiento en diseño UX/UI, usando tecnologías cómo metodología agile, UX Research (Entrevistas, Encuestas, User Persona), creación de sistemas de diseño, prototipado con Figma, Adobe Photoshop e Illustrator.</p>
-                <p class="about-third-p">Me enfoco en la mejora continua y en la implementación de soluciones escalables. Busco unir mis conocimientos en Programación y Diseño de Producto para crear aplicaciones con los más eficientes estándares de rendimiento, accesibilidad y usabilidad</p>
+                <article class="about-me-grid">
+                    <figure class="about-me-profile">
+                        <img src="./assets/images/perfil-portafolio.png" alt="Juan David Franco - Desarrollador Web / Diseador UX/UI"/>
+                    </figure>
+                    <div class="about-me-explanation">
+                        <h3 class="about-me-role">Programo y diseño páginas estáticas y aplicaciones web</h3>
+                        <p class="about-first-p">Software Developer y Diseñador UX/UI. Cuento con experiencia en el desarrollo de aplicaciones web. Domino tecnologías Frontend como HTML, CSS, JavaScript y React.js; y tecnologías Backend como Node.js, Express.js y MongoDB. </p>
+                        <!-- <p class="about-second-p">Cuento con conocimiento en diseño UX/UI, usando tecnologías cómo metodología agile, UX Research (Entrevistas, Encuestas, User Persona), creación de sistemas de diseño, prototipado con Figma, Adobe Photoshop e Illustrator.</p> -->
+                        <p class="about-third-p">Me enfoco en la mejora continua y en la implementación de soluciones escalables. Busco unir mis conocimientos en Programación y Diseño de Producto para crear aplicaciones con los más eficientes estándares de rendimiento, accesibilidad y usabilidad</p>
+                    </div>    
+                </article>
             </div>
         </section>
         <section class="projects">
@@ -150,21 +157,25 @@
                 <article class="projects-container-card" id="projects-container-card">
                     <div class="projects-container-card-delay-first" id="projects-container-card-delay">
                         <picture class="projects-container-card-image">
+                            <source media="(min-width:744px)" srcset="./assets/images/projects/proyecto-portafolio.jpg"/>
                             <source media="(min-width:568px)" srcset="./assets/images/projects/proyecto-portafolio-v.jpg"/>
                             <source media="(min-width:425px)" srcset="./assets/images/projects/proyecto-portafolio.jpg"/>
                             <img src="./assets/images/projects/proyecto-portafolio.jpg" alt="Futbol Legends - Proyecto de portafolio - Hecho por Juan David Franco"/>
                         </picture>
                         <picture class="projects-container-card-image">
+                            <source media="(min-width:744px)" srcset="./assets/images/projects/proyecto-portafolio-2.jpg"/>
                             <source media="(min-width:568px)" srcset="./assets/images/projects/proyecto-portafolio-v-2.jpg"/>
                             <source media="(min-width:425px)" srcset="./assets/images/projects/proyecto-portafolio-2.jpg"/>
                             <img src="./assets/images/projects/proyecto-portafolio-2.jpg" alt="Todo se vale - Proyecto de portafolio - Hecho por Juan David Franco"/>
                         </picture>
                         <picture class="projects-container-card-image">
+                            <source media="(min-width:744px)" srcset="./assets/images/projects/proyecto-portafolio-3.jpg"/>
                             <source media="(min-width:568px)" srcset="./assets/images/projects/proyecto-portafolio-v-3.jpg"/>
                             <source media="(min-width:425px)" srcset="./assets/images/projects/proyecto-portafolio-3.jpg"/>
                             <img src="./assets/images/projects/proyecto-portafolio-3.jpg" alt="Sienna Walks - Proyecto de portafolio - Hecho por Juan David Franco"/>
                         </picture>
                         <picture class="projects-container-card-image">
+                            <source media="(min-width:744px)" srcset="./assets/images/projects/proyecto-portafolio-4.jpg"/>
                             <source media="(min-width:568px)" srcset="./assets/images/projects/proyecto-portafolio-v-4.jpg"/>
                             <source media="(min-width:425px)" srcset="./assets/images/projects/proyecto-portafolio-4.jpg"/>
                             <img src="./assets/images/projects/proyecto-portafolio-4.jpg" alt="La Montaña Magica - Proyecto de portafolio - Hecho por Juan David Franco"/>
@@ -194,27 +205,7 @@
                         <img src="./assets/icons/new-icons/dark-screen-icons/streamline-logos_adobe-illustrator-logo-solid.svg" alt="Juan David Franco - stack - Illustrator"/>
                         <img src="./assets/icons/new-icons/dark-screen-icons/solar_figma-broken.svg" alt="Juan David Franco - stack - Figma"/>
                         <img src="./assets/icons/new-icons/dark-screen-icons/devicon-plain_trello-wordmark.svg" alt="Juan David Franco - stack - Trello"/>
-
-                        
-                    </div><img src="./assets/icons/new-icons/dark-screen-icons/devicon-plain_mongodb-wordmark.svg" alt="Juan David Franco - stack - MongoDB"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/simple-icons_express.svg" alt="Juan David Franco - stack - Express.js"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/uil_react.svg" alt="Juan David Franco - stack - React"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/fa-brands_node.svg" alt="Juan David Franco - stack - Node.js"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/catppuccin_typescript.svg" alt="Juan David Franco - stack - Typescript"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/streamline-logos_adobe-photoshop-logo-solid.svg" alt="Juan David Franco - stack - Photoshop"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/streamline-logos_adobe-illustrator-logo-solid.svg" alt="Juan David Franco - stack - Illustrator"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/solar_figma-broken.svg" alt="Juan David Franco - stack - Figma"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/devicon-plain_trello-wordmark.svg" alt="Juan David Franco - stack - Trello"/>
-
-                        <img src="./assets/icons/new-icons/dark-screen-icons/devicon-plain_mongodb-wordmark.svg" alt="Juan David Franco - stack - MongoDB"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/simple-icons_express.svg" alt="Juan David Franco - stack - Express.js"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/uil_react.svg" alt="Juan David Franco - stack - React"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/fa-brands_node.svg" alt="Juan David Franco - stack - Node.js"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/catppuccin_typescript.svg" alt="Juan David Franco - stack - Typescript"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/streamline-logos_adobe-photoshop-logo-solid.svg" alt="Juan David Franco - stack - Photoshop"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/streamline-logos_adobe-illustrator-logo-solid.svg" alt="Juan David Franco - stack - Illustrator"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/solar_figma-broken.svg" alt="Juan David Franco - stack - Figma"/>
-                        <img src="./assets/icons/new-icons/dark-screen-icons/devicon-plain_trello-wordmark.svg" alt="Juan David Franco - stack - Trello"/>
+                    </div>
                 </section>
             </article>
         </section>
@@ -256,6 +247,7 @@
                     <p>Comencemos un proyecto juntos, llevemos tu emprendimiento, idea al siguiente nivel</p>
                 </section>
             </header>
+            <main class="footer-main-grid">
             <article class="footer-section-links">
                 <ul>
                     <li>
@@ -291,10 +283,13 @@
                 </label>
                 <button type="submit">Enviar</button>
             </form>
+            </main>
             <footer class="footer-final-credits">
-                <p>Diseño y desarrollo</p>
-                <p>Juan David Franco</p>
-            </footer>
+                <section class="footer-label-credits">
+                    <p>Diseño y desarrollo:</p>
+                    <p>Juan David Franco</p>
+                </section>
+            </footer>     
         </section>
     </footer>    
 </body>
