@@ -44,6 +44,8 @@ type touchArray = {
 }
 
 /*función de sroll para la sección de proyectos: versión cellphone*/
+//variable global que identifica al elemento body
+const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
 
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
 const projectsContainerCard:HTMLDivElement = document.getElementById('projects-container-card') as HTMLDivElement;
@@ -78,13 +80,18 @@ let touchMovement: number = 0;
 projectsContainerCardDelay.classList.add(proyectContainerDelay[0]);
 
 //Hacer una referencia del primer toque, definiendo el toque en el eje x y el eje y
+
 projectsContainerCard.addEventListener('touchstart',(event:TouchEvent)=>{
-    let initClientX = event?.touches[0]?.clientX;
-    startTouch = initClientX;
+    if(bodyLayout?.clientWidth<=743){
+        console.log('esta funcion solo se aplica hasta media query cellphone')
+        let initClientX = event?.touches[0]?.clientX;
+        startTouch = initClientX;
+    } 
 })
 
-projectsContainerCard.addEventListener('touchmove',(event:TouchEvent)=>{    
-    const secondTouches =  event?.touches[0].clientX;
+projectsContainerCard.addEventListener('touchmove',(event:TouchEvent)=>{   
+    if(bodyLayout.clientWidth<=743){
+        const secondTouches =  event?.touches[0].clientX;
     
     //definir la matriz
     const matrixTouch:touchArray = {
@@ -94,9 +101,11 @@ projectsContainerCard.addEventListener('touchmove',(event:TouchEvent)=>{
     
     //asignar la matriz a la variable
     touchArrayMatrix = matrixTouch;
+    } 
 })
 
 projectsContainerCard.addEventListener('touchend',()=>{
+    if(bodyLayout.clientWidth<=743){
     const { initTouchX,secondTouchX } = touchArrayMatrix;
     
     if(initTouchX>secondTouchX){
@@ -163,6 +172,7 @@ projectsContainerCard.addEventListener('touchend',()=>{
             projectCaruoselCircles[2].classList.replace('outlined','carousel-indicator');
             projectCaruoselCircles[3].classList.replace('carousel-indicator','outlined');
             break;
+        }
     }
 })  
 
@@ -201,25 +211,30 @@ serviceTargetGrid.classList.add(serviceContainerDelay[0]);
 
 //Hacer una referencia del primer toque, definiendo el toque en el eje x y el eje y
 serviceTargetContainer.addEventListener('touchstart',(event:TouchEvent)=>{
-    let initClientX:number = event?.touches[0]?.clientX;
-    startServiceTouch = initClientX;
+    if(bodyLayout.clientWidth<=743){
+        let initClientX:number = event?.touches[0]?.clientX;
+        startServiceTouch = initClientX;
+    }
 })
 
 serviceTargetContainer.addEventListener('touchmove',(event:TouchEvent)=>{
-    const secondTouches =  event?.touches[0].clientX;
+    if(bodyLayout.clientWidth<=743){
+        const secondTouches =  event?.touches[0].clientX;
     
-    //definir la matriz
-    const matrixTouch:touchArray = {
-        initTouchX: startServiceTouch,
-        secondTouchX: secondTouches,
-    }
+        //definir la matriz
+        const matrixTouch:touchArray = {
+            initTouchX: startServiceTouch,
+            secondTouchX: secondTouches,
+        }
 
-    //asignar la matriz a la variable
-    touchServiceMatrix = matrixTouch;
+        //asignar la matriz a la variable
+        touchServiceMatrix = matrixTouch;
+    }
 });
 
 serviceTargetContainer.addEventListener('touchend',()=>{
-    const { initTouchX,secondTouchX } = touchServiceMatrix;
+    if(bodyLayout.clientWidth<=743){
+        const { initTouchX,secondTouchX } = touchServiceMatrix;
 
      if(initTouchX>secondTouchX){
         touchServiceMovement = touchServiceMovement + 1;
@@ -255,5 +270,6 @@ serviceTargetContainer.addEventListener('touchend',()=>{
 
         default:0
             break;
+        }
     }
 })
