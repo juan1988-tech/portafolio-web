@@ -399,7 +399,7 @@ body{
     object-fit: cover;
 }
 
-.introduction .cv-downloader{
+.introduction button{
     display: block;
     border: 1px solid var(--font-principal-letter);
     height: 3rem;
@@ -409,6 +409,7 @@ body{
     margin: 0 auto;
     margin-top: 1.2rem;
     color: var(--font-principal-letter);
+    font-style: var(--bai-jamjure);
 }
 
 .introduction .social-media{

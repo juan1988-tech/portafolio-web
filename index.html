@@ -7,6 +7,7 @@
     <link href="./styles/cellphone.css" rel="stylesheet" media="( min-width: 584px )"/>
     <link href="./styles/tablet.css" rel="stylesheet" media="( min-width: 744px )"/>
     <link href="./styles/tablet-horizontal.css" rel="stylesheet" media="(min-width: 1133px)"/>
+    <link href="./styles/desktop-1280.css" rel="stylesheet" media="(min-width: 1280px)"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Russo+One&display=swap" rel="stylesheet">
@@ -24,17 +25,17 @@
         </section>
         <ul class="ul-header">
             <li>
-                <a onclick="scrollToAboutMe(event)">Acerca de</a>
+                <a onclick="scrollToAboutMe(event)">Acerca de mí</a>
             </li>
             <li>
                 <a onclick="scrollToProjects(event)">Proyectos</a>
             </li>
             <li>
-                <a onclick="scrollToSkills(event)">Competencias</a>
+                <a onclick="scrollToSkills(event)">Stack técnológico</a>
             </li>
             <li class="contact-li">
-                <a onclick="scrollToContact(event)">Contacto</a>
                 <img src="./assets/icons/new-icons/phone-enabled-sharp-blue.svg" alt="Juan David Franco - Desarrollador web / diseñador UX/UI"/>
+                <a onclick="scrollToContact(event)" href="https://wa.me/message/IOGFO3KG42ELH1" target="_blank">Contacto</a>
             </li>     
         </ul>
         <article class="header-settings" onclick="toggleHeaderGear()">
@@ -50,13 +51,13 @@
                 <a onclick="scrollToIntroduction(event)">JD CODE</a>
             </li>
             <li>
-                <a onclick="scrollToAboutMe(event)">Acerca de</a>
+                <a onclick="scrollToAboutMe(event)">Acerca de mí</a>
             </li>
             <li>
                 <a onclick="scrollToProjects(event)">Proyectos</a>
             </li>
             <li>
-                <a onclick="scrollToSkills(event)">Competencias</a>
+                <a onclick="scrollToSkills(event)">Stack tecnológico</a>
             </li>
             <li>
                 <a href="https://wa.me/message/IOGFO3KG42ELH1" target="_blank"><span>3142366069</span> &nbsp;<img src="./assets/icons/new-icons/phone-enabled-sharp-blue.svg"  alt="phone-contact-number"/></a>
@@ -113,7 +114,7 @@
             <article class="introduction-tittle-label">
                 <h3 class="first-greeting">Hola, Soy</h3>
                 <h1 class="name-developer">Juan David Franco</h1>
-                <h3 class="name-label">Desarrollador web y diseñador de interfaces</h3>
+                <h3 class="name-label">Desarrollador web,<br> Diseñador de interfaces</h3>
             </article>
             <figure class="image-container">
                 <img class="name-image" src="./assets/images/juancho-header.png" alt="Juan David Franco - Desarrollador web / Diseñador UX/UI"/>
@@ -144,7 +145,7 @@
                     <div class="about-me-explanation">
                         <h3 class="about-me-role">Programo y diseño páginas estáticas y aplicaciones web</h3>
                         <p class="about-first-p">Software Developer y Diseñador UX/UI. Cuento con experiencia en el desarrollo de aplicaciones web. Domino tecnologías Frontend como HTML, CSS, JavaScript y React.js; y tecnologías Backend como Node.js, Express.js y MongoDB. </p>
-                        <p class="about-second-p">Cuento con conocimiento en diseño UX/UI, usando tecnologías cómo metodología agile, UX Research (Entrevistas, Encuestas, User Persona), creación de sistemas de diseño, prototipado con Figma, Adobe Photoshop e Illustrator.</p>
+                        <!-- <p class="about-second-p">Cuento con conocimiento en diseño UX/UI, usando tecnologías cómo metodología agile, UX Research (Entrevistas, Encuestas, User Persona), creación de sistemas de diseño, prototipado con Figma, Adobe Photoshop e Illustrator.</p> -->
                         <p class="about-third-p">Me enfoco en la mejora continua y en la implementación de soluciones escalables. Busco unir mis conocimientos en Programación y Diseño de Producto para crear aplicaciones con los más eficientes estándares de rendimiento, accesibilidad y usabilidad</p>
                     </div>    
                 </article>
@@ -246,6 +247,7 @@
                     <p>Comencemos un proyecto juntos, llevemos tu emprendimiento, idea al siguiente nivel</p>
                 </section>
             </header>
+            <main class="footer-main-grid">
             <article class="footer-section-links">
                 <ul>
                     <li>
@@ -281,12 +283,13 @@
                 </label>
                 <button type="submit">Enviar</button>
             </form>
+            </main>
             <footer class="footer-final-credits">
                 <section class="footer-label-credits">
                     <p>Diseño y desarrollo:</p>
                     <p>Juan David Franco</p>
                 </section>
-            </footer>
+            </footer>     
         </section>
     </footer>    
 </body>

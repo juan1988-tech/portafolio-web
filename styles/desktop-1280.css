@@ -1,0 +1,281 @@
+.header{
+    padding: 0;
+}
+
+.header .button-burguer{
+    display: none;
+}
+
+.header .button-burguer{
+    display: none;
+}
+
+.navbar, .navbar-chnage{
+    display: none;
+}
+
+.header .ul-header{
+    display: flex;
+    justify-content: space-between;
+    width: 44.8rem;
+    font-size: 1.6rem;
+    margin: 0 3.6rem 0 auto;
+}
+
+.header .ul-header a{
+    color: var(--font-principal-letter);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header .ul-header a:hover{
+    color: var(--font-principal-title);
+    transition-duration: .8s;
+}
+
+.header .title-logo{
+    width: 14.8rem;
+}
+
+.header .header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    margin-left: 12.8rem;
+}
+
+.header .ul-header li{
+    list-style: none;
+}
+
+.header .ul-header li:nth-child(4){
+    display: flex;
+    align-items: center;
+    width: 9rem;
+    justify-content: space-between;
+}
+
+.header .ul-header li:nth-child(4) a{
+    color: var(--font-principal-title);
+    align-items: center;
+}
+
+.header .ul-header li:nth-child(4) img{
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+
+.header .title-logo{
+    font-size: 3.2rem;
+}
+
+.header .header-settings{
+    font-size: 1.6rem;
+    display: flex;
+    width: 8rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-settings .header-ssettings-gear{
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url('../assets/icons/gear.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+.general-settings{
+    display: flex;
+    flex-direction: column;
+    width: 19.2rem;
+    height: 27.4rem;
+    border: 1px solid var(--font-principal-letter);
+    border-radius: .4rem;
+    background-color: var(--dark-principal-background);
+    left: 100%;
+    position: fixed;
+    top: 6rem;
+    transform: translateX(0rem);
+    transition-delay: .2s;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    font-size: 1.6rem;
+    padding-left: 3rem;
+    padding-top: 2.3rem;
+    z-index: 1
+}
+
+.general-settings-change{
+    display: flex;
+    flex-direction: column;
+    width: 19.2rem;
+    height: 27.4rem;
+    border: 1px solid var(--font-principal-letter);
+    border-radius: .4rem;
+    background-color: var(--dark-principal-background);
+    left: 100%;
+    position: fixed;
+    top: 6rem;
+    transform: translateX(-19.3rem);
+    transition-delay: .2s;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    font-size: 1.6rem;
+    padding-left: 3rem;
+    padding-top: 2.3rem;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+.header-settings .header-settings-gear{
+    background-image: url('../assets/icons/gear.svg');
+    width: 1.6rem;
+    height: 1.6rem;
+    background-size: cover;
+    display: block;
+    margin-left: .8rem;
+    transform: rotate(180deg);
+    transition-duration: 1s;
+    transition-timing-function: ease;    
+}
+
+.header-settings .header-settings-gear-change{
+    background-image: url('../assets/icons/gear.svg');
+    width: 1.6rem;
+    height: 1.6rem;
+    background-size: cover;
+    display: block;
+    margin-left: .8rem;
+    transform: rotate(-180deg);
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+.general-settings .navbar-customization{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 15.4rem;
+}
+
+.general-settings .navbar-customization span{
+    display: block;
+    width: 2.1rem;
+    height: 1.5rem;
+    background-size: cover;
+}
+
+.general-settings .navbar-customization p {
+    margin-left: 1.6rem;
+}
+.general-settings .navbar-customization h4{
+    color: var(--font-principal-title);
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.general-settings .navbar-customization li{
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/*introduction*/
+
+.introduction{
+    width: 102.4rem;
+}
+
+.introduction .first-greeting{
+    font-size: 2.4rem;
+}
+
+
+.introduction .social-media{
+    height: 5.6rem;
+    width: 13.2rem;
+}
+
+.introduction .linkedin-first-link{
+    width: 5.6rem;
+    height: 5.6rem;
+}
+
+.introduction .linkedin-first-link span{
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.introduction .github-first-link{
+    width: 5.6rem;
+    height: 5.6rem;
+}
+
+.introduction .github-first-link span{
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+/*about-me*/
+.about-me-container{
+    width: 102.4rem;
+}
+
+.about-me .about-me-profile{
+    width: 40ren;
+    height: 32rem;
+}
+
+/*footer*/
+.footer-section .footer-main-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 0 auto;
+    margin-top: 3.2rem;
+    grid-template-areas: "footer-main-form footer-section-links";
+    width: 93.5rem;
+}
+
+.footer-section .footer-main-form{
+    margin: 0;
+    grid-area: footer-main-form;
+    justify-self: center;
+    align-self: center;
+}
+
+.footer-section-links{
+    width: 30.2rem;
+    height: 35.8rem;
+    grid-area: footer-section-links;
+    margin-top: 0;
+    justify-self: center;
+    align-self: center;
+}
+
+.footer-section-links ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    height: 31.8rem;
+    margin-top: 0;
+
+}
+
+.footer-section-links ul li:not(:first-child){
+    margin-top: 3.2rem;
+}
+
+.footer-section .footer-label-credits{
+    width: 36rem;
+}
+
+.footer-section .footer-final-credits p:first-child,
+.footer-section .footer-final-credits p:first-child + p{
+    font-size: 2rem;
+}
