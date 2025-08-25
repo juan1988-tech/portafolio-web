@@ -3,10 +3,6 @@
     z-index: 2;
 }
 
-.main-content{
-    margin-top: 4rem;
-}
-
 .header .title-logo{
     display: none;
 }
@@ -78,10 +74,19 @@
 
 /*about me*/
 
+.about-me .about-me-title{
+    padding-top: 1.6rem;
+}
+
 /*projects*/
 .projects .projects-container{
     width: 52rem;
 }
+
+.projects .projects-title{
+    padding-top: 1.6rem;
+}
+
 
 .projects .projects-container-card{
     width: 52.1rem;

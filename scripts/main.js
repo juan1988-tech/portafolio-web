@@ -2,44 +2,18 @@
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
 //variable global que identifica al elemento body
 const bodyLayout = document.body;
-/*funciones del header scrollIntoView()*/
-/*identificar al título title-logo*/
+/*funciones del nabvar scrollIntoView()*/
 const titleLogo = document.querySelector('.title-logo');
 const navbarJDCode = document.querySelector('#navbar-JD-code');
 const navbarAboutMe = document.querySelector('#navbar-about-me');
-//hacer una funcion genérica para implementar el scroll
-const scrollToSection = (section) => {
-    //idenbtificar al elemento para hacer el scroll
-    const selectedELement = document.querySelector(section);
-    if (selectedELement) {
-        selectedELement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-    }
-};
-const scrollToEndSection = (section) => {
-    //idenbtificar al elemento para hacer el scroll
-    const selectedELement = document.querySelector(section);
-    if (selectedELement) {
-        selectedELement.scrollIntoView({ behavior: "smooth", block: "end" });
-    }
-};
-//función de scroll para la sección introduction
-titleLogo.addEventListener('click', () => {
-    scrollToSection('.main-content');
-});
-navbarJDCode.addEventListener('click', () => {
-    scrollToSection('.main-content');
-});
-//funcion de scroll para la sección acerca de mí
-navbarAboutMe.addEventListener('click', () => {
-    scrollToSection(".about-me");
-});
-let buttonBurguerTrigger = {
-    buttonBurguer: document.querySelector('.button-burguer'),
-    firstLine: document.querySelector('#first-line'),
-    secondLine: document.querySelector('#second-line'),
-    thirdLine: document.querySelector('#third-line'),
-    navbar: document.querySelector('#navbar')
-};
+const navbarProjects = document.querySelector('#navbar-projects');
+const navbarContact = document.querySelector('#navbar-contact');
+/*funciones del header scrollIntoView()*/
+const headerAboutMe = document.querySelector('#header-about-me');
+const headerProjects = document.querySelector("#header-projects");
+const headerContact = document.querySelector('#header-contact');
+/*realizar función del botón hamburguesa, aplicamos el concepto de interface para conectar
+el DOM con el botón de hamburguesa */
 const toggleButtonBurguer = () => {
     const { firstLine, secondLine, thirdLine, navbar } = buttonBurguerTrigger;
     firstLine.classList.toggle('first-line-change');
@@ -48,6 +22,58 @@ const toggleButtonBurguer = () => {
     //hacer el toggle del navbar
     navbar.classList.toggle('navbar-change');
 };
+let buttonBurguerTrigger = {
+    buttonBurguer: document.querySelector('.button-burguer'),
+    firstLine: document.querySelector('#first-line'),
+    secondLine: document.querySelector('#second-line'),
+    thirdLine: document.querySelector('#third-line'),
+    navbar: document.querySelector('#navbar')
+};
+//hacer una funcion genérica para implementar el scroll
+const scrollToSection = (section) => {
+    //idenbtificar al elemento para hacer el scroll
+    const selectedELement = document.querySelector(section);
+    if (selectedELement) {
+        selectedELement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    }
+};
+/*funciones en el nabvar: media query cellphone*/
+//función de scroll para la sección introduction 
+titleLogo.addEventListener('click', () => {
+    scrollToSection('.main-content');
+});
+navbarJDCode.addEventListener('click', () => {
+    scrollToSection('.main-content');
+    toggleButtonBurguer();
+});
+//funcion de scroll para la sección acerca de mí
+navbarAboutMe.addEventListener('click', () => {
+    scrollToSection(".about-me");
+    toggleButtonBurguer();
+});
+//funcion de scroll para la sección proyectos
+navbarProjects.addEventListener('click', () => {
+    scrollToSection(".projects");
+    toggleButtonBurguer();
+});
+//funcion de scroll para la sección contacto
+navbarContact.addEventListener('click', () => {
+    scrollToSection("#footer-section-email");
+    toggleButtonBurguer();
+});
+/*funciones en el nabvar: media query desktop*/
+//funcion de scroll para la sección acerca de mí
+headerAboutMe.addEventListener('click', () => {
+    scrollToSection(".about-me");
+});
+//funcion de scroll para la sección proyectos
+headerProjects.addEventListener('click', () => {
+    scrollToSection(".projects");
+});
+//funcion de scroll para la sección contacto
+headerContact.addEventListener('click', () => {
+    scrollToSection(".footer-section");
+});
 /*función de sroll para la sección de proyectos: versión cellphone*/
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
 const projectsContainerCard = document.getElementById('projects-container-card');

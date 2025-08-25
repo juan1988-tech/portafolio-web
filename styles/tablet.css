@@ -16,10 +16,6 @@
     margin-left: 0;
 }
 
-.main-content{
-    margin-top: 6rem;
-}
-
 /*introduction*/
 .introduction{
     width: 69.4rem;
@@ -96,9 +92,13 @@
     display: none;
 }
 
+.projects .projects-title{
+    padding-top: 6rem;
+}
+
 /*stack*/
 .stack{
-    margin-top: 6.6rem;
+    margin-top: 13.6rem;
     height: 18.2rem;
 }
 
@@ -223,7 +223,7 @@
     display: flex;
     width: 60rem;
     margin: 0 auto;
-    margin-top: 1.6rem;
+    margin-top: 3.2rem;
     justify-content: space-between;
 } 
 
