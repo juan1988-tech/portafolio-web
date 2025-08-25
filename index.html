@@ -17,7 +17,7 @@
 <body>
     <header class="header">
         <section class="header-container">
-        <h1 class="title-logo" onclick="scrollToIntroduction(event)">JD <span>CODE.</span></h1>
+        <h1 class="title-logo" id="title-logo">JD <span>CODE.</span></h1>
         <section class="button-burguer" onclick="toggleButtonBurguer()">
             <article class="first-line" id="first-line"></article>
             <article class="second-line" id="second-line"></article>
@@ -48,16 +48,16 @@
         <article class="navbar-global-settings" id="navbar-global-settings">
          <ul class="navbar-list" id="navbar-list">
             <li>
-                <a onclick="scrollToIntroduction(event)">JD CODE</a>
+                <a id="navbar-JD-code">JD CODE</a>
             </li>
             <li>
-                <a onclick="scrollToAboutMe(event)">Acerca de mí</a>
+                <a id="navbar-about-me">Acerca de mí</a>
             </li>
             <li>
-                <a onclick="scrollToProjects(event)">Proyectos</a>
+                <a id="navbar-projects">Proyectos</a>
             </li>
             <li>
-                <a onclick="scrollToSkills(event)">Stack tecnológico</a>
+                <a id="navbar-projects">Contacto</a>
             </li>
             <li>
                 <a href="https://wa.me/message/IOGFO3KG42ELH1" target="_blank"><span>3142366069</span> &nbsp;<img src="./assets/icons/new-icons/phone-enabled-sharp-blue.svg"  alt="phone-contact-number"/></a>
@@ -243,7 +243,7 @@
         <section class="footer-section-container">
             <header class="footer-initial-container">
                 <section class="footer-initial-label">
-                    <h1>Quiero saber más de tí</h1>
+                    <h1>Contacto</h1>
                     <p>Comencemos un proyecto juntos, llevemos tu emprendimiento, idea al siguiente nivel</p>
                 </section>
             </header>

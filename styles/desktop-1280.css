@@ -185,6 +185,11 @@
     cursor: pointer;
 }
 
+
+.main-content{
+    padding-top: 0;
+}
+
 /*introduction*/
 
 .introduction{

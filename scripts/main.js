@@ -1,7 +1,38 @@
 "use strict";
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
+//variable global que identifica al elemento body
+const bodyLayout = document.body;
+/*funciones del header scrollIntoView()*/
 /*identificar al título title-logo*/
 const titleLogo = document.querySelector('.title-logo');
+const navbarJDCode = document.querySelector('#navbar-JD-code');
+const navbarAboutMe = document.querySelector('#navbar-about-me');
+//hacer una funcion genérica para implementar el scroll
+const scrollToSection = (section) => {
+    //idenbtificar al elemento para hacer el scroll
+    const selectedELement = document.querySelector(section);
+    if (selectedELement) {
+        selectedELement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    }
+};
+const scrollToEndSection = (section) => {
+    //idenbtificar al elemento para hacer el scroll
+    const selectedELement = document.querySelector(section);
+    if (selectedELement) {
+        selectedELement.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+};
+//función de scroll para la sección introduction
+titleLogo.addEventListener('click', () => {
+    scrollToSection('.main-content');
+});
+navbarJDCode.addEventListener('click', () => {
+    scrollToSection('.main-content');
+});
+//funcion de scroll para la sección acerca de mí
+navbarAboutMe.addEventListener('click', () => {
+    scrollToSection(".about-me");
+});
 let buttonBurguerTrigger = {
     buttonBurguer: document.querySelector('.button-burguer'),
     firstLine: document.querySelector('#first-line'),
@@ -18,8 +49,6 @@ const toggleButtonBurguer = () => {
     navbar.classList.toggle('navbar-change');
 };
 /*función de sroll para la sección de proyectos: versión cellphone*/
-//variable global que identifica al elemento body
-const bodyLayout = document.body;
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
 const projectsContainerCard = document.getElementById('projects-container-card');
 const projectsContainerCardDelay = document.querySelector('#projects-container-card-delay');
