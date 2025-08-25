@@ -109,13 +109,46 @@ headerContact.addEventListener('click',()=>{
     scrollToSection(".footer-section")
 })
 
+/*funciones para ver las posiciones del navbar */
+type toggleYearElements ={
+    navbarGlobalSettings: HTMLDivElement,
+    navbarGear: HTMLButtonElement, 
+}
+
+const toggleGear = (globalSettings:string,gear:string,gearClassName:string,globalSettingsClassName:string ):void =>{
+     const nabvarListSettings:toggleYearElements = {
+        navbarGlobalSettings: document.querySelector(globalSettings) as HTMLDivElement,
+        navbarGear: document.querySelector(gear) as HTMLButtonElement
+     }
+
+     const { navbarGear, navbarGlobalSettings } = nabvarListSettings
+
+     navbarGear.classList.toggle(gearClassName)
+     navbarGlobalSettings.classList.toggle(globalSettingsClassName)
+}
+//toggleGear('#navbar-global-settings','#navbar-gear','navbar-gear-change','navbar-global-settings-change')
+//toggleGear('#general-settings','#header-settings-gear','header-settings-gear-change','general-settings-change')
+/* 
+const toggleHeaderGear = () =>{
+    const nabvarListSettings = {
+        generalSettings: document.querySelector('#general-settings'),
+        navbarGear: document.querySelector('#header-settings-gear')
+     }
+
+     const { generalSettings,navbarGear } = nabvarListSettings;
+     navbarGear.classList.toggle('header-settings-gear-change')
+     generalSettings.classList.toggle('general-settings-change')
+} */
+
+
+
+
+/*función de sroll para la sección de proyectos: versión cellphone*/
 //definir una matrz que identifique al primer y el segundo toque en el eje x y el eje y
 type touchArray = {
     initTouchX: number,
     secondTouchX: number,
 }
-
-/*función de sroll para la sección de proyectos: versión cellphone*/
 
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
 const projectsContainerCard:HTMLDivElement = document.getElementById('projects-container-card') as HTMLDivElement;
