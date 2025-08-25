@@ -1,31 +1,27 @@
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
 
-/*identificar al título title-logo*/
+//variable global que identifica al elemento body
+const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
+
+/*funciones del nabvar scrollIntoView()*/
 const titleLogo: HTMLTitleElement = document.querySelector('.title-logo') as HTMLTitleElement;
 
+const navbarJDCode: HTMLElement = document.querySelector('#navbar-JD-code') as HTMLElement;
 
+const navbarAboutMe: HTMLElement = document.querySelector('#navbar-about-me') as HTMLElement;
+
+const navbarProjects: HTMLElement = document.querySelector('#navbar-projects') as HTMLElement;
+
+const navbarContact: HTMLElement = document.querySelector('#navbar-contact') as HTMLElement;
+
+/*funciones del header scrollIntoView()*/
+const headerAboutMe: HTMLElement = document.querySelector('#header-about-me') as HTMLElement;
+
+const headerProjects: HTMLElement = document.querySelector("#header-projects") as HTMLElement;
+
+const headerContact: HTMLElement = document.querySelector('#header-contact') as HTMLElement;
 /*realizar función del botón hamburguesa, aplicamos el concepto de interface para conectar 
 el DOM con el botón de hamburguesa */
-
-interface BurguerButtons {
-    buttonBurguer: HTMLButtonElement,
-    firstLine: HTMLDivElement,
-    secondLine: HTMLDivElement,
-    thirdLine: HTMLDivElement
-}
-
-//extender los nodos del botón de humburguesa para involucrar al nodo del navbar
-interface Navbar extends BurguerButtons {
-    navbar: HTMLButtonElement,
-}
-
-let buttonBurguerTrigger:Navbar = {
-    buttonBurguer: document.querySelector('.button-burguer') as HTMLButtonElement,
-    firstLine: document.querySelector('#first-line') as HTMLDivElement,
-    secondLine: document.querySelector('#second-line') as HTMLDivElement,
-    thirdLine: document.querySelector('#third-line') as HTMLDivElement,
-    navbar: document.querySelector('#navbar') as HTMLButtonElement
-}
 
 const toggleButtonBurguer = () =>{
     const { firstLine, secondLine ,thirdLine,navbar } = buttonBurguerTrigger;
@@ -37,6 +33,82 @@ const toggleButtonBurguer = () =>{
     navbar.classList.toggle('navbar-change')
 }
 
+//interfaz para el nabvar y el botón de hamburguesa
+interface BurguerButtons {
+    buttonBurguer: HTMLButtonElement,
+    firstLine: HTMLDivElement,
+    secondLine: HTMLDivElement,
+    thirdLine: HTMLDivElement
+}
+
+let buttonBurguerTrigger:Navbar = {
+    buttonBurguer: document.querySelector('.button-burguer') as HTMLButtonElement,
+    firstLine: document.querySelector('#first-line') as HTMLDivElement,
+    secondLine: document.querySelector('#second-line') as HTMLDivElement,
+    thirdLine: document.querySelector('#third-line') as HTMLDivElement,
+    navbar: document.querySelector('#navbar') as HTMLButtonElement
+}
+
+//extender los nodos del botón de humburguesa para involucrar al nodo del navbar
+interface Navbar extends BurguerButtons {
+    navbar: HTMLButtonElement,
+}
+
+//hacer una funcion genérica para implementar el scroll
+const scrollToSection = (section:string):void =>{
+    //idenbtificar al elemento para hacer el scroll
+    const selectedELement = document.querySelector(section);
+
+    if(selectedELement){
+        selectedELement.scrollIntoView({behavior:"smooth",block:"start",inline:"nearest"});
+   }
+}
+
+/*funciones en el nabvar: media query cellphone*/
+//función de scroll para la sección introduction 
+titleLogo.addEventListener('click',()=>{
+    scrollToSection('.main-content');
+})
+
+navbarJDCode.addEventListener('click',()=>{
+    scrollToSection('.main-content');
+    toggleButtonBurguer();
+})
+
+//funcion de scroll para la sección acerca de mí
+navbarAboutMe.addEventListener('click',()=>{
+    scrollToSection(".about-me");
+    toggleButtonBurguer();
+})
+
+//funcion de scroll para la sección proyectos
+navbarProjects.addEventListener('click',()=>{
+    scrollToSection(".projects");
+    toggleButtonBurguer();
+})
+
+//funcion de scroll para la sección contacto
+navbarContact.addEventListener('click',()=>{
+    scrollToSection("#footer-section-email");
+    toggleButtonBurguer();
+})
+
+/*funciones en el nabvar: media query desktop*/
+//funcion de scroll para la sección acerca de mí
+headerAboutMe.addEventListener('click',()=>{
+    scrollToSection(".about-me");
+})
+
+//funcion de scroll para la sección proyectos
+headerProjects.addEventListener('click',()=>{
+    scrollToSection(".projects");
+})
+
+//funcion de scroll para la sección contacto
+headerContact.addEventListener('click',()=>{
+    scrollToSection(".footer-section")
+})
+
 //definir una matrz que identifique al primer y el segundo toque en el eje x y el eje y
 type touchArray = {
     initTouchX: number,
@@ -44,8 +116,6 @@ type touchArray = {
 }
 
 /*función de sroll para la sección de proyectos: versión cellphone*/
-//variable global que identifica al elemento body
-const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
 
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
 const projectsContainerCard:HTMLDivElement = document.getElementById('projects-container-card') as HTMLDivElement;

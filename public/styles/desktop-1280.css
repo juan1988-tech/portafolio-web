@@ -1,5 +1,6 @@
 .header{
     padding: 0;
+    position: static;
 }
 
 .header .button-burguer{
@@ -52,13 +53,14 @@
 .header .ul-header li:nth-child(4){
     display: flex;
     align-items: center;
-    width: 9rem;
+    width: 11.2rem;
     justify-content: space-between;
 }
 
 .header .ul-header li:nth-child(4) a{
     color: var(--font-principal-title);
     align-items: center;
+    display: block;
 }
 
 .header .ul-header li:nth-child(4) img{
@@ -185,6 +187,11 @@
     cursor: pointer;
 }
 
+
+.main-content{
+    padding-top: 0;
+}
+
 /*introduction*/
 
 .introduction{
@@ -229,6 +236,11 @@
 .about-me .about-me-profile{
     width: 40ren;
     height: 32rem;
+}
+
+/*projects*/
+.projects .projects-title{
+    padding-top: 0;
 }
 
 /*footer*/
