@@ -74,7 +74,15 @@ headerProjects.addEventListener('click', () => {
 headerContact.addEventListener('click', () => {
     scrollToSection(".footer-section");
 });
-/*función de sroll para la sección de proyectos: versión cellphone*/
+const toggleGear = (globalSettings, gear, gearClassName, globalSettingsClassName) => {
+    const nabvarListSettings = {
+        navbarGlobalSettings: document.querySelector(globalSettings),
+        navbarGear: document.querySelector(gear)
+    };
+    const { navbarGear, navbarGlobalSettings } = nabvarListSettings;
+    navbarGear.classList.toggle(gearClassName);
+    navbarGlobalSettings.classList.toggle(globalSettingsClassName);
+};
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
 const projectsContainerCard = document.getElementById('projects-container-card');
 const projectsContainerCardDelay = document.querySelector('#projects-container-card-delay');
