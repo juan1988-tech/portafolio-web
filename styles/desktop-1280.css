@@ -96,7 +96,7 @@
     height: 27.4rem;
     border: 1px solid var(--font-principal-letter);
     border-radius: .4rem;
-    background-color: var(--dark-principal-background);
+    background-color: var(--main-second-background);
     left: 100%;
     position: fixed;
     top: 6rem;
@@ -117,7 +117,7 @@
     height: 27.4rem;
     border: 1px solid var(--font-principal-letter);
     border-radius: .4rem;
-    background-color: var(--dark-principal-background);
+    background-color: var(--main-second-background);
     left: 100%;
     position: fixed;
     top: 6rem;
@@ -193,7 +193,6 @@
 }
 
 /*introduction*/
-
 .introduction{
     width: 102.4rem;
 }
@@ -243,6 +242,11 @@
     padding-top: 0;
 }
 
+.projects .projects-container{
+    margin-top: 1.6rem;
+}
+
+
 /*footer*/
 .footer-section .footer-main-grid{
     display: grid;
@@ -276,7 +280,7 @@
     justify-content: space-between;
     height: 31.8rem;
     margin-top: 0;
-
+    
 }
 
 .footer-section-links ul li:not(:first-child){

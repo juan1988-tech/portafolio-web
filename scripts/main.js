@@ -190,6 +190,17 @@ projectsContainerCard.addEventListener('touchend', () => {
         }
     }
 });
+/*funciones para las cards de proyectos*/
+var projectCardsId;
+(function (projectCardsId) {
+    projectCardsId["footbalLegends"] = "project-football-legends";
+})(projectCardsId || (projectCardsId = {}));
+const projectsSection = document.querySelector('.projects');
+const footballLegendsProject = document.getElementById(projectCardsId.footbalLegends);
+footballLegendsProject.addEventListener('click', () => {
+    const projectCardPerformance = footballLegendsProject.firstElementChild;
+    projectCardPerformance.classList.replace('project-card-performance-hidden', 'project-card-performance');
+});
 /*función de sroll para la sección de proyectos: versión cellphone*/
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
 const serviceTargetContainer = document.getElementById('service-target-container');
