@@ -126,22 +126,6 @@ const toggleGear = (globalSettings:string,gear:string,gearClassName:string,globa
      navbarGear.classList.toggle(gearClassName)
      navbarGlobalSettings.classList.toggle(globalSettingsClassName)
 }
-//toggleGear('#navbar-global-settings','#navbar-gear','navbar-gear-change','navbar-global-settings-change')
-//toggleGear('#general-settings','#header-settings-gear','header-settings-gear-change','general-settings-change')
-/* 
-const toggleHeaderGear = () =>{
-    const nabvarListSettings = {
-        generalSettings: document.querySelector('#general-settings'),
-        navbarGear: document.querySelector('#header-settings-gear')
-     }
-
-     const { generalSettings,navbarGear } = nabvarListSettings;
-     navbarGear.classList.toggle('header-settings-gear-change')
-     generalSettings.classList.toggle('general-settings-change')
-} */
-
-
-
 
 /*función de sroll para la sección de proyectos: versión cellphone*/
 //definir una matrz que identifique al primer y el segundo toque en el eje x y el eje y
@@ -278,6 +262,25 @@ projectsContainerCard.addEventListener('touchend',()=>{
         }
     }
 })  
+
+/*funciones para las cards de proyectos*/
+enum projectCardsId{
+    footbalLegends="project-football-legends"
+}
+
+const projectsSection:HTMLDivElement = document.querySelector('.projects') as HTMLDivElement;
+
+const footballLegendsProject:HTMLPictureElement = document.getElementById(projectCardsId.footbalLegends) as HTMLPictureElement;
+
+
+footballLegendsProject.addEventListener('click',():void =>{
+    
+   const projectCardPerformance:HTMLDivElement = footballLegendsProject.firstElementChild as HTMLDivElement;
+
+   projectCardPerformance.classList.replace('project-card-performance-hidden','project-card-performance')
+})
+
+
 
 /*función de sroll para la sección de proyectos: versión cellphone*/
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
