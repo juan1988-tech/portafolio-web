@@ -264,20 +264,30 @@ projectsContainerCard.addEventListener('touchend',()=>{
 })  
 
 /*funciones para las cards de proyectos*/
-enum projectCardsId{
-    footbalLegends="project-football-legends"
-}
-
 const projectsSection:HTMLDivElement = document.querySelector('.projects') as HTMLDivElement;
 
-const footballLegendsProject:HTMLPictureElement = document.getElementById(projectCardsId.footbalLegends) as HTMLPictureElement;
+const footballLegendsProject:HTMLElement = document.querySelector('#project-performance-football-legends') as HTMLElement;
+ 
+const switchFootballLegends = (event:MouseEvent):void =>{
+    let nodeElement:HTMLElement;
 
+    nodeElement = event.target as HTMLElement;
 
-footballLegendsProject.addEventListener('click',():void =>{
+    let nodeElementid:string = nodeElement.id;   
     
-   const projectCardPerformance:HTMLDivElement = footballLegendsProject.firstElementChild as HTMLDivElement;
+    const projectPerformanceLink:HTMLElement = document.getElementById('project-performance-link') as HTMLElement;
 
-   projectCardPerformance.classList.replace('project-card-performance-hidden','project-card-performance')
+    if(nodeElementid.includes("football-legends")){
+        footballLegendsProject.classList.replace('project-card-performance-hidden','project-card-performance');
+        projectPerformanceLink.classList.replace('project-performance-link-hidden','project-performance-link');
+    }else{
+        footballLegendsProject.classList.replace('project-card-performance','project-card-performance-hidden');
+        projectPerformanceLink.classList.replace('project-performance-link','project-performance-link-hidden');
+    } 
+}
+
+projectsSection.addEventListener('click',(event:MouseEvent)=>{
+    switchFootballLegends(event);
 })
 
 
@@ -300,7 +310,6 @@ let endServiceTouch:number =  0;
 const serviceCarouselIndicator:HTMLButtonElement= document.querySelector('.service-carousel-indicator') as HTMLButtonElement;
 
 const serviceCarouselCircles = serviceCarouselIndicator.children;
-
 
 //hacer una tupla para determinar los tipos de estilo de movimiento
 enum serviceContainerDelay {
