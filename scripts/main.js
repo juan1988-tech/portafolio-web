@@ -193,22 +193,33 @@ projectsContainerCard.addEventListener('touchend', () => {
 /*funciones para las cards de proyectos*/
 const projectsSection = document.querySelector('.projects');
 const footballLegendsProject = document.querySelector('#project-performance-football-legends');
-const switchFootballLegends = (event) => {
+const todoSevaleProject = document.querySelector('#project-performance-todo-se-vale');
+const switchProjectCard = (event) => {
     let nodeElement;
     nodeElement = event.target;
     let nodeElementid = nodeElement.id;
-    const projectPerformanceLink = document.getElementById('project-performance-link');
+    const projectFootballLink = document.getElementById('project-performance-link-football-legends');
+    const todoSevaleLink = document.getElementById('project-performance-link-todo-se-vale');
     if (nodeElementid.includes("football-legends")) {
         footballLegendsProject.classList.replace('project-card-performance-hidden', 'project-card-performance');
-        projectPerformanceLink.classList.replace('project-performance-link-hidden', 'project-performance-link');
+        projectFootballLink.classList.replace('project-performance-link-hidden', 'project-performance-link');
+        todoSevaleProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
     }
     else {
         footballLegendsProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
-        projectPerformanceLink.classList.replace('project-performance-link', 'project-performance-link-hidden');
+        projectFootballLink.classList.replace('project-performance-link', 'project-performance-link-hidden');
+    }
+    if (nodeElementid.includes('todo-se-vale')) {
+        todoSevaleProject.classList.replace('project-card-performance-hidden', 'project-card-performance');
+        todoSevaleLink.classList.replace('project-performance-link-hidden', 'project-performance-link');
+    }
+    else {
+        todoSevaleProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        todoSevaleLink.classList.replace('project-performance-link', 'project-performance-link-hidden');
     }
 };
 projectsSection.addEventListener('click', (event) => {
-    switchFootballLegends(event);
+    switchProjectCard(event);
 });
 /*función de sroll para la sección de proyectos: versión cellphone*/
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript

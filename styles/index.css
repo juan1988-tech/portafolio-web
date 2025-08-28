@@ -630,7 +630,7 @@ body{
     transition: all .25s ease-in-out;
 }
 
-.projects .project-performance-skills ul li:first-child span{
+#project-ul-football-legends li:first-child span{
     width: 2.4rem;
     height: 2.4rem;
     background-image: url('../assets/icons/new-icons/dark-screen-icons/uil_react.svg');
@@ -639,7 +639,7 @@ body{
     transition: all .25s ease-in-out;
 }
 
-.projects .project-performance-skills ul li:nth-child(2) span{
+#project-ul-football-legends li:nth-child(2) span{
     width: 2.4rem;
     height: 2.4rem;
     background-image: url('../assets/icons/new-icons/dark-screen-icons/devicon-plain_firebase-wordmark.svg');
@@ -649,7 +649,7 @@ body{
     transition: all .25s ease-in-out;
 }
 
-.projects .project-performance-skills ul li:nth-child(3) span{
+#project-ul-football-legends li:nth-child(3) span{
     width: 2em;
     height: 2rem;
     background-image: url('../assets/icons/new-icons/dark-screen-icons/solar_figma-broken.svg');
@@ -659,7 +659,7 @@ body{
     transition: all .25s ease-in-out;
 }
 
-.projects .project-performance-skills ul li:nth-child(4) span{
+#project-ul-football-legends li:nth-child(4) span{
     width: 2rem;
     height: 2rem;
     background-image: url('../assets/icons/new-icons/dark-screen-icons/chart.js\ 1.svg');
@@ -669,7 +669,7 @@ body{
     transition: all .25s ease-in-out;
 }
 
-.projects .project-performance-skills ul li:nth-child(5) span{
+#project-ul-football-legends li:nth-child(5) span{
     width: 2.1rem;
     height: 1.7rem;
     background-image: url('../assets/icons/new-icons/dark-screen-icons/fa-brands_node.svg');
@@ -678,6 +678,46 @@ body{
     background-position: center;
     transition: all .25s ease-in-out;
 }
+
+#project-ul-todo-se-vale li:first-child span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/uil_react.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-todo-se-vale li:nth-child(2) span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/solar_figma-broken.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-todo-se-vale li:nth-child(3) span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/akar-icons_php-fill.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-todo-se-vale li:nth-child(4) span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/fa-brands_node.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
 
 .projects .project-performance-logo{
     width: 100%;
@@ -693,6 +733,11 @@ body{
     width: 16.4rem;
     height: 2.3rem;
     background-size: cover;
+}
+
+.projects .project-performance-logo .project-performance-todo-se-vale{
+    width:6.6rem;
+    height: 6.6rem;
 }
 
 .projects .project-performance-description{
