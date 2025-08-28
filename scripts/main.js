@@ -192,20 +192,23 @@ projectsContainerCard.addEventListener('touchend', () => {
 });
 /*funciones para las cards de proyectos*/
 const projectsSection = document.querySelector('.projects');
-console.log(projectsSection);
 const footballLegendsProject = document.querySelector('#project-performance-football-legends');
-console.log(footballLegendsProject);
-projectsSection.addEventListener('click', (event) => {
+const switchFootballLegends = (event) => {
     let nodeElement;
     nodeElement = event.target;
     let nodeElementid = nodeElement.id;
-    console.log(nodeElementid);
+    const projectPerformanceLink = document.getElementById('project-performance-link');
     if (nodeElementid.includes("football-legends")) {
         footballLegendsProject.classList.replace('project-card-performance-hidden', 'project-card-performance');
+        projectPerformanceLink.classList.replace('project-performance-link-hidden', 'project-performance-link');
     }
     else {
         footballLegendsProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        projectPerformanceLink.classList.replace('project-performance-link', 'project-performance-link-hidden');
     }
+};
+projectsSection.addEventListener('click', (event) => {
+    switchFootballLegends(event);
 });
 /*función de sroll para la sección de proyectos: versión cellphone*/
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
