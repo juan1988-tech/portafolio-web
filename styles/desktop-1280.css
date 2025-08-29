@@ -101,8 +101,7 @@
     position: fixed;
     top: 6rem;
     transform: translateX(0rem);
-    transition-delay: .2s;
-    transition-duration: 1s;
+    transition-duration: .6s;
     transition-timing-function: ease;
     font-size: 1.6rem;
     padding-left: 3rem;
@@ -122,8 +121,7 @@
     position: fixed;
     top: 6rem;
     transform: translateX(-19.3rem);
-    transition-delay: .2s;
-    transition-duration: 1s;
+    transition-duration: .6s;
     transition-timing-function: ease;
     font-size: 1.6rem;
     padding-left: 3rem;

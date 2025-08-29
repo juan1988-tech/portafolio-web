@@ -912,8 +912,8 @@ body{
 }
 
 .project-carousel-arrows{
-    width: 8rem;
-    height: 3.2rem;
+    width: 12rem;
+    height: 4.2rem;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -921,7 +921,8 @@ body{
 }
 
 .project-carousel-arrows figure{
-    width: 3.2rem;
+    width: 4.2rem;
+    height: 4.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
