@@ -3,6 +3,12 @@
 //variable global que identifica al elemento body
 const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
 
+/*funciones para ver las posiciones del navbar */
+type toggleYearElements ={
+    navbarGlobalSettings: HTMLDivElement,
+    navbarGear: HTMLButtonElement, 
+}
+
 /*funciones del nabvar scrollIntoView()*/
 const titleLogo: HTMLTitleElement = document.querySelector('.title-logo') as HTMLTitleElement;
 
@@ -50,9 +56,27 @@ let buttonBurguerTrigger:Navbar = {
 }
 
 //extender los nodos del botón de humburguesa para involucrar al nodo del navbar
+
+
+
+
 interface Navbar extends BurguerButtons {
     navbar: HTMLButtonElement,
 }
+
+const firstScrollY:number =  window.scrollY;
+
+//cambiar el estado del botón si hacemos scroll en el home
+window.addEventListener('scroll',(event:Event)=>{
+    console.log(firstScrollY)
+    const  navbarGlobalSettings:HTMLDivElement = document.querySelector('#general-settings') as HTMLDivElement;
+    let secondScrollY:number =  window.scrollY;
+    
+    if(secondScrollY>firstScrollY){
+        navbarGlobalSettings.classList.replace('general-settings-change','general-settings');
+    }
+    
+})
 
 //hacer una funcion genérica para implementar el scroll
 const scrollToSection = (section:string):void =>{
@@ -109,11 +133,7 @@ headerContact.addEventListener('click',()=>{
     scrollToSection(".footer-section")
 })
 
-/*funciones para ver las posiciones del navbar */
-type toggleYearElements ={
-    navbarGlobalSettings: HTMLDivElement,
-    navbarGear: HTMLButtonElement, 
-}
+
 
 const toggleGear = (globalSettings:string,gear:string,gearClassName:string,globalSettingsClassName:string ):void =>{
      const nabvarListSettings:toggleYearElements = {
@@ -126,6 +146,10 @@ const toggleGear = (globalSettings:string,gear:string,gearClassName:string,globa
      navbarGear.classList.toggle(gearClassName)
      navbarGlobalSettings.classList.toggle(globalSettingsClassName)
 }
+
+
+/*funciones para cambiar el color de todo el portafolio*/
+
 
 /*función de sroll para la sección de proyectos: versión cellphone*/
 //definir una matrz que identifique al primer y el segundo toque en el eje x y el eje y

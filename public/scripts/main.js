@@ -29,6 +29,16 @@ let buttonBurguerTrigger = {
     thirdLine: document.querySelector('#third-line'),
     navbar: document.querySelector('#navbar')
 };
+const firstScrollY = window.scrollY;
+//cambiar el estado del botón si hacemos scroll en el home
+window.addEventListener('scroll', (event) => {
+    console.log(firstScrollY);
+    const navbarGlobalSettings = document.querySelector('#general-settings');
+    let secondScrollY = window.scrollY;
+    if (secondScrollY > firstScrollY && bodyLayout.clientWidth >= 1280) {
+        navbarGlobalSettings.classList.replace('general-settings-change', 'general-settings');
+    }
+});
 //hacer una funcion genérica para implementar el scroll
 const scrollToSection = (section) => {
     //idenbtificar al elemento para hacer el scroll
