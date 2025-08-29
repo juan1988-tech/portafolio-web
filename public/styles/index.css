@@ -293,7 +293,6 @@ body{
     font-weight: 400
 }
 
-
 .navbar .navbar-customization li{
     list-style: none;
     display: inline-flex;
@@ -347,7 +346,7 @@ body{
 .introduction{
     margin: 0 auto;
     margin-top: .8rem;
-    width: 85%;
+    width: 90%;
     padding-bottom: 1.6rem;
 }
 
@@ -469,7 +468,7 @@ body{
 
 
 .about-me-container{
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
     padding-bottom: 1.6rem;
 }
@@ -510,7 +509,7 @@ body{
 
 /*projects*/
 .projects .projects-container{
-    width: 85%;
+    width: 90%;
     margin: 0 auto 1.6rem;
 }
 
@@ -523,9 +522,11 @@ body{
 }
 
 .projects .projects-container-card{
+    margin: 0 auto;
     margin-top: 1.2rem;
-    width: 100%;
-    height: 100%;
+    width: 28.8rem;
+    height: 28.8rem;
+    overflow: hidden;
     overflow-x: hidden;
 }
 
@@ -533,9 +534,9 @@ body{
 .projects .projects-container-card-delay-first{
     display: flex;
     width: 400%;
-    overflow-x: auto;
+    height: 100%;
     transform: translateX(0%);
-    transition-duration: .6s;
+    transition-duration: .4s;
     overflow-x: hidden;
     transition-timing-function: ease-in;
 }
@@ -544,9 +545,8 @@ body{
 .projects .projects-container-card-delay-second{
     display: flex;
     width: 400%;
-    overflow-x: auto;
      transform: translateX(-25%);
-    transition-duration: .6s;
+    transition-duration: .4s;
     overflow-x: hidden;
     transition-timing-function: ease-in;
 }
@@ -555,9 +555,8 @@ body{
 .projects .projects-container-card-delay-third{
     display: flex;
     width: 400%;
-    overflow-x: auto;
      transform: translateX(-50%);
-    transition-duration: .6s;
+    transition-duration: .4s;
     overflow-x: hidden;
     transition-timing-function: ease-in;
 }
@@ -568,7 +567,7 @@ body{
     width: 400%;
     overflow-x: auto;
     transform: translateX(-75%);
-    transition-duration: .6s;
+    transition-duration: .4s;
     overflow-x: hidden;
     transition-timing-function: ease-in;
 }
@@ -576,6 +575,302 @@ body{
 .projects .projects-container-card-image{
     width: 100%;
     height: 100%;
+    position: relative;
+}
+
+.projects .project-card-performance-hidden{
+    position: absolute;
+    top: 0;
+    background: var(--main-second-background);
+    height: 100%;
+    width: 100%;
+    padding: 1.6rem;
+    transition: all .4s ease-in-out;
+    opacity: 0;
+}
+
+.projects .project-card-performance{
+    position: absolute;
+    top: 0;
+    background: var(--main-second-background);
+    height: 100%;
+    width: 100%;
+    padding: 1.6rem;
+    transition: all .4s ease-in-out;
+    opacity: 1;
+}
+
+.projects .project-performance-skills{
+    width: 22rem;
+    height: 3.6rem;
+    display: block;    
+}
+
+.projects .project-performance-skills ul{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.projects .project-performance-skills ul li{
+    list-style: none;
+    border: 1px solid var(--font-principal-letter);
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects .project-performance-skills ul li span{
+    display: block;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-football-legends li:first-child span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/uil_react.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-football-legends li:nth-child(2) span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/devicon-plain_firebase-wordmark.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-football-legends li:nth-child(3) span{
+    width: 2em;
+    height: 2rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/solar_figma-broken.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-football-legends li:nth-child(4) span{
+    width: 2rem;
+    height: 2rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/chart.js\ 1.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-football-legends li:nth-child(5) span{
+    width: 2.1rem;
+    height: 1.7rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/fa-brands_node.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-todo-se-vale li:first-child span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/uil_react.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-todo-se-vale li:nth-child(2) span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/solar_figma-broken.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-todo-se-vale li:nth-child(3) span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/akar-icons_php-fill.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-todo-se-vale li:nth-child(4) span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/fa-brands_node.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-skills-sienna li:first-child span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/devicon-plain_mongodb-wordmark.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all .25s ease-in-out;
+}
+
+#project-skills-sienna li:nth-child(2) span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/simple-icons_express.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-skills-sienna li:nth-child(3) span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/uil_react.svg');    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-skills-sienna li:nth-child(4) span{
+    width: 2.1rem;
+    height: 1.7rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/fa-brands_node.svg');    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-la-montanna-magica li:first-child span{
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/akar-icons_html-fill.svg');    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-la-montanna-magica li:nth-child(2) span{
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/fa6-brands_css.svg');    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-la-montanna-magica li:nth-child(3) span{
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/akar-icons_javascript-fill.svg');    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+#project-ul-la-montanna-magica li:nth-child(4) span{
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/solar_figma-broken.svg');    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s ease-in-out;
+}
+
+
+.projects .project-performance-logo{
+    width: 100%;
+    height: 6.6rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: none;
+    margin-top: 1.2rem;
+}
+
+.projects .project-performance-logo .project-performance-futbol-legends{
+    width: 16.4rem;
+    height: 2.3rem;
+    background-size: cover;
+}
+
+.projects .project-performance-logo .project-performance-todo-se-vale{
+    width:6.6rem;
+    height: 6.6rem;
+}
+
+.projects .project-performance-logo .project-performance-sienna{
+    width: 7.8rem;
+    height: 6.6rem;
+}
+
+.projects .project-performance-logo .project-performance-la-montanna-magica{
+    width: 13.2rem;
+    height: 6.6rem;
+}
+
+
+
+.projects .project-performance-description{
+    font-size: 1.6rem;
+}
+
+.projects .project-performance-link-hidden{
+    display: none;
+    transition: all .25s ease-in-out;
+}
+
+.projects .project-performance-link{
+    display: flex;
+    font-size: 2rem;
+    width: 19rem;
+    height: 2.4rem;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 2rem;
+    transition: all .25s ease-in-out;
+}
+
+.projects .project-performance-link a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--font-principal-letter);
+    width: 7.4rem;
+}
+
+.project-performance-link .link-icon{
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/mingcute_link-fill.svg');  
+}
+
+.project-performance-link .doc-icon{
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/catppuccin_folder-github.svg');
 }
 
 .projects .projects-container-card-image img,
@@ -614,6 +909,29 @@ body{
     background: var(--main-second-background);
     transform: scale(1.2); 
     transition-duration: .6s;
+}
+
+.project-carousel-arrows{
+    width: 8rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 1.2rem;
+}
+
+.project-carousel-arrows figure{
+    width: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-second-background);
+    border-radius: 50%;
+    border:1px solid var(--font-principal-letter);
+}
+
+.project-carousel-arrows figure img{
+    width: 1.6rem;
 }
 
 /*stack*/

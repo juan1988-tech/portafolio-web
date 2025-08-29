@@ -74,19 +74,20 @@ headerProjects.addEventListener('click', () => {
 headerContact.addEventListener('click', () => {
     scrollToSection(".footer-section");
 });
-/*función de sroll para la sección de proyectos: versión cellphone*/
+const toggleGear = (globalSettings, gear, gearClassName, globalSettingsClassName) => {
+    const nabvarListSettings = {
+        navbarGlobalSettings: document.querySelector(globalSettings),
+        navbarGear: document.querySelector(gear)
+    };
+    const { navbarGear, navbarGlobalSettings } = nabvarListSettings;
+    navbarGear.classList.toggle(gearClassName);
+    navbarGlobalSettings.classList.toggle(globalSettingsClassName);
+};
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
+let touchMovement = 0;
 const projectsContainerCard = document.getElementById('projects-container-card');
 const projectsContainerCardDelay = document.querySelector('#projects-container-card-delay');
-//identificar a los botones de carrusel de la sección proyectos
-const projectCarouselIndicator = document.querySelector('.project-carousel-indicator');
-const projectCaruoselCircles = projectCarouselIndicator.children;
-//2. cuando haga un touch en la pantalla debe deslizarse una sola vez por cada interfaz del proyecto
-//crear la variable del toque inicial
-let startTouch = 0;
-//crear la variabla del toque final
-let endTouch = 0;
-//hacer una tupla para determinar los tipos de estilo de movimiento
+const projectCarouselArrows = document.getElementById('project-carousel-arrows');
 var proyectContainerDelay;
 (function (proyectContainerDelay) {
     proyectContainerDelay[proyectContainerDelay["projects-container-card-delay-first"] = 0] = "projects-container-card-delay-first";
@@ -94,93 +95,120 @@ var proyectContainerDelay;
     proyectContainerDelay[proyectContainerDelay["projects-container-card-delay-third"] = 2] = "projects-container-card-delay-third";
     proyectContainerDelay[proyectContainerDelay["projects-container-card-delay-fourth"] = 3] = "projects-container-card-delay-fourth";
 })(proyectContainerDelay || (proyectContainerDelay = {}));
-let touchArrayMatrix;
-let touchMovement = 0;
-//asignar el nombre de clase al contenedor de proyectos
-projectsContainerCardDelay.classList.add(proyectContainerDelay[0]);
-//Hacer una referencia del primer toque, definiendo el toque en el eje x y el eje y
-projectsContainerCard.addEventListener('touchstart', (event) => {
-    var _a;
-    if ((bodyLayout === null || bodyLayout === void 0 ? void 0 : bodyLayout.clientWidth) <= 743) {
-        console.log('esta funcion solo se aplica hasta media query cellphone');
-        let initClientX = (_a = event === null || event === void 0 ? void 0 : event.touches[0]) === null || _a === void 0 ? void 0 : _a.clientX;
-        startTouch = initClientX;
+const projectMovementStates = () => {
+    switch (touchMovement) {
+        case 0:
+            //cambio de estilo: carrusel para proyecto: 1
+            projectsContainerCardDelay.classList.replace(proyectContainerDelay[1], proyectContainerDelay[0]);
+            projectsContainerCardDelay.classList.replace(proyectContainerDelay[2], proyectContainerDelay[0]);
+            projectsContainerCardDelay.classList.replace(proyectContainerDelay[3], proyectContainerDelay[0]);
+            break;
+        case 1:
+            //cambio de estilo: carrusel para proyecto: 2
+            projectsContainerCardDelay.classList.replace(proyectContainerDelay[0], proyectContainerDelay[1]);
+            projectsContainerCardDelay.classList.replace(proyectContainerDelay[2], proyectContainerDelay[1]);
+            projectsContainerCardDelay.classList.replace(proyectContainerDelay[3], proyectContainerDelay[1]);
+            break;
+        case 2:
+            //cambio de estilo: carrusel para proyecto: 3
+            projectsContainerCardDelay.classList.replace(proyectContainerDelay[0], proyectContainerDelay[2]);
+            projectsContainerCardDelay.classList.replace(proyectContainerDelay[1], proyectContainerDelay[2]);
+            projectsContainerCardDelay.classList.replace(proyectContainerDelay[3], proyectContainerDelay[2]);
+            break;
+        case 3:
+            //cambio de estilo: carrusel para proyecto: 4
+            projectsContainerCardDelay.classList.replace(proyectContainerDelay[0], proyectContainerDelay[3]);
+            projectsContainerCardDelay.classList.replace(proyectContainerDelay[1], proyectContainerDelay[3]);
+            projectsContainerCardDelay.classList.replace(proyectContainerDelay[2], proyectContainerDelay[3]);
+            break;
     }
-});
-projectsContainerCard.addEventListener('touchmove', (event) => {
-    if (bodyLayout.clientWidth <= 743) {
-        const secondTouches = event === null || event === void 0 ? void 0 : event.touches[0].clientX;
-        //definir la matriz
-        const matrixTouch = {
-            initTouchX: startTouch,
-            secondTouchX: secondTouches,
-        };
-        //asignar la matriz a la variable
-        touchArrayMatrix = matrixTouch;
-    }
-});
-projectsContainerCard.addEventListener('touchend', () => {
-    if (bodyLayout.clientWidth <= 743) {
-        const { initTouchX, secondTouchX } = touchArrayMatrix;
-        if (initTouchX > secondTouchX) {
-            touchMovement = touchMovement + 1;
-        }
-        if (initTouchX < secondTouchX) {
+};
+const projectCardMovement = (event) => {
+    //detectar al nodo que esta activando el evento
+    let nodeEevent = event.target;
+    console.log(nodeEevent.id);
+    switch (nodeEevent.id) {
+        case "project-carousel-left":
             touchMovement = touchMovement - 1;
-        }
-        if (touchMovement > 3) {
-            touchMovement = 3;
-        }
-        if (touchMovement < 0) {
-            touchMovement = 0;
-        }
-        switch (touchMovement) {
-            case 0:
-                //cambio de estilo: carrusel para proyecto: 1
-                projectsContainerCardDelay.classList.replace(proyectContainerDelay[1], proyectContainerDelay[0]);
-                projectsContainerCardDelay.classList.replace(proyectContainerDelay[2], proyectContainerDelay[0]);
-                projectsContainerCardDelay.classList.replace(proyectContainerDelay[3], proyectContainerDelay[0]);
-                //cambio de estilos para los botones del carrusel
-                projectCaruoselCircles[0].classList.replace('carousel-indicator', 'outlined');
-                projectCaruoselCircles[1].classList.replace('outlined', 'carousel-indicator');
-                projectCaruoselCircles[2].classList.replace('outlined', 'carousel-indicator');
-                projectCaruoselCircles[3].classList.replace('outlined', 'carousel-indicator');
-                break;
-            case 1:
-                //cambio de estilo: carrusel para proyecto: 2
-                projectsContainerCardDelay.classList.replace(proyectContainerDelay[0], proyectContainerDelay[1]);
-                projectsContainerCardDelay.classList.replace(proyectContainerDelay[2], proyectContainerDelay[1]);
-                projectsContainerCardDelay.classList.replace(proyectContainerDelay[3], proyectContainerDelay[1]);
-                //cambio de estilos para los botones del carrusel
-                projectCaruoselCircles[0].classList.replace('outlined', 'carousel-indicator');
-                projectCaruoselCircles[1].classList.replace('carousel-indicator', 'outlined');
-                projectCaruoselCircles[2].classList.replace('outlined', 'carousel-indicator');
-                projectCaruoselCircles[3].classList.replace('outlined', 'carousel-indicator');
-                break;
-            case 2:
-                //cambio de estilo: carrusel para proyecto: 3
-                projectsContainerCardDelay.classList.replace(proyectContainerDelay[0], proyectContainerDelay[2]);
-                projectsContainerCardDelay.classList.replace(proyectContainerDelay[1], proyectContainerDelay[2]);
-                projectsContainerCardDelay.classList.replace(proyectContainerDelay[3], proyectContainerDelay[2]);
-                //cambio de estilos para los botones del carrusel
-                projectCaruoselCircles[0].classList.replace('outlined', 'carousel-indicator');
-                projectCaruoselCircles[1].classList.replace('outlined', 'carousel-indicator');
-                projectCaruoselCircles[2].classList.replace('carousel-indicator', 'outlined');
-                projectCaruoselCircles[3].classList.replace('outlined', 'carousel-indicator');
-                break;
-            case 3:
-                //cambio de estilo: carrusel para proyecto: 4
-                projectsContainerCardDelay.classList.replace(proyectContainerDelay[0], proyectContainerDelay[3]);
-                projectsContainerCardDelay.classList.replace(proyectContainerDelay[1], proyectContainerDelay[3]);
-                projectsContainerCardDelay.classList.replace(proyectContainerDelay[2], proyectContainerDelay[3]);
-                //cambio de estilos para los botones del carrusel
-                projectCaruoselCircles[0].classList.replace('outlined', 'carousel-indicator');
-                projectCaruoselCircles[1].classList.replace('outlined', 'carousel-indicator');
-                projectCaruoselCircles[2].classList.replace('outlined', 'carousel-indicator');
-                projectCaruoselCircles[3].classList.replace('carousel-indicator', 'outlined');
-                break;
-        }
+            break;
+        case "project-carousel-right":
+            touchMovement = touchMovement + 1;
+        default:
+            break;
     }
+    if (touchMovement > 3) {
+        touchMovement = 3;
+    }
+    if (touchMovement < 0) {
+        touchMovement = 0;
+    }
+    //ejecutar la funcion de cambioa de estado para cada nodo
+    projectMovementStates();
+};
+projectCarouselArrows.addEventListener('click', (event) => {
+    projectCardMovement(event);
+});
+/*funciones para las cards de proyectos*/
+const projectsSection = document.querySelector('.projects');
+const footballLegendsProject = document.querySelector('#project-performance-football-legends');
+const todoSevaleProject = document.querySelector('#project-performance-todo-se-vale');
+const siennaProject = document.querySelector("#project-performance-sienna");
+const montannaMagicaProject = document.querySelector('#project-performance-la-montanna-magica');
+const switchProjectCard = (event) => {
+    let nodeElement;
+    nodeElement = event.target;
+    let nodeElementid = nodeElement.id;
+    const projectFootballLink = document.getElementById('project-performance-link-football-legends');
+    const todoSevaleLink = document.getElementById('project-performance-link-todo-se-vale');
+    const siennaLink = document.getElementById('project-performance-link-sienna');
+    const montannaMagicaLink = document.getElementById('project-performance-link-la-montanna-magica');
+    if (nodeElementid.includes("football-legends")) {
+        footballLegendsProject.classList.replace('project-card-performance-hidden', 'project-card-performance');
+        projectFootballLink.classList.replace('project-performance-link-hidden', 'project-performance-link');
+        todoSevaleProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        siennaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        montannaMagicaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+    }
+    else {
+        footballLegendsProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        projectFootballLink.classList.replace('project-performance-link', 'project-performance-link-hidden');
+    }
+    if (nodeElementid.includes('todo-se-vale')) {
+        todoSevaleProject.classList.replace('project-card-performance-hidden', 'project-card-performance');
+        todoSevaleLink.classList.replace('project-performance-link-hidden', 'project-performance-link');
+        footballLegendsProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        siennaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        montannaMagicaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+    }
+    else {
+        todoSevaleProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        todoSevaleLink.classList.replace('project-performance-link', 'project-performance-link-hidden');
+    }
+    if (nodeElementid.includes('sienna')) {
+        siennaProject.classList.replace('project-card-performance-hidden', 'project-card-performance');
+        siennaLink.classList.replace('project-performance-link-hidden', 'project-performance-link');
+        footballLegendsProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        montannaMagicaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        todoSevaleProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+    }
+    else {
+        siennaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        siennaLink.classList.replace('project-performance-link', 'project-performance-link-hidden');
+    }
+    if (nodeElementid.includes('la-montanna-magica')) {
+        montannaMagicaProject.classList.replace('project-card-performance-hidden', 'project-card-performance');
+        montannaMagicaLink.classList.replace('project-performance-link-hidden', 'project-performance-link');
+        footballLegendsProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        siennaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        todoSevaleProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+    }
+    else {
+        montannaMagicaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        montannaMagicaLink.classList.replace('project-performance-link', 'project-performance-link-hidden');
+    }
+};
+projectsSection.addEventListener('click', (event) => {
+    switchProjectCard(event);
 });
 /*función de sroll para la sección de proyectos: versión cellphone*/
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
