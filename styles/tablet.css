@@ -65,7 +65,7 @@
     grid-template-columns: 29.5rem 1fr;
     margin-top: 2.4rem;
     column-gap: 1.6rem;
-    padding-bottom: 10.5rem;
+    padding-bottom: 4.5rem;
 }
 
 .about-me .about-me-role{
@@ -73,6 +73,9 @@
 }
 
 /*projects*/
+.project-carousel-arrows{
+    display: none;
+}
 
 .projects .projects-container,
 .projects .projects-container-card{
@@ -94,6 +97,68 @@
 
 .projects .projects-title{
     padding-top: 6rem;
+}
+
+.projects .project-performance-skills{
+    width: 27.4rem;
+    height: 4rem;
+}
+
+.projects .project-performance-skills ul li{
+    width: 4rem;
+    height: 4rem;
+}
+
+#project-ul-football-legends li:first-child span{
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+#project-ul-football-legends li:nth-child(2) span{
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+#project-ul-football-legends li:nth-child(3) span{
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+#project-ul-football-legends li:nth-child(4) span{
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+#project-ul-football-legends li:nth-child(5) span{
+    width: 2.5rem;
+    height: 2rem;
+}
+
+#project-ul-todo-se-vale li:nth-child(4) span,
+#project-skills-sienna li:nth-child(4) span{
+    width: 2.5rem;
+    height: 1.9rem;
+}
+
+
+.projects .project-performance-logo .project-performance-sienna{
+    width: 10.7rem;
+    height: 9rem;
+}
+
+.projects .project-performance-logo{
+    height: 9rem;
+    margin-top: 1.2rem;
+}
+
+.projects .project-performance-description{
+    font-size: 2rem;
+    margin-top: 1.2rem;
+    height: 10rem;
+}
+
+.projects .project-performance-link{
+    margin-top: 3rem;
 }
 
 /*stack*/

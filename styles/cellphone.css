@@ -87,7 +87,6 @@
     padding-top: 1.6rem;
 }
 
-
 .projects .projects-container-card{
     width: 52.1rem;
     height: 21.5rem;
@@ -96,6 +95,33 @@
 .projects .projects-container-card-delay-first{
     width: 400%;
     height: 21.5rem;
+}
+
+.projects .project-card-performance-hidden{
+    position: absolute;
+    top: 0;
+    background: var(--main-second-background);
+    height: 100%;
+    width: 100%;
+    padding: 1.6rem;
+    transition: all .4s ease-in-out;
+    opacity: 0;
+}
+
+
+.projects .project-card-performance{
+    position: absolute;
+    top: 0;
+    background: var(--main-second-background);
+    height: 100%;
+    width: 100%;
+    padding: 1.6rem;
+    transition: all .4s ease-in-out;
+    opacity: 1;
+}
+
+.projects .project-performance-logo{
+    margin-top: 0;
 }
 
 /*abput-me*/
