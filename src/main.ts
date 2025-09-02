@@ -1,13 +1,54 @@
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
-
+import { addThemeLayout,themesLi,themesLiHeader,bodyLayout } from "./addThemes.js";
 //variable global que identifica al elemento body
-const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
+//const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
 
+/*funciones para poner estilos generales*/
+themesLi[0].addEventListener('click',()=>{
+    addThemeLayout('purple')
+})
+
+themesLi[1].addEventListener('click',()=>{
+    addThemeLayout('blue');
+})
+
+themesLi[2].addEventListener('click',()=>{
+    addThemeLayout('white');
+})
+
+themesLiHeader[0].addEventListener('click',()=>{
+    addThemeLayout('purple');
+})
+
+themesLiHeader[1].addEventListener('click',()=>{
+    addThemeLayout('blue');
+})
+
+themesLiHeader[2].addEventListener('click',()=>{
+    addThemeLayout('white');
+})
+
+/* 
+themesLiHeader[0].addEventListener('click',()=>{
+    addHeaderTheme('purple');
+});
+
+themesLiHeader[1].addEventListener('click',()=>{
+    addHeaderTheme('blue');
+});
+
+themesLiHeader[2].addEventListener('click',()=>{
+    addHeaderTheme('white');
+}); */
+
+//addVioletTheme;
 /*funciones para ver las posiciones del navbar */
 type toggleYearElements ={
     navbarGlobalSettings: HTMLDivElement,
     navbarGear: HTMLButtonElement, 
 }
+
+const buttonBurguer: HTMLButtonElement = document.querySelector('#button-burguer') as HTMLButtonElement;
 
 /*funciones del nabvar scrollIntoView()*/
 const titleLogo: HTMLTitleElement = document.querySelector('.title-logo') as HTMLTitleElement;
@@ -39,6 +80,11 @@ const toggleButtonBurguer = () =>{
     navbar.classList.toggle('navbar-change')
 }
 
+buttonBurguer.addEventListener('click',()=>{
+    toggleButtonBurguer();
+})
+
+
 //interfaz para el nabvar y el botón de hamburguesa
 interface BurguerButtons {
     buttonBurguer: HTMLButtonElement,
@@ -56,10 +102,6 @@ let buttonBurguerTrigger:Navbar = {
 }
 
 //extender los nodos del botón de humburguesa para involucrar al nodo del navbar
-
-
-
-
 interface Navbar extends BurguerButtons {
     navbar: HTMLButtonElement,
 }
@@ -133,7 +175,9 @@ headerContact.addEventListener('click',()=>{
     scrollToSection(".footer-section")
 })
 
+const headerSettings: HTMLElement = document.getElementById('header-settings') as HTMLElement;
 
+const navbarSettings: HTMLElement = document.getElementById('navbar-settings') as HTMLElement;
 
 const toggleGear = (globalSettings:string,gear:string,gearClassName:string,globalSettingsClassName:string ):void =>{
      const nabvarListSettings:toggleYearElements = {
@@ -147,7 +191,13 @@ const toggleGear = (globalSettings:string,gear:string,gearClassName:string,globa
      navbarGlobalSettings.classList.toggle(globalSettingsClassName)
 }
 
+headerSettings.addEventListener('click',()=>{
+    toggleGear('#general-settings','#header-settings-gear','header-settings-gear-change','general-settings-change');
+})
 
+navbarSettings.addEventListener('click',()=>{
+    toggleGear('#navbar-global-settings','#navbar-gear','navbar-gear-change','navbar-global-settings-change');
+})
 /*funciones para cambiar el color de todo el portafolio*/
 
 
