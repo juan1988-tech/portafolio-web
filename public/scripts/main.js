@@ -1,8 +1,7 @@
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
-import { addThemeLayout, themesLi, themesLiHeader, bodyLayout } from "./addThemes.js";
+import { addThemeLayout, themesLi, themesLiHeader, bodyLayout, addNavbarTheme } from "./addThemes.js";
 //variable global que identifica al elemento body
 //const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
-//addBodyTheme();
 /*funciones para poner estilos generales*/
 themesLi[0].addEventListener('click', () => {
     addThemeLayout('purple');
@@ -35,13 +34,31 @@ const headerProjects = document.querySelector("#header-projects");
 const headerContact = document.querySelector('#header-contact');
 /*realizar función del botón hamburguesa, aplicamos el concepto de interface para conectar
 el DOM con el botón de hamburguesa */
+let defaultToggle = false;
 const toggleButtonBurguer = () => {
     const { firstLine, secondLine, thirdLine, navbar } = buttonBurguerTrigger;
     firstLine.classList.toggle('first-line-change');
     secondLine.classList.toggle('second-line-change');
     thirdLine.classList.toggle('third-line-change');
-    //hacer el toggle del navbar
-    navbar.classList.toggle('navbar-change');
+    (defaultToggle === false) ? (defaultToggle = true) : (defaultToggle = false);
+    if (defaultToggle === true) {
+        navbar.classList.add('navbar-change');
+        navbar.classList.remove('navbar');
+    }
+    else {
+        //navbar.classList.replace('navbar','nabvar-change');
+        navbar.classList.add('navbar');
+        navbar.classList.remove('navbar-change');
+    }
+    if (navbar.className === "navbar-change") {
+        addNavbarTheme('purple');
+    }
+    if (navbar.className === "navbar-change-blue") {
+        addNavbarTheme('blue');
+    }
+    if (navbar.className === "navbar-change-white") {
+        addNavbarTheme('white');
+    }
 };
 buttonBurguer.addEventListener('click', () => {
     toggleButtonBurguer();

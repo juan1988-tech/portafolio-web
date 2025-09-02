@@ -124,6 +124,12 @@ html{
     font-family: var(--russo-one);
 }
 
+.header .title-logo,
+.header-blue .title-logo,
+.header-white .title-logo{
+    color: var(--font-principal-letter);
+}
+
 .header .title-logo span{
     color: var(--font-principal-title);
 }
@@ -309,8 +315,7 @@ html{
     position: fixed;
     top: 6rem;
     transform: translateX(-19.3rem);
-    transition-delay: .2s;
-    transition-duration: 1s;
+    transition-duration: .8s;
     transition-timing-function: ease;
     font-size: 1.6rem;
     padding-left: 3rem;
@@ -330,9 +335,6 @@ html{
     position: fixed;
     top: 6rem;
     transform: translateX(-19.3rem);
-    transition-delay: .2s;
-    transition-duration: 1s;
-    transition-timing-function: ease;
     font-size: 1.6rem;
     padding-left: 3rem;
     padding-top: 2.3rem;
@@ -350,9 +352,6 @@ html{
     position: fixed;
     top: 6rem;
     transform: translateX(-19.3rem);
-    transition-delay: .2s;
-    transition-duration: 1s;
-    transition-timing-function: ease;
     font-size: 1.6rem;
     padding-left: 3rem;
     padding-top: 2.3rem;
@@ -360,8 +359,10 @@ html{
     z-index: 1;
 }
 
-
-.navbar .navbar-global-settings{
+.navbar .navbar-global-settings,
+.navbar-change .navbar-global-settings,
+.navbar-change-blue .navbar-global-settings,
+.navbar-change-white .navbar-global-settings{
     height: 18.3rem;
     display: flex;
     overflow-x: hidden;
@@ -370,8 +371,13 @@ html{
     transition-delay: .2s;
     transition-duration: 1s;
     transition-timing-function: ease;
+    color: var(--font-principal-letter);
 }
-.navbar .navbar-global-settings-change{
+
+.navbar .navbar-global-settings-change,
+.navbar-change .navbar-global-settings-change,
+.navbar-change-blue .navbar-global-settings-change,
+.navbar-change-white .navbar-global-settings-change{
     height: 18.3rem;
     display: flex;
     overflow-x: hidden;
@@ -382,7 +388,10 @@ html{
     transition-timing-function: ease;
 }
 
-.navbar .navbar-list{
+.navbar .navbar-list,
+.navbar-change .navbar-list,
+.navbar-change-blue .navbar-list,
+.navbar-change-white .navbar-list{
     display: flex;
     flex-direction: column;
     font-size: 1.6rem;
@@ -392,25 +401,37 @@ html{
     width: 17.4rem;
 }
 
-.navbar .navbar-list li a{
+.navbar .navbar-list li a,
+.navbar-change .navbar-list li a,
+.navbar-change-blue .navbar-list li a,
+.navbar-change-white .navbar-list li a{
     display: block;
     text-decoration: none;
     color: var(--font-principal-letter);
 }
 
-.navbar .navbar-list li:nth-child(5) a{
+.navbar .navbar-list li:nth-child(5) a,
+.navbar-change .navbar-list li:nth-child(5) a,
+.navbar-change-blue .navbar-list li:nth-child(5) a,
+.navbar-change-white .navbar-list li:nth-child(5) a{
     display: inline-flex;
     text-decoration: none;
     color: var(--font-principal-title)
 }
 
-.navbar .navbar-settings{
+.navbar .navbar-settings,
+.navbar-change .navbar-settings,
+.navbar-change-blue .navbar-settings,
+.navbar-change-white .navbar-settings{
     display: inline-flex;
     align-items: center;
     margin-top: 2.6rem;
 }
 
-.navbar .navbar-settings .navbar-gear{
+.navbar .navbar-settings .navbar-gear,
+.navbar-change .navbar-settings .navbar-gear,
+.navbar-change-blue .navbar-settings .navbar-gear,
+.navbar-change-white .navbar-settings .navbar-gear{
     background-image: url('../assets/icons/gear.svg');
     width: 1.3rem;
     height: 1.3rem;
@@ -422,7 +443,10 @@ html{
     transition-timing-function: ease;    
 }
 
-.navbar .navbar-settings .navbar-gear-change{
+.navbar .navbar-settings .navbar-gear-change,
+.navbar-change .navbar-settings .navbar-gear-change,
+.navbar-change-blue .navbar-settings .navbar-gear-change,
+.navbar-change-white .navbar-settings .navbar-gear-change{
     background-image: url('../assets/icons/gear.svg');
     width: 1.3rem;
     height: 1.3rem;
@@ -434,7 +458,10 @@ html{
     transition-timing-function: ease;
 }
 
-.navbar .navbar-customization{
+.navbar .navbar-customization,
+.navbar-change .navbar-customization,
+.navbar-change-blue .navbar-customization,
+.navbar-change-white .navbar-customization{
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -442,19 +469,28 @@ html{
     width: 15.4rem;
 }
 
-.navbar .navbar-customization h4{
+.navbar .navbar-customization h4,
+.navbar-change .navbar-customization h4,
+.navbar-change-blue .navbar-customization h4,
+.navbar-change-white .navbar-customization h4{
     color: var(--font-principal-title);
     font-weight: 400
 }
 
-.navbar .navbar-customization li{
+.navbar .navbar-customization li,
+.navbar-change .navbar-customization li,
+.navbar-change-blue .navbar-customization li,
+.navbar-change-white .navbar-customization li{
     list-style: none;
     display: inline-flex;
     align-items: center;
     cursor: pointer;
 }
 
-.navbar .navbar-customization span{
+.navbar .navbar-customization span,
+.navbar-change .navbar-customization span,
+.navbar-change-blue .navbar-customization span,
+.navbar-change-white .navbar-customization span{
     display: block;
     width: 2.1rem;
     height: 1.5rem;
@@ -462,7 +498,10 @@ html{
     background-repeat: none;
 }
 
-.navbar .navbar-customization p{
+.navbar .navbar-customization p,
+.navbar-change .navbar-customization p,
+.navbar-change-blue .navbar-customization p,
+.navbar-change-white .navbar-customization p{
     margin-left: 1.6rem;
 }
 

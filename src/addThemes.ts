@@ -4,13 +4,12 @@ interface theme{
     header: HTMLHeadElement;
     themesLi: HTMLLIElement[];
     themesLiHeader: HTMLLIElement[];
-    titleLogo: HTMLTitleElement;
     contactIcon: HTMLImageElement;
+    navbar: HTMLDivElement 
 }
 
 let itemsTheme: theme ={
     body: document.body as HTMLBodyElement,
-
     /*header*/
     header: document.getElementById('header') as HTMLHeadElement,
     themesLi: [
@@ -23,8 +22,8 @@ let itemsTheme: theme ={
         document.querySelector('#add-blue-theme-header') as HTMLLIElement,
         document.querySelector('#add-white-theme-header') as HTMLLIElement
     ],
-    titleLogo: document.querySelector('#title-logo') as HTMLTitleElement,
     contactIcon: document.querySelector('.contact-li img') as HTMLImageElement,
+    navbar: document.querySelector('#navbar') as HTMLDivElement,
 }
 
 //función para modificar el body
@@ -37,36 +36,52 @@ export const addBodyTheme = (mainBg:string,secondBg:string,thirdBg:string):void 
 }
 
 //funcion para modificar los colores del header
-export const { header,themesLi,themesLiHeader,contactIcon } = itemsTheme; 
+export const { header,themesLi,themesLiHeader,contactIcon,navbar } = itemsTheme; 
 
 const addheaderTheme = (mainColor:string,secondColor:string,thirdColor:string,contactIconImg:string):void =>{
     //header.classList.replace('header-blue','header');
     header.classList.replace(secondColor,mainColor);
     header.classList.replace(thirdColor,mainColor);
 
-    //contactIcon.src = './assets/icons/new-icons/phone-enabled-sharp-blue.svg';
     contactIcon.src = contactIconImg;
 }
 
-const addNavbarTheme = (mainColor:string,secondColor:string,thirdColor:string) =>{
-
+export const addNavbarTheme = (bgColor:string):void =>{
+    
+    if(bgColor==="purple"){
+        navbar.classList.replace("navbar-change-blue","navbar-change")
+        navbar.classList.replace("navbar-change-white","navbar-change")  
+    }
+    if(bgColor==="blue"){
+        navbar.classList.replace("navbar-change","navbar-change-blue")
+        navbar.classList.replace("navbar-change-white","navbar-change-blue")
+    }
+    if(bgColor==="white"){
+        navbar.classList.replace("navbar-change","navbar-change-white")
+        navbar.classList.replace("navbar-change-blue","navbar-change-white")
+    }
 }
 
-export function addThemeLayout(bgColor:string):void{
+export function addThemeLayout(bgColor:string){
     switch (bgColor) {
         case "purple":
             addBodyTheme('body','body-blue','body-white');
             addheaderTheme('header','header-blue','header-white','./assets/icons/new-icons/phone-enabled-sharp-blue.svg');
+            addNavbarTheme(bgColor);
             break;
         case "blue":
             addBodyTheme('body-blue','body','body-white');
             addheaderTheme('header-blue','header','header-white',"./assets/icons/new-icons/phone-enabled-sharp-green.svg");
+            addNavbarTheme(bgColor);
             break;
         case "white":
             addBodyTheme('body-white','body-blue','body');
             addheaderTheme( 'header-white','header','header-blue','./assets/icons/new-icons/phone-enabled-sharp-blue.svg');
+            addNavbarTheme(bgColor);
             break;    
     }
+
+    return bgColor;
 }
 
 

@@ -1,5 +1,5 @@
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
-import { addThemeLayout,themesLi,themesLiHeader,bodyLayout } from "./addThemes.js";
+import { addThemeLayout,themesLi,themesLiHeader,bodyLayout,addNavbarTheme } from "./addThemes.js";
 //variable global que identifica al elemento body
 //const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
 
@@ -28,20 +28,6 @@ themesLiHeader[2].addEventListener('click',()=>{
     addThemeLayout('white');
 })
 
-/* 
-themesLiHeader[0].addEventListener('click',()=>{
-    addHeaderTheme('purple');
-});
-
-themesLiHeader[1].addEventListener('click',()=>{
-    addHeaderTheme('blue');
-});
-
-themesLiHeader[2].addEventListener('click',()=>{
-    addHeaderTheme('white');
-}); */
-
-//addVioletTheme;
 /*funciones para ver las posiciones del navbar */
 type toggleYearElements ={
     navbarGlobalSettings: HTMLDivElement,
@@ -70,14 +56,34 @@ const headerContact: HTMLElement = document.querySelector('#header-contact') as 
 /*realizar función del botón hamburguesa, aplicamos el concepto de interface para conectar 
 el DOM con el botón de hamburguesa */
 
+let defaultToggle:boolean = false;
+
 const toggleButtonBurguer = () =>{
     const { firstLine, secondLine ,thirdLine,navbar } = buttonBurguerTrigger;
-    firstLine.classList.toggle('first-line-change')
-    secondLine.classList.toggle('second-line-change')
-    thirdLine.classList.toggle('third-line-change')
+    firstLine.classList.toggle('first-line-change');
+    secondLine.classList.toggle('second-line-change');
+    thirdLine.classList.toggle('third-line-change');
+    
+    (defaultToggle===false)?(defaultToggle=true):(defaultToggle=false);
 
-    //hacer el toggle del navbar
-    navbar.classList.toggle('navbar-change')
+    if(defaultToggle===true){
+        navbar.classList.add('navbar-change');
+        navbar.classList.remove('navbar');
+    }else{
+        navbar.classList.add('navbar');
+        navbar.classList.remove('navbar-change');
+    } 
+    
+    if(navbar.className==="navbar-change"){
+        addNavbarTheme('purple');
+        
+    }
+    if(navbar.className==="navbar-change-blue"){
+        addNavbarTheme('blue')
+    }
+    if(navbar.className==="navbar-change-white"){
+        addNavbarTheme('white')
+    }    
 }
 
 buttonBurguer.addEventListener('click',()=>{
