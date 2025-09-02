@@ -1,13 +1,23 @@
 :root{
     --font-principal-letter: #FEFEFE;
     --font-principal-title: #00D8FF;
-    --main-body-background: #502766;
-    --main-second-background: #3C1751;
+    /*--main-body-background: #502766;*/
+    --main-body-background: linear-gradient(90deg, rgb(57, 12, 81) 0%, rgb(81.86, 38.13, 105.19) 50%, rgb(57, 12, 81) 100%);
+    --main-second-background: #36114b;
     --service-shadow: #1572B6;
     /*colores grises*/
     --medium-dark-gray: #A8A8A8;
     --soft-gray: #D8D6D6;
 
+    /*Olas Azules*/
+    --main-body-background-blue: linear-gradient(90deg, #0C0F51 0%, #22256D 50%, #0C0F51 100%);
+    --main-second-background-blue:#090B36;
+    --main-second-background-white: #131313;
+    --font-principal-title-blue: #88FF00;
+
+    /*Blanco*/
+    --main-body-background-white: linear-gradient(90deg, #F7F7F7 0%, #E4E2E1 50%, #F7F7F7 100%);
+    --font-principal-letter-white: #131313;
     /*tipogrfía*/
     --bai-jamjure: "Bai Jamjuree", sans-serif;
     --russo-one: "Russo One", sans-serif;
@@ -28,9 +38,21 @@ html{
     scroll-behavior: smooth;
 }
 
-body{
+.body{
     background: var(--main-body-background);
+    color: var(--font-principal-letter);
 }
+
+.body-blue{
+    background: var(--main-body-background-blue);
+    color: var(--font-principal-letter);
+}
+
+.body-white{
+    background: var(--main-body-background-white);
+    color: var(--font-principal-letter-white);
+}
+
 
 /*header*/
 .header{
@@ -46,22 +68,57 @@ body{
     z-index: 1;
 }
 
-.header .ul-header{
+.header-blue{
+    background: var(--main-second-background-blue);
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.4rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.header-white{
+    background: var(--main-second-background-white);
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.4rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+
+.header .ul-header,
+.header-blue .ul-header,
+.header-white .ul-header{
     display: none;
 }
 
-.header .header-settings{
+.header .header-settings,
+.header-blue .header-settings,
+.header-white .header-settings{
     display: none;
 }
 
-.header .header-container{
+.header .header-container,
+.header-blue .header-container,
+.header-white .header-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-.header .title-logo{
+.header .title-logo,
+.header-blue .title-logo,
+.header-white .title-logo{
     font-size: 2.4rem;
     font-style: normal;
     font-family: var(--russo-one);
@@ -71,7 +128,18 @@ body{
     color: var(--font-principal-title);
 }
 
-.header .button-burguer{
+
+.header-blue .title-logo span{
+    color: var(--font-principal-title-blue);
+}   
+
+.header-white .title-logo span{
+    color: var(--font-principal-title);
+}
+
+.header .button-burguer,
+.header-blue .button-burguer,
+.header-white .button-burguer{
     height: 1.9rem;
     width: 1.9rem;
     display: flex;
@@ -171,8 +239,51 @@ body{
     width: 19.2rem;
     height: 27.4rem;
     border: 1px solid var(--font-principal-letter);
+    color: var(--font-principal-letter);
     border-radius: .4rem;
     background-color: var(--main-second-background);
+    left: 100%;
+    position: fixed;
+    top: 6rem;
+    transform: translateX(0rem);
+    transition-delay: .2s;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    font-size: 1.6rem;
+    padding-left: 3rem;
+    padding-top: 2.3rem;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+.navbar-blue{
+    width: 19.2rem;
+    height: 27.4rem;
+    border: 1px solid var(--font-principal-letter);
+    color: var(--font-principal-letter);
+    border-radius: .4rem;
+    background-color: var(--main-second-background-blue);
+    left: 100%;
+    position: fixed;
+    top: 6rem;
+    transform: translateX(0rem);
+    transition-delay: .2s;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    font-size: 1.6rem;
+    padding-left: 3rem;
+    padding-top: 2.3rem;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+.navbar-white{
+    width: 19.2rem;
+    height: 27.4rem;
+    border: 1px solid var(--font-principal-letter);
+    border-radius: .4rem;
+    background-color: var(--main-second-background-white);
+    color: var(--main-second-background-white);
     left: 100%;
     position: fixed;
     top: 6rem;
@@ -193,6 +304,7 @@ body{
     border: 1px solid var(--font-principal-letter);
     border-radius: .4rem;
     background-color: var(--main-second-background);
+    color: var(--font-principal-letter);
     left: 100%;
     position: fixed;
     top: 6rem;
@@ -206,6 +318,48 @@ body{
     overflow-x: hidden;
     z-index: 1;
 }
+
+.navbar-change-blue{
+    width: 19.2rem;
+    height: 27.4rem;
+    border: 1px solid var(--font-principal-letter);
+    border-radius: .4rem;
+    background-color: var(--main-second-background-blue);
+    color: var(--font-principal-letter);
+    left: 100%;
+    position: fixed;
+    top: 6rem;
+    transform: translateX(-19.3rem);
+    transition-delay: .2s;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    font-size: 1.6rem;
+    padding-left: 3rem;
+    padding-top: 2.3rem;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+.navbar-change-white{
+    width: 19.2rem;
+    height: 27.4rem;
+    border: 1px solid var(--font-principal-letter);
+    border-radius: .4rem;
+    background-color: var(--main-second-background-white);
+    left: 100%;
+    position: fixed;
+    top: 6rem;
+    transform: translateX(-19.3rem);
+    transition-delay: .2s;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    font-size: 1.6rem;
+    padding-left: 3rem;
+    padding-top: 2.3rem;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
 
 .navbar .navbar-global-settings{
     height: 18.3rem;
@@ -1177,7 +1331,7 @@ body{
     width: 100%;
     border: 1px solid var(--soft-gray);
     border-radius: .6rem;
-    background: var(--main-body-background);
+    background: #502766;
     padding: 1.6rem;
     margin-top: 2.4rem;
 }

@@ -1,13 +1,13 @@
-.header{
+.header,
+.header-blue,
+.header-white{
     padding: 0;
     position: static;
 }
 
-.header .button-burguer{
-    display: none;
-}
-
-.header .button-burguer{
+.header .button-burguer,
+.header-blue .button-burguer,
+.header-white .button-burguer{
     display: none;
 }
 
@@ -15,7 +15,9 @@
     display: none;
 }
 
-.header .ul-header{
+.header .ul-header,
+.header-blue .ul-header,
+.header-white .ul-header{
     display: flex;
     justify-content: space-between;
     width: 44.8rem;
@@ -23,7 +25,9 @@
     margin: 0 3.6rem 0 auto;
 }
 
-.header .ul-header a{
+.header .ul-header a,
+.header-blue .ul-header a,
+.header-white .ul-header a{
     color: var(--font-principal-letter);
     text-decoration: none;
     cursor: pointer;
@@ -34,11 +38,25 @@
     transition-duration: .8s;
 }
 
-.header .title-logo{
+.header-blue .ul-header a:hover{
+    color: var(--font-principal-title-blue);
+    transition-duration: .8s;
+}
+
+.header-white .ul-header a:hover{
+    color: var(--font-principal-title);
+    transition-duration: .8s;
+}
+
+.header .title-logo,
+.header-blue .title-logo,
+.header-white .title-logo{
     width: 14.8rem;
 }
 
-.header .header-container{
+.header .header-container,
+.header-blue .header-container,
+.header-white .header-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,11 +64,15 @@
     margin-left: 12.8rem;
 }
 
-.header .ul-header li{
+.header .ul-header li,
+.header-blue .ul-header li,
+.header-white .ul-header li{
     list-style: none;
 }
 
-.header .ul-header li:nth-child(4){
+.header .ul-header li:nth-child(4),
+.header-blue .ul-header li:nth-child(4),
+.header-white .ul-header li:nth-child(4){
     display: flex;
     align-items: center;
     width: 11.2rem;
@@ -63,17 +85,35 @@
     display: block;
 }
 
-.header .ul-header li:nth-child(4) img{
+.header-blue .ul-header li:nth-child(4) a{
+    color: var(--font-principal-title-blue);
+    align-items: center;
+    display: block;
+}
+
+.header-white .ul-header li:nth-child(4) a{
+    color: var(--font-principal-title);
+    align-items: center;
+    display: block;
+}
+
+.header .ul-header li:nth-child(4) img,
+.header-blue .ul-header li:nth-child(4) img,
+.header-white .ul-header li:nth-child(4) img{
     width: 1.6rem;
     height: 1.6rem;
 }
 
 
-.header .title-logo{
+.header .title-logo,
+.header-blue .title-logo,
+.header-white .title-logo{
     font-size: 3.2rem;
 }
 
-.header .header-settings{
+.header .header-settings,
+.header-blue .header-settings,
+.header-white .header-settings{
     font-size: 1.6rem;
     display: flex;
     width: 8rem;

@@ -25,8 +25,6 @@ let itemsTheme: theme ={
     ],
     titleLogo: document.querySelector('#title-logo') as HTMLTitleElement,
     contactIcon: document.querySelector('.contact-li img') as HTMLImageElement,
-
-    
 }
 
 //función para modificar el body

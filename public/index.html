@@ -12,18 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Russo+One&display=swap" rel="stylesheet">
     <title>Juan David Franco Desarrollador web</title>
-    <script defer src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
 </head>
-<body>
-    <main class="dark-scr">
-
-    </main>
-
-
-    <header class="header">
+<body class="body">
+    <header class="header" id="header">
         <section class="header-container">
         <h1 class="title-logo" id="title-logo">JD <span>CODE.</span></h1>
-        <section class="button-burguer" onclick="toggleButtonBurguer()">
+        <section class="button-burguer" id="button-burguer">
             <article class="first-line" id="first-line"></article>
             <article class="second-line" id="second-line"></article>
             <article class="third-line" id="third-line"></article>
@@ -43,7 +38,7 @@
                 <a href="https://wa.me/message/YEMLDGSKRE4RK1" target="_blank">3142366069</a>
             </li>     
         </ul>
-        <article class="header-settings" onclick="toggleGear('#general-settings','#header-settings-gear','header-settings-gear-change','general-settings-change')">
+        <article class="header-settings" id="header-settings">
             <p>Ajustes</p>
             <span class="header-settings-gear" id="header-settings-gear"></span>
         </article>
@@ -70,7 +65,7 @@
         </ul> 
         <ul class="navbar-customization">
             <h4>Lenguaje</h4>
-            <li data-language="en" id="en-language" onclick="changeEnglishIdiom('en-language')">
+            <li data-language="en" id="en-language">
                 <span class="setting-english"></span><p> ENG</p>
             </li>
             <li data-language="es">
@@ -78,18 +73,18 @@
             </li>
             
             <h4>Temas</h4>
-            <li onclick="addPruprleTheme()">
+            <li id="add-violet-theme">
                 <span class="violet-icon"></span><p>Violeta</p>
             </li>
-            <li onclick="addBlueTheme()">
+            <li id="add-blue-theme">
                 <span class="blue-waves"></span><p>Olas Azules</p>
             </li>
-            <li onclick="addLightTheme()">
+            <li id="add-white-theme">
                 <span class="light"></span><p>Claro</p>
             </li>
         </ul>    
         </article>
-        <p class="navbar-settings" onclick="toggleGear('#navbar-global-settings','#navbar-gear','navbar-gear-change','navbar-global-settings-change')">Ajustes <span class="navbar-gear" id="navbar-gear"></span></p>
+        <p class="navbar-settings" id="navbar-settings">Ajustes <span class="navbar-gear" id="navbar-gear"></span></p>
     </section>
     <section class="general-settings" id="general-settings">
         <ul class="navbar-customization">
@@ -97,18 +92,18 @@
             <li id="en-language-nav" onclick="changeEnglishIdiom('en-language-nav')">
                 <span class="setting-english"></span><p> ENG</p>
             </li>
-            <li>
+            <li id="add-white-theme">
                 <span class="setting-spanish"></span><p> ESP</p>
             </li>
             
             <h4>Temas</h4>
-            <li onclick="addPurpleTheme()">
+            <li  id="add-violet-theme-header">
                 <span class="violet-icon"></span><p>Violeta</p>
             </li>
-            <li onclick="addBlueTheme()">
+            <li id="add-blue-theme-header">
                 <span class="blue-waves"></span><p>Olas Azules</p>
             </li>
-            <li onclick="addLightTheme()">
+            <li id="add-white-theme-header">
                 <span class="light"></span><p>Claro</p>
             </li>
         </ul>    

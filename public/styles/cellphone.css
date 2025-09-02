@@ -1,13 +1,19 @@
-.header{
+.header,
+.header-blue,
+.header-white{
     background: transparent;
     z-index: 2;
 }
 
-.header .title-logo{
+.header .title-logo,
+.header-blue .title-logo,
+.header-white .title-logo{
     display: none;
 }
 
-.header .button-burguer{
+.header .button-burguer,
+.header-blue .button-burguer,
+.header-white .button-burguer{
     margin-left: auto;
 }
 
