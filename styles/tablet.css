@@ -7,12 +7,23 @@
     background: var(--main-second-background);
 }
 
+.header-blue{
+    background: var(--main-second-background-blue);
+}
 
-.header .title-logo{
+.header-white{
+    background: var(--main-second-background-white);
+}
+
+.header .title-logo,
+.header-blue .title-logo,
+.header-white .title-logo{
     display: block;
 }
 
-.header .button-burguer{
+.header .button-burguer,
+.header-blue .button-burguer,
+.header-white .button-burguer{
     margin-left: 0;
 }
 

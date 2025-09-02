@@ -1,7 +1,28 @@
-"use strict";
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
+import { addThemeLayout, themesLi, themesLiHeader, bodyLayout } from "./addThemes.js";
 //variable global que identifica al elemento body
-const bodyLayout = document.body;
+//const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
+//addBodyTheme();
+/*funciones para poner estilos generales*/
+themesLi[0].addEventListener('click', () => {
+    addThemeLayout('purple');
+});
+themesLi[1].addEventListener('click', () => {
+    addThemeLayout('blue');
+});
+themesLi[2].addEventListener('click', () => {
+    addThemeLayout('white');
+});
+themesLiHeader[0].addEventListener('click', () => {
+    addThemeLayout('purple');
+});
+themesLiHeader[1].addEventListener('click', () => {
+    addThemeLayout('blue');
+});
+themesLiHeader[2].addEventListener('click', () => {
+    addThemeLayout('white');
+});
+const buttonBurguer = document.querySelector('#button-burguer');
 /*funciones del nabvar scrollIntoView()*/
 const titleLogo = document.querySelector('.title-logo');
 const navbarJDCode = document.querySelector('#navbar-JD-code');
@@ -22,6 +43,9 @@ const toggleButtonBurguer = () => {
     //hacer el toggle del navbar
     navbar.classList.toggle('navbar-change');
 };
+buttonBurguer.addEventListener('click', () => {
+    toggleButtonBurguer();
+});
 let buttonBurguerTrigger = {
     buttonBurguer: document.querySelector('.button-burguer'),
     firstLine: document.querySelector('#first-line'),
@@ -35,7 +59,7 @@ window.addEventListener('scroll', (event) => {
     console.log(firstScrollY);
     const navbarGlobalSettings = document.querySelector('#general-settings');
     let secondScrollY = window.scrollY;
-    if (secondScrollY > firstScrollY && bodyLayout.clientWidth >= 1280) {
+    if (secondScrollY > firstScrollY) {
         navbarGlobalSettings.classList.replace('general-settings-change', 'general-settings');
     }
 });
@@ -84,6 +108,8 @@ headerProjects.addEventListener('click', () => {
 headerContact.addEventListener('click', () => {
     scrollToSection(".footer-section");
 });
+const headerSettings = document.getElementById('header-settings');
+const navbarSettings = document.getElementById('navbar-settings');
 const toggleGear = (globalSettings, gear, gearClassName, globalSettingsClassName) => {
     const nabvarListSettings = {
         navbarGlobalSettings: document.querySelector(globalSettings),
@@ -93,6 +119,12 @@ const toggleGear = (globalSettings, gear, gearClassName, globalSettingsClassName
     navbarGear.classList.toggle(gearClassName);
     navbarGlobalSettings.classList.toggle(globalSettingsClassName);
 };
+headerSettings.addEventListener('click', () => {
+    toggleGear('#general-settings', '#header-settings-gear', 'header-settings-gear-change', 'general-settings-change');
+});
+navbarSettings.addEventListener('click', () => {
+    toggleGear('#navbar-global-settings', '#navbar-gear', 'navbar-gear-change', 'navbar-global-settings-change');
+});
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
 let touchMovement = 0;
 const projectsContainerCard = document.getElementById('projects-container-card');
@@ -244,15 +276,14 @@ let touchServiceMovement = 0;
 serviceTargetGrid.classList.add(serviceContainerDelay[0]);
 //Hacer una referencia del primer toque, definiendo el toque en el eje x y el eje y
 serviceTargetContainer.addEventListener('touchstart', (event) => {
-    var _a;
     if (bodyLayout.clientWidth <= 743) {
-        let initClientX = (_a = event === null || event === void 0 ? void 0 : event.touches[0]) === null || _a === void 0 ? void 0 : _a.clientX;
+        let initClientX = event?.touches[0]?.clientX;
         startServiceTouch = initClientX;
     }
 });
 serviceTargetContainer.addEventListener('touchmove', (event) => {
     if (bodyLayout.clientWidth <= 743) {
-        const secondTouches = event === null || event === void 0 ? void 0 : event.touches[0].clientX;
+        const secondTouches = event?.touches[0].clientX;
         //definir la matriz
         const matrixTouch = {
             initTouchX: startServiceTouch,
