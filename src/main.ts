@@ -1,32 +1,9 @@
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
-import { addThemeLayout,themesLi,themesLiHeader,bodyLayout,addNavbarTheme } from "./addThemes.js";
+import { addThemeLayout,themesLi,themesLiHeader,bodyLayout } from "./addThemes.js";
 //variable global que identifica al elemento body
 //const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
 
-/*funciones para poner estilos generales*/
-themesLi[0].addEventListener('click',()=>{
-    addThemeLayout('purple')
-})
 
-themesLi[1].addEventListener('click',()=>{
-    addThemeLayout('blue');
-})
-
-themesLi[2].addEventListener('click',()=>{
-    addThemeLayout('white');
-})
-
-themesLiHeader[0].addEventListener('click',()=>{
-    addThemeLayout('purple');
-})
-
-themesLiHeader[1].addEventListener('click',()=>{
-    addThemeLayout('blue');
-})
-
-themesLiHeader[2].addEventListener('click',()=>{
-    addThemeLayout('white');
-})
 
 /*funciones para ver las posiciones del navbar */
 type toggleYearElements ={
@@ -55,48 +32,17 @@ const headerProjects: HTMLElement = document.querySelector("#header-projects") a
 const headerContact: HTMLElement = document.querySelector('#header-contact') as HTMLElement;
 /*realizar función del botón hamburguesa, aplicamos el concepto de interface para conectar 
 el DOM con el botón de hamburguesa */
-
-let defaultToggle:boolean = false;
-
-const toggleButtonBurguer = () =>{
-    const { firstLine, secondLine ,thirdLine,navbar } = buttonBurguerTrigger;
-    firstLine.classList.toggle('first-line-change');
-    secondLine.classList.toggle('second-line-change');
-    thirdLine.classList.toggle('third-line-change');
-    
-    (defaultToggle===false)?(defaultToggle=true):(defaultToggle=false);
-
-    if(defaultToggle===true){
-        navbar.classList.add('navbar-change');
-        navbar.classList.remove('navbar');
-    }else{
-        navbar.classList.add('navbar');
-        navbar.classList.remove('navbar-change');
-    } 
-    
-    if(navbar.className==="navbar-change"){
-        addNavbarTheme('purple');
-        
-    }
-    if(navbar.className==="navbar-change-blue"){
-        addNavbarTheme('blue')
-    }
-    if(navbar.className==="navbar-change-white"){
-        addNavbarTheme('white')
-    }    
-}
-
-buttonBurguer.addEventListener('click',()=>{
-    toggleButtonBurguer();
-})
-
-
 //interfaz para el nabvar y el botón de hamburguesa
 interface BurguerButtons {
     buttonBurguer: HTMLButtonElement,
     firstLine: HTMLDivElement,
     secondLine: HTMLDivElement,
     thirdLine: HTMLDivElement
+}
+
+//extender los nodos del botón de humburguesa para involucrar al nodo del navbar
+interface Navbar extends BurguerButtons {
+    navbar: HTMLButtonElement,
 }
 
 let buttonBurguerTrigger:Navbar = {
@@ -107,10 +53,83 @@ let buttonBurguerTrigger:Navbar = {
     navbar: document.querySelector('#navbar') as HTMLButtonElement
 }
 
-//extender los nodos del botón de humburguesa para involucrar al nodo del navbar
-interface Navbar extends BurguerButtons {
-    navbar: HTMLButtonElement,
+/*funciones para poner estilos generales*/
+themesLi[0].addEventListener('click',()=>{
+    addThemeLayout('purple');
+})
+
+
+themesLi[1].addEventListener('click',()=>{
+    addThemeLayout('blue');
+
+})
+
+themesLi[2].addEventListener('click',()=>{
+    addThemeLayout('white');
+})
+
+themesLiHeader[0].addEventListener('click',()=>{
+    addThemeLayout('purple');
+})
+
+themesLiHeader[1].addEventListener('click',()=>{
+    addThemeLayout('blue');
+})
+
+themesLiHeader[2].addEventListener('click',()=>{
+    addThemeLayout('white');
+})
+
+
+interface toggleScreen {
+    purpleToggle:boolean,
+    blueToggle:boolean,
+    whiteToggle: boolean
 }
+
+
+
+const { firstLine, secondLine ,thirdLine, navbar } = buttonBurguerTrigger;
+
+let purpleToggle:boolean = false;
+
+const toggleColorButtons = (firstNavbar:string,secondNavbar:string) =>{
+    (purpleToggle===false)?(purpleToggle=true):(purpleToggle=false);
+    
+    if(purpleToggle===true){
+        navbar.classList.add(secondNavbar);
+        navbar.classList.remove(firstNavbar);
+    }else{
+        navbar.classList.add(firstNavbar);
+        navbar.classList.remove(secondNavbar);
+    }
+}
+
+const toggleButtonBurguer = ():void =>{
+    console.log(navbar.className);
+    firstLine.classList.toggle('first-line-change');
+    secondLine.classList.toggle('second-line-change');
+    thirdLine.classList.toggle('third-line-change');
+
+    /*cambio para si es purpura*/ 
+    if(navbar.className==="navbar" || navbar.className==="navbar-change"){
+        toggleColorButtons('navbar','navbar-change')
+    }   
+   
+    if(navbar.className==="navbar-blue" || navbar.className==="navbar-change-blue"){
+        toggleColorButtons('navbar-blue','navbar-change-blue')
+    }
+
+    /*
+    if(navbar.className==='navbar-white' || navbar.className==="navbar-change-white"){
+        toggleColorButtons('navbar-white',"navbar-change-white")
+    }
+    */
+}
+
+buttonBurguer.addEventListener('click',()=>{
+    toggleButtonBurguer();
+})
 
 const firstScrollY:number =  window.scrollY;
 

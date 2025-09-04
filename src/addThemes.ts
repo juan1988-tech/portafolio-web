@@ -47,7 +47,6 @@ const addheaderTheme = (mainColor:string,secondColor:string,thirdColor:string,co
 }
 
 export const addNavbarTheme = (bgColor:string):void =>{
-    
     if(bgColor==="purple"){
         navbar.classList.replace("navbar-change-blue","navbar-change")
         navbar.classList.replace("navbar-change-white","navbar-change")  
@@ -55,6 +54,7 @@ export const addNavbarTheme = (bgColor:string):void =>{
     if(bgColor==="blue"){
         navbar.classList.replace("navbar-change","navbar-change-blue")
         navbar.classList.replace("navbar-change-white","navbar-change-blue")
+        
     }
     if(bgColor==="white"){
         navbar.classList.replace("navbar-change","navbar-change-white")
