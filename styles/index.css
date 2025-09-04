@@ -124,6 +124,12 @@ html{
     font-family: var(--russo-one);
 }
 
+.header .title-logo,
+.header-blue .title-logo,
+.header-white .title-logo{
+    color: var(--font-principal-letter);
+}
+
 .header .title-logo span{
     color: var(--font-principal-title);
 }
@@ -179,7 +185,6 @@ html{
     position: absolute;
     transition-timing-function: ease;
 }
-
 
 .button-burguer .second-line{
     top: .6rem;
@@ -309,8 +314,7 @@ html{
     position: fixed;
     top: 6rem;
     transform: translateX(-19.3rem);
-    transition-delay: .2s;
-    transition-duration: 1s;
+    transition-duration: .8s;
     transition-timing-function: ease;
     font-size: 1.6rem;
     padding-left: 3rem;
@@ -330,8 +334,7 @@ html{
     position: fixed;
     top: 6rem;
     transform: translateX(-19.3rem);
-    transition-delay: .2s;
-    transition-duration: 1s;
+    transition-duration: .8s;
     transition-timing-function: ease;
     font-size: 1.6rem;
     padding-left: 3rem;
@@ -350,8 +353,7 @@ html{
     position: fixed;
     top: 6rem;
     transform: translateX(-19.3rem);
-    transition-delay: .2s;
-    transition-duration: 1s;
+    transition-duration: .8s;
     transition-timing-function: ease;
     font-size: 1.6rem;
     padding-left: 3rem;
@@ -360,8 +362,12 @@ html{
     z-index: 1;
 }
 
-
-.navbar .navbar-global-settings{
+.navbar .navbar-global-settings,
+.navbar-change .navbar-global-settings,
+.navbar-blue .navbar-global-settings,
+.navbar-change-blue .navbar-global-settings,
+.navbar-white .navbar-global-settings
+.navbar-change-white .navbar-global-settings{
     height: 18.3rem;
     display: flex;
     overflow-x: hidden;
@@ -370,8 +376,15 @@ html{
     transition-delay: .2s;
     transition-duration: 1s;
     transition-timing-function: ease;
+    color: var(--font-principal-letter);
 }
-.navbar .navbar-global-settings-change{
+
+.navbar .navbar-global-settings-change,
+.navbar-change .navbar-global-settings-change,
+.navbar-blue .navbar-global-settings-change,
+.navbar-change-blue .navbar-global-settings-change,
+.navbar-white .navbar-global-settings-change
+.navbar-change-white .navbar-global-settings-change{
     height: 18.3rem;
     display: flex;
     overflow-x: hidden;
@@ -382,7 +395,7 @@ html{
     transition-timing-function: ease;
 }
 
-.navbar .navbar-list{
+.navbar-list{
     display: flex;
     flex-direction: column;
     font-size: 1.6rem;
@@ -392,25 +405,25 @@ html{
     width: 17.4rem;
 }
 
-.navbar .navbar-list li a{
+.navbar-list li a{
     display: block;
     text-decoration: none;
     color: var(--font-principal-letter);
 }
 
-.navbar .navbar-list li:nth-child(5) a{
+.navbar-list li:nth-child(5) a{
     display: inline-flex;
     text-decoration: none;
     color: var(--font-principal-title)
 }
 
-.navbar .navbar-settings{
+.navbar-settings{
     display: inline-flex;
     align-items: center;
     margin-top: 2.6rem;
 }
 
-.navbar .navbar-settings .navbar-gear{
+.navbar-gear{
     background-image: url('../assets/icons/gear.svg');
     width: 1.3rem;
     height: 1.3rem;
@@ -422,7 +435,7 @@ html{
     transition-timing-function: ease;    
 }
 
-.navbar .navbar-settings .navbar-gear-change{
+.navbar-gear-change{
     background-image: url('../assets/icons/gear.svg');
     width: 1.3rem;
     height: 1.3rem;
@@ -434,7 +447,7 @@ html{
     transition-timing-function: ease;
 }
 
-.navbar .navbar-customization{
+.navbar-customization{
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -442,19 +455,18 @@ html{
     width: 15.4rem;
 }
 
-.navbar .navbar-customization h4{
+.navbar-customization h4{
     color: var(--font-principal-title);
-    font-weight: 400
+    font-weight: 400;
 }
-
-.navbar .navbar-customization li{
+.navbar-customization li{
     list-style: none;
     display: inline-flex;
     align-items: center;
     cursor: pointer;
 }
 
-.navbar .navbar-customization span{
+.navbar-customization span{
     display: block;
     width: 2.1rem;
     height: 1.5rem;
@@ -462,7 +474,7 @@ html{
     background-repeat: none;
 }
 
-.navbar .navbar-customization p{
+.navbar-customization p{
     margin-left: 1.6rem;
 }
 

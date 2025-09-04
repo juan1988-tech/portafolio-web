@@ -1,8 +1,23 @@
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
 import { addThemeLayout, themesLi, themesLiHeader, bodyLayout } from "./addThemes.js";
-//variable global que identifica al elemento body
-//const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
-//addBodyTheme();
+const buttonBurguer = document.querySelector('#button-burguer');
+/*funciones del nabvar scrollIntoView()*/
+const titleLogo = document.querySelector('.title-logo');
+const navbarJDCode = document.querySelector('#navbar-JD-code');
+const navbarAboutMe = document.querySelector('#navbar-about-me');
+const navbarProjects = document.querySelector('#navbar-projects');
+const navbarContact = document.querySelector('#navbar-contact');
+/*funciones del header scrollIntoView()*/
+const headerAboutMe = document.querySelector('#header-about-me');
+const headerProjects = document.querySelector("#header-projects");
+const headerContact = document.querySelector('#header-contact');
+let buttonBurguerTrigger = {
+    buttonBurguer: document.querySelector('.button-burguer'),
+    firstLine: document.querySelector('#first-line'),
+    secondLine: document.querySelector('#second-line'),
+    thirdLine: document.querySelector('#third-line'),
+    navbar: document.querySelector('#navbar')
+};
 /*funciones para poner estilos generales*/
 themesLi[0].addEventListener('click', () => {
     addThemeLayout('purple');
@@ -22,37 +37,40 @@ themesLiHeader[1].addEventListener('click', () => {
 themesLiHeader[2].addEventListener('click', () => {
     addThemeLayout('white');
 });
-const buttonBurguer = document.querySelector('#button-burguer');
-/*funciones del nabvar scrollIntoView()*/
-const titleLogo = document.querySelector('.title-logo');
-const navbarJDCode = document.querySelector('#navbar-JD-code');
-const navbarAboutMe = document.querySelector('#navbar-about-me');
-const navbarProjects = document.querySelector('#navbar-projects');
-const navbarContact = document.querySelector('#navbar-contact');
-/*funciones del header scrollIntoView()*/
-const headerAboutMe = document.querySelector('#header-about-me');
-const headerProjects = document.querySelector("#header-projects");
-const headerContact = document.querySelector('#header-contact');
-/*realizar función del botón hamburguesa, aplicamos el concepto de interface para conectar
-el DOM con el botón de hamburguesa */
+const { firstLine, secondLine, thirdLine, navbar } = buttonBurguerTrigger;
+let purpleToggle = false;
+const toggleColorButtons = (firstNavbar, secondNavbar) => {
+    (purpleToggle === false) ? (purpleToggle = true) : (purpleToggle = false);
+    if (purpleToggle === true) {
+        navbar.classList.add(secondNavbar);
+        navbar.classList.remove(firstNavbar);
+    }
+    else {
+        navbar.classList.add(firstNavbar);
+        navbar.classList.remove(secondNavbar);
+    }
+};
 const toggleButtonBurguer = () => {
-    const { firstLine, secondLine, thirdLine, navbar } = buttonBurguerTrigger;
+    console.log(navbar.className);
     firstLine.classList.toggle('first-line-change');
     secondLine.classList.toggle('second-line-change');
     thirdLine.classList.toggle('third-line-change');
-    //hacer el toggle del navbar
-    navbar.classList.toggle('navbar-change');
+    /*cambio para si es purpura*/
+    if (navbar.className === "navbar" || navbar.className === "navbar-change") {
+        toggleColorButtons('navbar', 'navbar-change');
+    }
+    if (navbar.className === "navbar-blue" || navbar.className === "navbar-change-blue") {
+        toggleColorButtons('navbar-blue', 'navbar-change-blue');
+    }
+    /*
+    if(navbar.className==='navbar-white' || navbar.className==="navbar-change-white"){
+        toggleColorButtons('navbar-white',"navbar-change-white")
+    }
+    */
 };
 buttonBurguer.addEventListener('click', () => {
     toggleButtonBurguer();
 });
-let buttonBurguerTrigger = {
-    buttonBurguer: document.querySelector('.button-burguer'),
-    firstLine: document.querySelector('#first-line'),
-    secondLine: document.querySelector('#second-line'),
-    thirdLine: document.querySelector('#third-line'),
-    navbar: document.querySelector('#navbar')
-};
 const firstScrollY = window.scrollY;
 //cambiar el estado del botón si hacemos scroll en el home
 window.addEventListener('scroll', (event) => {
