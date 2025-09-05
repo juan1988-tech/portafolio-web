@@ -3,8 +3,6 @@ import { addThemeLayout,themesLi,themesLiHeader,bodyLayout } from "./addThemes.j
 //variable global que identifica al elemento body
 //const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
 
-
-
 /*funciones para ver las posiciones del navbar */
 type toggleYearElements ={
     navbarGlobalSettings: HTMLDivElement,
