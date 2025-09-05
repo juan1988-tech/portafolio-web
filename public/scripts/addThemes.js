@@ -18,7 +18,23 @@ let itemsTheme = {
         firstGreeting: document.getElementById('first-greeting'),
         nameLabel: document.getElementById('name-label'),
         availableToWork: document.querySelector('#available-to-work'),
-        lightButton: document.querySelector("#light-button")
+        lightButton: document.querySelector("#light-button"),
+        cvDownloader: document.querySelector(".cv-downloader"),
+        socialMedia: document.querySelector(".social-media")
+    },
+    aboutMe: {
+        aboutMeBg: document.querySelector('#about-me'),
+        aboutMeTitle: document.querySelector("#about-me-title"),
+        aboutMeRole: document.querySelector("#about-me-role")
+    },
+    projects: {
+        projectsTitle: document.querySelector("#projects-title"),
+        projectPerformance: {
+            footballLegends: document.querySelector("#project-performance-football-legends"),
+            todoSevale: document.querySelector("#project-performance-todo-se-vale"),
+            sienna: document.querySelector("#project-performance-sienna"),
+            montannaMagica: document.querySelector("#project-performance-la-montanna-magica")
+        }
     }
 };
 //función para modificar el body
@@ -29,7 +45,7 @@ export const addBodyTheme = (mainBg, secondBg, thirdBg) => {
     bodyLayout.classList.replace(thirdBg, mainBg);
 };
 //funcion para modificar los colores del header
-export const { header, themesLi, themesLiHeader, contactIcon, navbar, introduction } = itemsTheme;
+export const { header, themesLi, themesLiHeader, contactIcon, navbar, introduction, aboutMe, projects } = itemsTheme;
 const addheaderTheme = (mainColor, secondColor, thirdColor, contactIconImg) => {
     //header.classList.replace('header-blue','header');
     header.classList.replace(secondColor, mainColor);
@@ -51,7 +67,8 @@ export const addNavbarTheme = (bgColor) => {
     }
 };
 const addIntroductionTheme = (bgColor) => {
-    const { firstGreeting, nameLabel, availableToWork, lightButton } = introduction;
+    const { firstGreeting, nameLabel, availableToWork, lightButton, cvDownloader, socialMedia } = introduction;
+    const socialMediaButtons = socialMedia.children;
     switch (bgColor) {
         case "purple":
             firstGreeting.classList.replace("first-greeting-blue", "first-greeting");
@@ -62,6 +79,12 @@ const addIntroductionTheme = (bgColor) => {
             availableToWork.classList.replace("available-to-work-white", "available-to-work");
             lightButton.classList.replace("light-button-blue", "light-button");
             lightButton.classList.replace("light-button-white", "light-button");
+            cvDownloader.classList.replace("cv-downloader-blue", "cv-downloader");
+            cvDownloader.classList.replace("cv-downloader-white", "cv-downloader");
+            socialMediaButtons[0].classList.replace('linkedin-first-link-blue', 'linkedin-first-link');
+            socialMediaButtons[0].classList.replace('linkedin-first-link-white', 'linkedin-first-link');
+            socialMediaButtons[1].classList.replace('github-first-link-blue', 'github-first-link');
+            socialMediaButtons[1].classList.replace('github-first-link-white', 'github-first-link');
             break;
         case "blue":
             firstGreeting.classList.replace("first-greeting", "first-greeting-blue");
@@ -72,6 +95,12 @@ const addIntroductionTheme = (bgColor) => {
             availableToWork.classList.replace("available-to-work-white", "available-to-work-blue");
             lightButton.classList.replace("light-button", "light-button-blue");
             lightButton.classList.replace("light-button-white", "light-button-blue");
+            cvDownloader.classList.replace("cv-downloader", "cv-downloader-blue");
+            cvDownloader.classList.replace("cv-downloader-white", "cv-downloader-blue");
+            socialMediaButtons[0].classList.replace('linkedin-first-link', 'linkedin-first-link-blue');
+            socialMediaButtons[0].classList.replace('linkedin-first-link-white', 'linkedin-first-link-blue');
+            socialMediaButtons[1].classList.replace('github-first-link', 'github-first-link-blue');
+            socialMediaButtons[1].classList.replace('github-first-link-white', 'github-first-link-blue');
             break;
         case "white":
             firstGreeting.classList.replace("first-greeting", "first-greeting-white");
@@ -82,6 +111,72 @@ const addIntroductionTheme = (bgColor) => {
             availableToWork.classList.replace("available-to-work-blue", "available-to-work-white");
             lightButton.classList.replace("light-button", "light-button-white");
             lightButton.classList.replace("light-button-blue", "light-button-white");
+            cvDownloader.classList.replace("cv-downloader", "cv-downloader-white");
+            cvDownloader.classList.replace("cv-downloader-blue", "cv-downloader-white");
+            socialMediaButtons[0].classList.replace('linkedin-first-link', 'linkedin-first-link-white');
+            socialMediaButtons[0].classList.replace('linkedin-first-link-blue', 'linkedin-first-link-white');
+            socialMediaButtons[1].classList.replace('github-first-link', 'github-first-link-white');
+            socialMediaButtons[1].classList.replace('github-first-link-blue', 'github-first-link-white');
+            break;
+    }
+};
+const addboutMeTheme = (bgColor) => {
+    const { aboutMeBg, aboutMeTitle, aboutMeRole } = aboutMe;
+    switch (bgColor) {
+        case "purple":
+            aboutMeBg.classList.replace("about-me-blue", "about-me");
+            aboutMeBg.classList.replace("about-me-white", "about-me");
+            aboutMeTitle.classList.replace("about-me-title-blue", "about-me-title");
+            aboutMeTitle.classList.replace("about-me-title-white", "about-me-title");
+            aboutMeRole.classList.replace("about-me-role-blue", "about-me-role");
+            aboutMeRole.classList.replace("about-me-role-white", "about-me-role");
+            break;
+        case "blue":
+            aboutMeBg.classList.replace("about-me", "about-me-blue");
+            aboutMeBg.classList.replace("about-me-white", "about-me-blue");
+            aboutMeTitle.classList.replace("about-me-title", "about-me-title-blue");
+            aboutMeTitle.classList.replace("about-me-title-white", "about-me-title-blue");
+            aboutMeRole.classList.replace("about-me-role", "about-me-role-blue");
+            aboutMeRole.classList.replace("about-me-role-white", "about-me-role-blue");
+            break;
+        case "white":
+            aboutMeBg.classList.replace("about-me", "about-me-white");
+            aboutMeBg.classList.replace("about-me-blue", "about-me-white");
+            aboutMeTitle.classList.replace("about-me-title", "about-me-title-white");
+            aboutMeTitle.classList.replace("about-me-title-blue", "about-me-title-white");
+            aboutMeRole.classList.replace("about-me-role", "about-me-role-white");
+            aboutMeRole.classList.replace("about-me-role-blue", "about-me-role-white");
+            break;
+    }
+};
+const addProjectTheme = (bgColor) => {
+    const { projectsTitle, projectPerformance } = projects;
+    const { footballLegends, todoSevale, sienna, montannaMagica } = projectPerformance;
+    console.log(footballLegends);
+    switch (bgColor) {
+        case "purple":
+            projectsTitle.classList.replace("projects-title-blue", "projects-title");
+            projectsTitle.classList.replace("projects-title-white", "projects-title");
+            footballLegends.classList.replace("project-card-performance-blue", "project-card-performance");
+            footballLegends.classList.replace("project-card-performance-white", "project-card-performance");
+            todoSevale.classList.replace("project-card-performance-blue", "project-card-performance");
+            todoSevale.classList.replace("project-card-performance-white", "project-card-performance");
+            break;
+        case "blue":
+            projectsTitle.classList.replace("projects-title", "projects-title-blue");
+            projectsTitle.classList.replace("projects-title-white", "projects-title-blue");
+            footballLegends.classList.replace("project-card-performance", "project-card-performance-blue");
+            footballLegends.classList.replace("project-card-performance-white", "project-card-performance-blue");
+            todoSevale.classList.replace("project-card-performance", "project-card-performance-blue");
+            todoSevale.classList.replace("project-card-performance-white", "project-card-performance-blue");
+            break;
+        case "white":
+            projectsTitle.classList.replace("projects-title", "projects-title-white");
+            projectsTitle.classList.replace("projects-title-blue", "projects-title-white");
+            footballLegends.classList.replace("project-card-performance", "project-card-performance-white");
+            footballLegends.classList.replace("project-card-performance-blue", "project-card-performance-white");
+            todoSevale.classList.replace("project-card-performance", "project-card-performance-white");
+            todoSevale.classList.replace("project-card-performance-blue", "project-card-performance-white");
             break;
     }
 };
@@ -92,18 +187,24 @@ export function addThemeLayout(bgColor) {
             addheaderTheme('header', 'header-blue', 'header-white', './assets/icons/new-icons/phone-enabled-sharp-blue.svg');
             addNavbarTheme(bgColor);
             addIntroductionTheme(bgColor);
+            addboutMeTheme(bgColor);
+            addProjectTheme(bgColor);
             break;
         case "blue":
             addBodyTheme('body-blue', 'body', 'body-white');
             addheaderTheme('header-blue', 'header', 'header-white', "./assets/icons/new-icons/phone-enabled-sharp-green.svg");
             addNavbarTheme(bgColor);
             addIntroductionTheme(bgColor);
+            addboutMeTheme(bgColor);
+            addProjectTheme(bgColor);
             break;
         case "white":
             addBodyTheme('body-white', 'body-blue', 'body');
             addheaderTheme('header-white', 'header', 'header-blue', './assets/icons/new-icons/phone-enabled-sharp-blue.svg');
             addNavbarTheme(bgColor);
             addIntroductionTheme(bgColor);
+            addboutMeTheme(bgColor);
+            addProjectTheme(bgColor);
             break;
     }
     return bgColor;
