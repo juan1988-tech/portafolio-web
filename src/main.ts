@@ -80,15 +80,6 @@ themesLiHeader[2].addEventListener('click',()=>{
     addThemeLayout('white');
 })
 
-
-interface toggleScreen {
-    purpleToggle:boolean,
-    blueToggle:boolean,
-    whiteToggle: boolean
-}
-
-
-
 const { firstLine, secondLine ,thirdLine, navbar } = buttonBurguerTrigger;
 
 let purpleToggle:boolean = false;
@@ -120,11 +111,9 @@ const toggleButtonBurguer = ():void =>{
         toggleColorButtons('navbar-blue','navbar-change-blue')
     }
 
-    /*
     if(navbar.className==='navbar-white' || navbar.className==="navbar-change-white"){
         toggleColorButtons('navbar-white',"navbar-change-white")
     }
-    */
 }
 
 buttonBurguer.addEventListener('click',()=>{
@@ -142,7 +131,6 @@ window.addEventListener('scroll',(event:Event)=>{
     if(secondScrollY>firstScrollY){
         navbarGlobalSettings.classList.replace('general-settings-change','general-settings');
     }
-    
 })
 
 //hacer una funcion genérica para implementar el scroll
