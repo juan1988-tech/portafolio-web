@@ -16,8 +16,9 @@
     --font-principal-title-blue: #88FF00;
 
     /*Blanco*/
-    --main-body-background-white: linear-gradient(90deg, #F7F7F7 0%, #E4E2E1 50%, #F7F7F7 100%);
+    --main-body-background-white: linear-gradient(90deg, #F7F7F7 0%, #d3d3d3 50%, #F7F7F7 100%);
     --font-principal-letter-white: #131313;
+    --font-principal-title-white: #0D16D9;
     /*tipogrfía*/
     --bai-jamjure: "Bai Jamjuree", sans-serif;
     --russo-one: "Russo One", sans-serif;
@@ -362,7 +363,7 @@ html{
     z-index: 1;
 }
 
-.navbar .navbar-global-settings,
+.navbar-global-settings,
 .navbar-change .navbar-global-settings,
 .navbar-blue .navbar-global-settings,
 .navbar-change-blue .navbar-global-settings,
@@ -379,7 +380,7 @@ html{
     color: var(--font-principal-letter);
 }
 
-.navbar .navbar-global-settings-change,
+.navbar-global-settings-change,
 .navbar-change .navbar-global-settings-change,
 .navbar-blue .navbar-global-settings-change,
 .navbar-change-blue .navbar-global-settings-change,
@@ -421,6 +422,7 @@ html{
     display: inline-flex;
     align-items: center;
     margin-top: 2.6rem;
+    color: var(--font-principal-letter);
 }
 
 .navbar-gear{
@@ -476,6 +478,7 @@ html{
 
 .navbar-customization p{
     margin-left: 1.6rem;
+    color: var(--font-principal-letter);
 }
 
 .navbar-customization .setting-english{
@@ -508,7 +511,6 @@ html{
     padding-top: 6rem;
 }
 
-
 .introduction{
     margin: 0 auto;
     margin-top: .8rem;
@@ -516,11 +518,28 @@ html{
     padding-bottom: 1.6rem;
 }
 
-.introduction .first-greeting, .introduction .name-label{
+.introduction .first-greeting,
+.introduction .name-label{
     font-size: 2rem;
     color: var(--font-principal-title);
     font-weight: 400;  
     margin-top: .8rem; 
+}
+
+.introduction .first-greeting-blue,
+.introduction .name-label-blue{
+    font-size: 2rem;
+    color: var(--font-principal-title-blue);
+    font-weight: 400;  
+    margin-top: .8rem;
+}
+
+.introduction .first-greeting-white,
+.introduction .name-label-white{
+    font-size: 2rem;
+    color: var(--font-principal-title-white);
+    font-weight: 500;  
+    margin-top: .8rem;
 }
 
 .introduction .name-developer{
@@ -550,7 +569,35 @@ html{
     background-color: var(--main-second-background);
 }
 
-.introduction .available-to-work .light-button{
+.introduction .available-to-work-blue{
+    width: 21.2rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--font-principal-title-blue);
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 1.2rem;
+    background-color: var(--main-second-background-blue);
+}
+
+.introduction .available-to-work-white{
+    width: 21.2rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--font-principal-title-white);
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 1.2rem;
+    background-color: var(--font-principal-letter);
+}
+
+.light-button{
     display: block;
     width: 1.2rem;
     height: 1.2rem;
@@ -558,6 +605,21 @@ html{
     background: var(--font-principal-title);
 }
 
+.light-button-blue{
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: var(--font-principal-title-blue);
+}
+
+.light-button-white{
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: var(--font-principal-title-white);
+}
 
 .introduction .name-image{
     width: 100%;

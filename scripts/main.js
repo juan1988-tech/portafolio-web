@@ -62,11 +62,9 @@ const toggleButtonBurguer = () => {
     if (navbar.className === "navbar-blue" || navbar.className === "navbar-change-blue") {
         toggleColorButtons('navbar-blue', 'navbar-change-blue');
     }
-    /*
-    if(navbar.className==='navbar-white' || navbar.className==="navbar-change-white"){
-        toggleColorButtons('navbar-white',"navbar-change-white")
+    if (navbar.className === 'navbar-white' || navbar.className === "navbar-change-white") {
+        toggleColorButtons('navbar-white', "navbar-change-white");
     }
-    */
 };
 buttonBurguer.addEventListener('click', () => {
     toggleButtonBurguer();

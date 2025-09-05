@@ -17,7 +17,12 @@
     margin-left: auto;
 }
 
-.navbar, .navbar-change{
+.navbar,
+.navbar-change,
+.navbar-blue,
+.navbar-change-blue,
+.navbar-white,
+.navbar-change-white{
     top: 0;
 }
 
