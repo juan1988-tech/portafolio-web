@@ -40,7 +40,9 @@
     grid-area: introduction-tittle-label;
 }
 
-.introduction .first-greeting{
+.first-greeting,
+.first-greeting-blue,
+.first-greeting-white{
     font-size: 2rem;
     font-weight: 500;
 }
@@ -87,7 +89,9 @@
 
 /*about me*/
 
-.about-me .about-me-title{
+.about-me-title,
+.about-me-title-blue,
+.about-me-title-white{
     padding-top: 1.6rem;
 }
 
@@ -96,7 +100,7 @@
     width: 52rem;
 }
 
-.projects .projects-title{
+.projects-title{
     padding-top: 1.6rem;
 }
 

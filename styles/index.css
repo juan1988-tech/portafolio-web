@@ -880,10 +880,26 @@ html{
     margin: 0 auto 1.6rem;
 }
 
-.projects .projects-title{
+.projects-title{
     font-size: 2.4rem;
     font-weight: 500;
     color: var(--font-principal-title);
+    padding-top: 6rem;
+    text-align: center;
+}
+
+.projects-title-blue{
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--font-principal-title-blue);
+    padding-top: 6rem;
+    text-align: center;
+} 
+
+.projects-title-white{
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--font-principal-title-white);
     padding-top: 6rem;
     text-align: center;
 }
