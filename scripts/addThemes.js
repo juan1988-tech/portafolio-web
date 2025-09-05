@@ -26,6 +26,15 @@ let itemsTheme = {
         aboutMeBg: document.querySelector('#about-me'),
         aboutMeTitle: document.querySelector("#about-me-title"),
         aboutMeRole: document.querySelector("#about-me-role")
+    },
+    projects: {
+        projectsTitle: document.querySelector("#projects-title"),
+        projectPerformance: {
+            footballLegends: document.querySelector("#project-performance-football-legends"),
+            todoSevale: document.querySelector("#project-performance-todo-se-vale"),
+            sienna: document.querySelector("#project-performance-sienna"),
+            montannaMagica: document.querySelector("#project-performance-la-montanna-magica")
+        }
     }
 };
 //función para modificar el body
@@ -36,7 +45,7 @@ export const addBodyTheme = (mainBg, secondBg, thirdBg) => {
     bodyLayout.classList.replace(thirdBg, mainBg);
 };
 //funcion para modificar los colores del header
-export const { header, themesLi, themesLiHeader, contactIcon, navbar, introduction, aboutMe } = itemsTheme;
+export const { header, themesLi, themesLiHeader, contactIcon, navbar, introduction, aboutMe, projects } = itemsTheme;
 const addheaderTheme = (mainColor, secondColor, thirdColor, contactIconImg) => {
     //header.classList.replace('header-blue','header');
     header.classList.replace(secondColor, mainColor);
@@ -140,6 +149,37 @@ const addboutMeTheme = (bgColor) => {
             break;
     }
 };
+const addProjectTheme = (bgColor) => {
+    const { projectsTitle, projectPerformance } = projects;
+    const { footballLegends, todoSevale, sienna, montannaMagica } = projectPerformance;
+    console.log(footballLegends);
+    switch (bgColor) {
+        case "purple":
+            projectsTitle.classList.replace("projects-title-blue", "projects-title");
+            projectsTitle.classList.replace("projects-title-white", "projects-title");
+            footballLegends.classList.replace("project-card-performance-blue", "project-card-performance");
+            footballLegends.classList.replace("project-card-performance-white", "project-card-performance");
+            todoSevale.classList.replace("project-card-performance-blue", "project-card-performance");
+            todoSevale.classList.replace("project-card-performance-white", "project-card-performance");
+            break;
+        case "blue":
+            projectsTitle.classList.replace("projects-title", "projects-title-blue");
+            projectsTitle.classList.replace("projects-title-white", "projects-title-blue");
+            footballLegends.classList.replace("project-card-performance", "project-card-performance-blue");
+            footballLegends.classList.replace("project-card-performance-white", "project-card-performance-blue");
+            todoSevale.classList.replace("project-card-performance", "project-card-performance-blue");
+            todoSevale.classList.replace("project-card-performance-white", "project-card-performance-blue");
+            break;
+        case "white":
+            projectsTitle.classList.replace("projects-title", "projects-title-white");
+            projectsTitle.classList.replace("projects-title-blue", "projects-title-white");
+            footballLegends.classList.replace("project-card-performance", "project-card-performance-white");
+            footballLegends.classList.replace("project-card-performance-blue", "project-card-performance-white");
+            todoSevale.classList.replace("project-card-performance", "project-card-performance-white");
+            todoSevale.classList.replace("project-card-performance-blue", "project-card-performance-white");
+            break;
+    }
+};
 export function addThemeLayout(bgColor) {
     switch (bgColor) {
         case "purple":
@@ -148,6 +188,7 @@ export function addThemeLayout(bgColor) {
             addNavbarTheme(bgColor);
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
+            addProjectTheme(bgColor);
             break;
         case "blue":
             addBodyTheme('body-blue', 'body', 'body-white');
@@ -155,6 +196,7 @@ export function addThemeLayout(bgColor) {
             addNavbarTheme(bgColor);
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
+            addProjectTheme(bgColor);
             break;
         case "white":
             addBodyTheme('body-white', 'body-blue', 'body');
@@ -162,6 +204,7 @@ export function addThemeLayout(bgColor) {
             addNavbarTheme(bgColor);
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
+            addProjectTheme(bgColor);
             break;
     }
     return bgColor;
