@@ -12,12 +12,14 @@
     /*Olas Azules*/
     --main-body-background-blue: linear-gradient(90deg, #0C0F51 0%, #22256D 50%, #0C0F51 100%);
     --main-second-background-blue:#090B36;
-    --main-second-background-white: #131313;
+    
     --font-principal-title-blue: #88FF00;
 
     /*Blanco*/
     --main-body-background-white: linear-gradient(90deg, #F7F7F7 0%, #d3d3d3 50%, #F7F7F7 100%);
     --font-principal-letter-white: #131313;
+    --main-second-background-white: #131313;
+    --main-buttons-white:#f8f8f8;
     --font-principal-title-white: #0D16D9;
     /*tipogrfía*/
     --bai-jamjure: "Bai Jamjuree", sans-serif;
@@ -555,7 +557,7 @@ html{
     margin-top: 1.6rem;
 }
 
-.introduction .available-to-work{
+.available-to-work{
     width: 21.2rem;
     height: 3rem;
     border-radius: 1.5rem;
@@ -569,7 +571,7 @@ html{
     background-color: var(--main-second-background);
 }
 
-.introduction .available-to-work-blue{
+.available-to-work-blue{
     width: 21.2rem;
     height: 3rem;
     border-radius: 1.5rem;
@@ -583,7 +585,7 @@ html{
     background-color: var(--main-second-background-blue);
 }
 
-.introduction .available-to-work-white{
+.available-to-work-white{
     width: 21.2rem;
     height: 3rem;
     border-radius: 1.5rem;
@@ -594,7 +596,7 @@ html{
     align-items: center;
     margin: 0 auto;
     margin-top: 1.2rem;
-    background-color: var(--font-principal-letter);
+    background-color: var(--main-buttons-white);
 }
 
 .light-button{
@@ -627,7 +629,7 @@ html{
     object-fit: cover;
 }
 
-.introduction button{
+.cv-downloader{
     display: block;
     border: 1px solid var(--font-principal-letter);
     height: 3rem;
@@ -640,6 +642,32 @@ html{
     font-style: var(--bai-jamjure);
 }
 
+.cv-downloader-blue{
+    display: block;
+    border: 1px solid var(--font-principal-letter);
+    height: 3rem;
+    width: 14.3rem;
+    border-radius: .4rem;
+    background: var(--main-second-background-blue);
+    margin: 0 auto;
+    margin-top: 1.2rem;
+    color: var(--font-principal-letter);
+    font-style: var(--bai-jamjure);
+}
+
+.cv-downloader-white{
+    display: block;
+    border: 1px solid var(--font-principal-letter-white);
+    height: 3rem;
+    width: 14.3rem;
+    border-radius: .4rem;
+    background: var(--main-buttons-white);
+    margin: 0 auto;
+    margin-top: 1.2rem;
+    color: var(--font-principal-letter-white);
+    font-style: var(--bai-jamjure);
+}
+
 .introduction .social-media{
     display: flex;
     width: 10.3rem;
@@ -649,7 +677,7 @@ html{
     justify-content: space-between;      
 }
 
-.introduction .linkedin-first-link{
+.linkedin-first-link{
     width: 4.2rem;
     height: 4.2rem;
     background-color: var(--main-second-background);
@@ -660,7 +688,30 @@ html{
     align-items: center;
 }
 
-.introduction .linkedin-first-link span{
+.linkedin-first-link-blue{
+    width: 4.2rem;
+    height: 4.2rem;
+    background-color: var(--main-second-background-blue);
+    border-radius: 50%;
+    border: 1px solid #FEFEFE;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkedin-first-link-white{
+    width: 4.2rem;
+    height: 4.2rem;
+    background-color: var(--main-buttons-white);
+    border-radius: 50%;
+    border: 1px solid var(--font-principal-letter-white);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkedin-first-link span,
+.linkedin-first-link-blue span{
     width: 2.4rem;
     height: 2.4rem;
     background-image: url('../assets/icons/new-icons/dark-screen-icons/la_linkedin-in.svg');
@@ -669,7 +720,16 @@ html{
     background-size: cover;
 }
 
-.introduction .github-first-link{
+.linkedin-first-link-white span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/light-screen-icons/la_linkedin-in.svg');
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.github-first-link{
     width: 4.2rem;
     height: 4.2rem;
     background-color: var(--main-second-background);
@@ -680,10 +740,50 @@ html{
     align-items: center;
 }
 
-.introduction .github-first-link span{
+.github-first-link-blue{
+    width: 4.2rem;
+    height: 4.2rem;
+    background-color: var(--main-second-background-blue);
+    border-radius: 50%;
+    border: 1px solid #FEFEFE;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github-first-link-white{
+    width: 4.2rem;
+    height: 4.2rem;
+    background-color: var(--main-buttons-white);
+    border-radius: 50%;
+    border: 1px solid var(--font-principal-letter-white);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github-first-link span{
     width: 2.4rem;
     height: 2.4rem;
     background-image: url('../assets/icons/new-icons/dark-screen-icons/line-md_github.svg');
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.github-first-link-blue span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/dark-screen-icons/line-md_github.svg');
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.github-first-link-white span{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-image: url('../assets/icons/new-icons/light-screen-icons/line-md_github.svg');
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
@@ -694,6 +794,13 @@ html{
     background: var(--main-second-background);
 }
 
+.about-me-blue{
+    background: var(--main-second-background-blue);
+}
+
+.about-me-white{
+    background: var(--main-buttons-white);
+}
 
 .about-me-container{
     width: 90%;
@@ -701,7 +808,7 @@ html{
     padding-bottom: 1.6rem;
 }
 
-.about-me .about-me-title{
+.about-me-title{
     font-size: 2.4rem;
     font-weight: 500;
     color: var(--font-principal-title);
@@ -709,7 +816,23 @@ html{
     padding-top: 6rem;
 }
 
-.about-me .about-me-profile{
+.about-me-title-blue{
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--font-principal-title-blue);
+    text-align: center;
+    padding-top: 6rem;
+}
+
+.about-me-title-white{
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--font-principal-title-white);
+    text-align: center;
+    padding-top: 6rem;
+}
+
+.about-me-profile{
     width: 19.6rem;
     height: 15.7rem;
     margin: 0 auto;
@@ -717,19 +840,35 @@ html{
     margin-bottom: 1.2rem;
 }
 
-.about-me .about-me-profile img{
+.about-me-profile img{
     width: 100%;
     height: 100%;
 }
 
-.about-me .about-me-role{
+.about-me-role{
     font-size: 2rem;
     font-weight: 500;
     color: var(--font-principal-title);
     margin-top: 1.6rem;
 }
 
-.about-me p{
+.about-me-role-blue{
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--font-principal-title-blue);
+    margin-top: 1.6rem;
+}
+
+.about-me-role-white{
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--font-principal-title-white);
+    margin-top: 1.6rem;
+}
+
+.about-me p,
+.about-me-blue p,
+.about-me-white p{
     font-size: 1.6rem;
     margin-top: 1.2rem;
     font-weight: 400;

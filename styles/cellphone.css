@@ -77,7 +77,9 @@
     margin-left: 2rem;
 }
 
-.introduction .available-to-work{
+.available-to-work,
+.available-to-work-blue,
+.available-to-work-white{
     grid-area: available-to-work;
     margin: 0;
     justify-self: center;
