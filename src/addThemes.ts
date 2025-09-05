@@ -19,6 +19,15 @@ interface theme{
         aboutMeTitle: HTMLTitleElement,
         aboutMeRole: HTMLTitleElement,
     } 
+    projects:{
+        projectsTitle: HTMLTitleElement
+        projectPerformance:{
+            footballLegends: HTMLDivElement,
+            todoSevale: HTMLDivElement,
+            sienna: HTMLDivElement,
+            montannaMagica: HTMLDivElement
+        }
+    }
 }
 
 let itemsTheme: theme ={
@@ -49,8 +58,17 @@ let itemsTheme: theme ={
         aboutMeBg: document.querySelector('#about-me') as HTMLDivElement,
         aboutMeTitle: document.querySelector("#about-me-title") as HTMLTitleElement,
         aboutMeRole: document.querySelector("#about-me-role") as HTMLTitleElement
+    },
+    projects:{
+        projectsTitle: document.querySelector("#projects-title") as HTMLTitleElement,
+        projectPerformance: {
+            footballLegends: document.querySelector("#project-performance-football-legends") as HTMLDivElement,
+            todoSevale: document.querySelector("#project-performance-todo-se-vale") as HTMLDivElement,
+            sienna: document.querySelector("#project-performance-sienna") as HTMLDivElement,
+            montannaMagica: document.querySelector("#project-performance-la-montanna-magica") as HTMLDivElement
+        }
+
     }
-    
 }
 
 //función para modificar el body
@@ -63,7 +81,7 @@ export const addBodyTheme = (mainBg:string,secondBg:string,thirdBg:string):void 
 }
 
 //funcion para modificar los colores del header
-export const { header,themesLi,themesLiHeader,contactIcon,navbar,introduction,aboutMe } = itemsTheme; 
+export const { header,themesLi,themesLiHeader,contactIcon,navbar,introduction,aboutMe,projects } = itemsTheme; 
 
 const addheaderTheme = (mainColor:string,secondColor:string,thirdColor:string,contactIconImg:string):void =>{
     //header.classList.replace('header-blue','header');
@@ -199,6 +217,48 @@ const addboutMeTheme = (bgColor:String) =>{
     }
 }
 
+const addProjectTheme = (bgColor:string) =>{
+    const { projectsTitle,projectPerformance } = projects;
+
+    const { footballLegends,todoSevale,sienna,montannaMagica } = projectPerformance; 
+
+    console.log(footballLegends);
+
+    switch (bgColor) {
+        case "purple":
+            projectsTitle.classList.replace("projects-title-blue","projects-title");
+            projectsTitle.classList.replace("projects-title-white","projects-title");
+            
+            footballLegends.classList.replace("project-card-performance-blue","project-card-performance");
+            footballLegends.classList.replace("project-card-performance-white","project-card-performance");
+
+            todoSevale.classList.replace("project-card-performance-blue","project-card-performance");
+            todoSevale.classList.replace("project-card-performance-white","project-card-performance")
+            break;
+        case "blue":
+            projectsTitle.classList.replace("projects-title","projects-title-blue");
+            projectsTitle.classList.replace("projects-title-white","projects-title-blue");
+            
+            footballLegends.classList.replace("project-card-performance","project-card-performance-blue");
+            footballLegends.classList.replace("project-card-performance-white","project-card-performance-blue");
+
+            todoSevale.classList.replace("project-card-performance","project-card-performance-blue");
+            todoSevale.classList.replace("project-card-performance-white","project-card-performance-blue");
+            break;
+        case "white":
+            projectsTitle.classList.replace("projects-title","projects-title-white");
+            projectsTitle.classList.replace("projects-title-blue","projects-title-white");    
+
+            footballLegends.classList.replace("project-card-performance","project-card-performance-white");
+            footballLegends.classList.replace("project-card-performance-blue","project-card-performance-white");
+
+            todoSevale.classList.replace("project-card-performance","project-card-performance-white");
+            todoSevale.classList.replace("project-card-performance-blue","project-card-performance-white")
+            break;
+    }
+}
+
+
 export function addThemeLayout(bgColor:string){
     switch (bgColor) {
         case "purple":
@@ -207,6 +267,7 @@ export function addThemeLayout(bgColor:string){
             addNavbarTheme(bgColor);
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
+            addProjectTheme(bgColor);
             break;
         case "blue":
             addBodyTheme('body-blue','body','body-white');
@@ -214,6 +275,7 @@ export function addThemeLayout(bgColor:string){
             addNavbarTheme(bgColor);
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
+            addProjectTheme(bgColor);
             break;
         case "white":
             addBodyTheme('body-white','body-blue','body');
@@ -221,6 +283,7 @@ export function addThemeLayout(bgColor:string){
             addNavbarTheme(bgColor);
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
+            addProjectTheme(bgColor);
             break;    
     }
 
