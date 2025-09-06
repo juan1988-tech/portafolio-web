@@ -1329,7 +1329,7 @@ html{
     margin-top: 1.2rem;
 }
 
-.project-carousel-arrows figure{
+.project-carousel-button{
     width: 4.2rem;
     height: 4.2rem;
     display: flex;
@@ -1340,7 +1340,31 @@ html{
     border:1px solid var(--font-principal-letter);
 }
 
-.project-carousel-arrows figure img{
+.project-carousel-button-blue{
+    width: 4.2rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-second-background-blue);
+    border-radius: 50%;
+    border:1px solid var(--font-principal-letter);
+}
+
+.project-carousel-button-white{
+    width: 4.2rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-buttons-white);
+    border-radius: 50%;
+    border:1px solid var(--font-principal-letter-white);
+}
+
+.project-carousel-button figure img,
+.project-carousel-button-blue figure img,
+.project-carousel-button-white figure img{
     width: 1.6rem;
 }
 

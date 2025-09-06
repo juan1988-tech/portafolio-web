@@ -189,9 +189,14 @@ const projectCardMovement = (event) => {
         case "project-carousel-left":
             touchMovement = touchMovement - 1;
             break;
+        case "project-carousel-left-img":
+            touchMovement = touchMovement - 1;
+            break;
         case "project-carousel-right":
             touchMovement = touchMovement + 1;
-        default:
+            break;
+        case "project-carousel-right-img":
+            touchMovement = touchMovement + 1;
             break;
     }
     if (touchMovement > 3) {
@@ -212,61 +217,72 @@ const footballLegendsProject = document.querySelector('#project-performance-foot
 const todoSevaleProject = document.querySelector('#project-performance-todo-se-vale');
 const siennaProject = document.querySelector("#project-performance-sienna");
 const montannaMagicaProject = document.querySelector('#project-performance-la-montanna-magica');
-const switchProjectCard = (event) => {
+const projectFootballLink = document.getElementById('project-performance-link-football-legends');
+const todoSevaleLink = document.getElementById('project-performance-link-todo-se-vale');
+const siennaLink = document.getElementById('project-performance-link-sienna');
+const montannaMagicaLink = document.getElementById('project-performance-link-la-montanna-magica');
+const siwtchProjectByColor = (event, visibleProject) => {
     let nodeElement;
     nodeElement = event.target;
     let nodeElementid = nodeElement.id;
-    const projectFootballLink = document.getElementById('project-performance-link-football-legends');
-    const todoSevaleLink = document.getElementById('project-performance-link-todo-se-vale');
-    const siennaLink = document.getElementById('project-performance-link-sienna');
-    const montannaMagicaLink = document.getElementById('project-performance-link-la-montanna-magica');
     if (nodeElementid.includes("football-legends")) {
-        footballLegendsProject.classList.replace('project-card-performance-hidden', 'project-card-performance');
+        footballLegendsProject.classList.replace('project-card-performance-hidden', visibleProject);
         projectFootballLink.classList.replace('project-performance-link-hidden', 'project-performance-link');
-        todoSevaleProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
-        siennaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
-        montannaMagicaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        todoSevaleProject.classList.replace(visibleProject, 'project-card-performance-hidden');
+        siennaProject.classList.replace(visibleProject, 'project-card-performance-hidden');
+        montannaMagicaProject.classList.replace(visibleProject, 'project-card-performance-hidden');
     }
     else {
-        footballLegendsProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        footballLegendsProject.classList.replace(visibleProject, 'project-card-performance-hidden');
         projectFootballLink.classList.replace('project-performance-link', 'project-performance-link-hidden');
     }
     if (nodeElementid.includes('todo-se-vale')) {
-        todoSevaleProject.classList.replace('project-card-performance-hidden', 'project-card-performance');
+        todoSevaleProject.classList.replace('project-card-performance-hidden', visibleProject);
         todoSevaleLink.classList.replace('project-performance-link-hidden', 'project-performance-link');
-        footballLegendsProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
-        siennaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
-        montannaMagicaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        footballLegendsProject.classList.replace(visibleProject, 'project-card-performance-hidden');
+        siennaProject.classList.replace(visibleProject, 'project-card-performance-hidden');
+        montannaMagicaProject.classList.replace(visibleProject, 'project-card-performance-hidden');
     }
     else {
-        todoSevaleProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        todoSevaleProject.classList.replace(visibleProject, 'project-card-performance-hidden');
         todoSevaleLink.classList.replace('project-performance-link', 'project-performance-link-hidden');
     }
     if (nodeElementid.includes('sienna')) {
-        siennaProject.classList.replace('project-card-performance-hidden', 'project-card-performance');
+        siennaProject.classList.replace('project-card-performance-hidden', visibleProject);
         siennaLink.classList.replace('project-performance-link-hidden', 'project-performance-link');
-        footballLegendsProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
-        montannaMagicaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
-        todoSevaleProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        footballLegendsProject.classList.replace(visibleProject, 'project-card-performance-hidden');
+        montannaMagicaProject.classList.replace(visibleProject, 'project-card-performance-hidden');
+        todoSevaleProject.classList.replace(visibleProject, 'project-card-performance-hidden');
     }
     else {
-        siennaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        siennaProject.classList.replace(visibleProject, 'project-card-performance-hidden');
         siennaLink.classList.replace('project-performance-link', 'project-performance-link-hidden');
     }
     if (nodeElementid.includes('la-montanna-magica')) {
-        montannaMagicaProject.classList.replace('project-card-performance-hidden', 'project-card-performance');
+        montannaMagicaProject.classList.replace('project-card-performance-hidden', visibleProject);
         montannaMagicaLink.classList.replace('project-performance-link-hidden', 'project-performance-link');
-        footballLegendsProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
-        siennaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
-        todoSevaleProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        footballLegendsProject.classList.replace(visibleProject, 'project-card-performance-hidden');
+        siennaProject.classList.replace(visibleProject, 'project-card-performance-hidden');
+        todoSevaleProject.classList.replace(visibleProject, 'project-card-performance-hidden');
     }
     else {
-        montannaMagicaProject.classList.replace('project-card-performance', 'project-card-performance-hidden');
+        montannaMagicaProject.classList.replace(visibleProject, 'project-card-performance-hidden');
         montannaMagicaLink.classList.replace('project-performance-link', 'project-performance-link-hidden');
     }
 };
 projectsSection.addEventListener('click', (event) => {
-    switchProjectCard(event);
+    let bodyClassName = bodyLayout.className;
+    switch (bodyClassName) {
+        case "body":
+            siwtchProjectByColor(event, "project-card-performance");
+            break;
+        case "body-blue":
+            siwtchProjectByColor(event, "project-card-performance-blue");
+            break;
+        case "body-white":
+            siwtchProjectByColor(event, "project-card-performance-white");
+            break;
+    }
 });
 /*función de sroll para la sección de proyectos: versión cellphone*/
 //1. identificar en el DOM al nodo de los proyectos con el evento de tocar pantalla en typescript
