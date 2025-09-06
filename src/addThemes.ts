@@ -27,6 +27,12 @@ interface theme{
             sienna: HTMLDivElement,
             montannaMagica: HTMLDivElement
         }
+        projectCarouselButtons:{
+            projectCarouselLeft: HTMLButtonElement,
+            projectCarouselRight: HTMLButtonElement,
+            projectCarouselLeftImg: HTMLImageElement,
+            projectCarouselRightimg: HTMLImageElement
+        }
     }
 }
 
@@ -66,8 +72,13 @@ let itemsTheme: theme ={
             todoSevale: document.querySelector("#project-performance-todo-se-vale") as HTMLDivElement,
             sienna: document.querySelector("#project-performance-sienna") as HTMLDivElement,
             montannaMagica: document.querySelector("#project-performance-la-montanna-magica") as HTMLDivElement
-        }
-
+        },
+        projectCarouselButtons:{
+            projectCarouselLeft: document.getElementById('project-carousel-left') as HTMLButtonElement,
+            projectCarouselRight: document.getElementById('project-carousel-right') as HTMLButtonElement,
+            projectCarouselLeftImg: document.getElementById('project-carousel-left-img') as HTMLImageElement,
+            projectCarouselRightimg: document.getElementById('project-carousel-right-img') as HTMLImageElement
+        } 
     }
 }
 
@@ -218,11 +229,11 @@ const addboutMeTheme = (bgColor:String) =>{
 }
 
 const addProjectTheme = (bgColor:string) =>{
-    const { projectsTitle,projectPerformance } = projects;
-
+    const { projectsTitle,projectPerformance,projectCarouselButtons } = projects;
+    
     const { footballLegends,todoSevale,sienna,montannaMagica } = projectPerformance; 
 
-    console.log(footballLegends);
+    const { projectCarouselLeft,projectCarouselRight, projectCarouselLeftImg,projectCarouselRightimg} = projectCarouselButtons;
 
     switch (bgColor) {
         case "purple":
@@ -233,7 +244,22 @@ const addProjectTheme = (bgColor:string) =>{
             footballLegends.classList.replace("project-card-performance-white","project-card-performance");
 
             todoSevale.classList.replace("project-card-performance-blue","project-card-performance");
-            todoSevale.classList.replace("project-card-performance-white","project-card-performance")
+            todoSevale.classList.replace("project-card-performance-white","project-card-performance");
+
+            sienna.classList.replace("project-card-performance-blue","project-card-performance");
+            sienna.classList.replace("project-card-performance-white","project-card-performance");
+            
+            montannaMagica.classList.replace("project-card-performance-blue","project-card-performance");
+            montannaMagica.classList.replace("project-card-performance-white","project-card-performance");
+
+            projectCarouselLeft.classList.replace("project-carousel-button-blue","project-carousel-button");
+            projectCarouselLeft.classList.replace("project-carousel-button-white","project-carousel-button");
+
+            projectCarouselRight.classList.replace("project-carousel-button-blue","project-carousel-button");
+            projectCarouselRight.classList.replace("project-carousel-button-white","project-carousel-button");
+
+            projectCarouselLeftImg.src = "../public/assets/icons/new-icons/dark-screen-icons/ep_arrow-left-bold.svg";
+            projectCarouselRightimg.src = '../public/assets/icons/new-icons/dark-screen-icons/ep_arrow-right-bold.svg';
             break;
         case "blue":
             projectsTitle.classList.replace("projects-title","projects-title-blue");
@@ -244,6 +270,21 @@ const addProjectTheme = (bgColor:string) =>{
 
             todoSevale.classList.replace("project-card-performance","project-card-performance-blue");
             todoSevale.classList.replace("project-card-performance-white","project-card-performance-blue");
+
+            sienna.classList.replace("project-card-performance","project-card-performance-blue");
+            sienna.classList.replace("project-card-performance-white","project-card-performance-blue");
+
+            montannaMagica.classList.replace("project-card-performance","project-card-performance-blue");
+            montannaMagica.classList.replace("project-card-performance-white","project-card-performance-blue");
+
+            projectCarouselLeft.classList.replace("project-carousel-button","project-carousel-button-blue");
+            projectCarouselLeft.classList.replace("project-carousel-button-white","project-carousel-button-blue");
+
+            projectCarouselRight.classList.replace("project-carousel-button","project-carousel-button-blue");
+            projectCarouselRight.classList.replace("project-carousel-button-white","project-carousel-button-blue");
+
+            projectCarouselLeftImg.src = "../public/assets/icons/new-icons/dark-screen-icons/ep_arrow-left-bold.svg";
+            projectCarouselRightimg.src = '../public/assets/icons/new-icons/dark-screen-icons/ep_arrow-right-bold.svg';
             break;
         case "white":
             projectsTitle.classList.replace("projects-title","projects-title-white");
@@ -253,11 +294,25 @@ const addProjectTheme = (bgColor:string) =>{
             footballLegends.classList.replace("project-card-performance-blue","project-card-performance-white");
 
             todoSevale.classList.replace("project-card-performance","project-card-performance-white");
-            todoSevale.classList.replace("project-card-performance-blue","project-card-performance-white")
+            todoSevale.classList.replace("project-card-performance-blue","project-card-performance-white");
+
+            sienna.classList.replace("project-card-performance","project-card-performance-white");
+            sienna.classList.replace("project-card-performance-blue","project-card-performance-white");
+
+            montannaMagica.classList.replace("project-card-performance","project-card-performance-white");
+            montannaMagica.classList.replace("project-card-performance-blue","project-card-performance-white");
+
+            projectCarouselLeft.classList.replace("project-carousel-button","project-carousel-button-white");
+            projectCarouselLeft.classList.replace("project-carousel-button-blue","project-carousel-button-white");
+
+            projectCarouselRight.classList.replace("project-carousel-button","project-carousel-button-white");
+            projectCarouselRight.classList.replace("project-carousel-button-blue","project-carousel-button-white");
+
+            projectCarouselLeftImg.src = '../public/assets/icons/new-icons/light-screen-icons/ep_arrow-left-bold-black.svg';
+            projectCarouselRightimg.src = '../public/assets/icons/new-icons/light-screen-icons/ep_arrow-rigtht-bold-black.svg';    
             break;
     }
 }
-
 
 export function addThemeLayout(bgColor:string){
     switch (bgColor) {

@@ -275,10 +275,16 @@ const projectCardMovement = (event:MouseEvent):void =>{
         case "project-carousel-left":
             touchMovement = touchMovement - 1;
             break;
+        case "project-carousel-left-img":
+            touchMovement = touchMovement - 1;
+            break;
+
         case "project-carousel-right":
             touchMovement = touchMovement + 1;
-        default:
             break;
+        case "project-carousel-right-img":
+            touchMovement = touchMovement + 1;
+            break;    
     }
     
     if (touchMovement > 3) {
@@ -304,72 +310,85 @@ const todoSevaleProject:HTMLElement = document.querySelector('#project-performan
 const siennaProject:HTMLElement = document.querySelector("#project-performance-sienna") as HTMLElement;
 const montannaMagicaProject:HTMLElement = document.querySelector('#project-performance-la-montanna-magica') as HTMLElement;
 
-const switchProjectCard = (event:MouseEvent):void =>{
+const projectFootballLink:HTMLElement = document.getElementById('project-performance-link-football-legends') as HTMLElement;
+const todoSevaleLink:HTMLElement = document.getElementById('project-performance-link-todo-se-vale') as HTMLElement;
+const siennaLink:HTMLElement =  document.getElementById('project-performance-link-sienna') as HTMLElement;
+const montannaMagicaLink:HTMLElement = document.getElementById('project-performance-link-la-montanna-magica') as HTMLElement;
+
+const siwtchProjectByColor = (event:MouseEvent,visibleProject:string):void =>{
+    
     let nodeElement:HTMLElement;
 
     nodeElement = event.target as HTMLElement;
 
     let nodeElementid:string = nodeElement.id;   
 
-    const projectFootballLink:HTMLElement = document.getElementById('project-performance-link-football-legends') as HTMLElement;
-    const todoSevaleLink:HTMLElement = document.getElementById('project-performance-link-todo-se-vale') as HTMLElement;
-    const siennaLink:HTMLElement =  document.getElementById('project-performance-link-sienna') as HTMLElement;
-    const montannaMagicaLink:HTMLElement = document.getElementById('project-performance-link-la-montanna-magica') as HTMLElement;
-
     if(nodeElementid.includes("football-legends")){
-        footballLegendsProject.classList.replace('project-card-performance-hidden','project-card-performance');
+        footballLegendsProject.classList.replace('project-card-performance-hidden',visibleProject);
         projectFootballLink.classList.replace('project-performance-link-hidden','project-performance-link');
 
-        todoSevaleProject.classList.replace('project-card-performance','project-card-performance-hidden');
-        siennaProject.classList.replace('project-card-performance','project-card-performance-hidden');
-        montannaMagicaProject.classList.replace('project-card-performance','project-card-performance-hidden');
+        todoSevaleProject.classList.replace(visibleProject,'project-card-performance-hidden');
+        siennaProject.classList.replace(visibleProject,'project-card-performance-hidden');
+        montannaMagicaProject.classList.replace(visibleProject,'project-card-performance-hidden');
     }else{
-        footballLegendsProject.classList.replace('project-card-performance','project-card-performance-hidden');
+        footballLegendsProject.classList.replace(visibleProject,'project-card-performance-hidden');
         projectFootballLink.classList.replace('project-performance-link','project-performance-link-hidden');
     }
-    
+
     if(nodeElementid.includes('todo-se-vale')){
-        todoSevaleProject.classList.replace('project-card-performance-hidden','project-card-performance');
+        todoSevaleProject.classList.replace('project-card-performance-hidden',visibleProject);
         todoSevaleLink.classList.replace('project-performance-link-hidden','project-performance-link');
 
-        footballLegendsProject.classList.replace('project-card-performance','project-card-performance-hidden');
-        siennaProject.classList.replace('project-card-performance','project-card-performance-hidden');
-        montannaMagicaProject.classList.replace('project-card-performance','project-card-performance-hidden');
+        footballLegendsProject.classList.replace(visibleProject,'project-card-performance-hidden');
+        siennaProject.classList.replace(visibleProject,'project-card-performance-hidden');
+        montannaMagicaProject.classList.replace(visibleProject,'project-card-performance-hidden');
     }
     else{
-        todoSevaleProject.classList.replace('project-card-performance','project-card-performance-hidden');
+        todoSevaleProject.classList.replace(visibleProject,'project-card-performance-hidden');
         todoSevaleLink.classList.replace('project-performance-link','project-performance-link-hidden');
     }
 
     if(nodeElementid.includes('sienna')){
-        siennaProject.classList.replace('project-card-performance-hidden','project-card-performance');
+        siennaProject.classList.replace('project-card-performance-hidden',visibleProject);
         siennaLink.classList.replace('project-performance-link-hidden','project-performance-link');
 
-        footballLegendsProject.classList.replace('project-card-performance','project-card-performance-hidden');
-        montannaMagicaProject.classList.replace('project-card-performance','project-card-performance-hidden');
-        todoSevaleProject.classList.replace('project-card-performance','project-card-performance-hidden');   
+        footballLegendsProject.classList.replace(visibleProject,'project-card-performance-hidden');
+        montannaMagicaProject.classList.replace(visibleProject,'project-card-performance-hidden');
+        todoSevaleProject.classList.replace(visibleProject,'project-card-performance-hidden');   
     }
     else{
-        siennaProject.classList.replace('project-card-performance','project-card-performance-hidden');
+        siennaProject.classList.replace(visibleProject,'project-card-performance-hidden');
         siennaLink.classList.replace('project-performance-link','project-performance-link-hidden');
     }
 
     if(nodeElementid.includes('la-montanna-magica')){
-        montannaMagicaProject.classList.replace('project-card-performance-hidden','project-card-performance');
+        montannaMagicaProject.classList.replace('project-card-performance-hidden',visibleProject);
         montannaMagicaLink.classList.replace('project-performance-link-hidden','project-performance-link');
 
-        footballLegendsProject.classList.replace('project-card-performance','project-card-performance-hidden');
-        siennaProject.classList.replace('project-card-performance','project-card-performance-hidden');
-        todoSevaleProject.classList.replace('project-card-performance','project-card-performance-hidden');
+        footballLegendsProject.classList.replace(visibleProject,'project-card-performance-hidden');
+        siennaProject.classList.replace(visibleProject,'project-card-performance-hidden');
+        todoSevaleProject.classList.replace(visibleProject,'project-card-performance-hidden');
     }
     else{
-        montannaMagicaProject.classList.replace('project-card-performance','project-card-performance-hidden');
+        montannaMagicaProject.classList.replace(visibleProject,'project-card-performance-hidden');
         montannaMagicaLink.classList.replace('project-performance-link','project-performance-link-hidden');
-    }
+    } 
 }
 
 projectsSection.addEventListener('click',(event:MouseEvent)=>{
-    switchProjectCard(event);
+    let bodyClassName:string = bodyLayout.className;
+
+    switch (bodyClassName) {
+        case "body":
+            siwtchProjectByColor(event,"project-card-performance");        
+            break;
+        case "body-blue":
+            siwtchProjectByColor(event,"project-card-performance-blue");        
+            break;
+        case "body-white":
+            siwtchProjectByColor(event,"project-card-performance-white");        
+            break;    
+    }
 })
 
 /*función de sroll para la sección de proyectos: versión cellphone*/
