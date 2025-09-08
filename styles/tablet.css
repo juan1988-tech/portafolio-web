@@ -1,4 +1,9 @@
-.navbar, .navbar-change{
+.navbar, 
+.navbar-change,
+.navbar-blue,
+.navbar-change-blue,
+.navbar-white,
+.navbar-change-white{
     margin-top: 6.1rem;
 }
 
@@ -55,7 +60,9 @@
 }
 
 /*about me*/
-.about-me .about-me-title{
+.about-me-title,
+.about-me-title-blue,
+.about-me-title-white{
     font-size: 2.8rem;
     padding-top: 6.7rem;
 }
@@ -64,14 +71,18 @@
     width: 69.4rem;
 }
 
-.about-me .about-me-profile{
+.about-me .about-me-profile,
+.about-me-blue .about-me-profile,
+.about-me-white .about-me-profile{
     width: 29.5rem;
     height: 24.4rem;
     align-self: center;
     margin: 0;
 }
 
-.about-me .about-me-grid{
+.about-me .about-me-grid,
+.about-me-blue .about-me-grid,
+.about-me-white .about-me-grid{
     display: grid;
     grid-template-columns: 29.5rem 1fr;
     margin-top: 2.4rem;
@@ -79,7 +90,9 @@
     padding-bottom: 4.5rem;
 }
 
-.about-me .about-me-role{
+.about-me .about-me-role,
+.about-me-blue .about-me-role,
+.about-me-white .about-me-role{
     margin-top: 0;
 }
 
@@ -106,7 +119,9 @@
     display: none;
 }
 
-.projects .projects-title{
+.projects-title,
+.projects-title-blue,
+.projects-title-white{
     padding-top: 6rem;
 }
 

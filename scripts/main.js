@@ -1,5 +1,5 @@
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
-import { addThemeLayout, themesLi, themesLiHeader, bodyLayout } from "./addThemes.js";
+import { addThemeLayout, themesLi, themesLiHeader, bodyLayout, generalSettings } from "./addThemes.js";
 const buttonBurguer = document.querySelector('#button-burguer');
 /*funciones del nabvar scrollIntoView()*/
 const titleLogo = document.querySelector('.title-logo');
@@ -38,10 +38,10 @@ themesLiHeader[2].addEventListener('click', () => {
     addThemeLayout('white');
 });
 const { firstLine, secondLine, thirdLine, navbar } = buttonBurguerTrigger;
-let purpleToggle = false;
+let navbarToggle = false;
 const toggleColorButtons = (firstNavbar, secondNavbar) => {
-    (purpleToggle === false) ? (purpleToggle = true) : (purpleToggle = false);
-    if (purpleToggle === true) {
+    (navbarToggle === false) ? (navbarToggle = true) : (navbarToggle = false);
+    if (navbarToggle === true) {
         navbar.classList.add(secondNavbar);
         navbar.classList.remove(firstNavbar);
     }
@@ -51,7 +51,6 @@ const toggleColorButtons = (firstNavbar, secondNavbar) => {
     }
 };
 const toggleButtonBurguer = () => {
-    console.log(navbar.className);
     firstLine.classList.toggle('first-line-change');
     secondLine.classList.toggle('second-line-change');
     thirdLine.classList.toggle('third-line-change');
@@ -59,9 +58,11 @@ const toggleButtonBurguer = () => {
     if (navbar.className === "navbar" || navbar.className === "navbar-change") {
         toggleColorButtons('navbar', 'navbar-change');
     }
+    /*cambio para si es azul*/
     if (navbar.className === "navbar-blue" || navbar.className === "navbar-change-blue") {
         toggleColorButtons('navbar-blue', 'navbar-change-blue');
     }
+    /*cambio para si es blanco*/
     if (navbar.className === 'navbar-white' || navbar.className === "navbar-change-white") {
         toggleColorButtons('navbar-white', "navbar-change-white");
     }
@@ -71,12 +72,19 @@ buttonBurguer.addEventListener('click', () => {
 });
 const firstScrollY = window.scrollY;
 //cambiar el estado del botón si hacemos scroll en el home
-window.addEventListener('scroll', (event) => {
-    console.log(firstScrollY);
-    const navbarGlobalSettings = document.querySelector('#general-settings');
+window.addEventListener('scroll', () => {
+    const generalSettings = document.querySelector('#general-settings');
     let secondScrollY = window.scrollY;
     if (secondScrollY > firstScrollY) {
-        navbarGlobalSettings.classList.replace('general-settings-change', 'general-settings');
+        if (generalSettings.className.includes("general-settings-change")) {
+            generalSettings.classList.replace('general-settings-change', 'general-settings');
+        }
+        if (generalSettings.className.includes("general-settings-change-blue")) {
+            generalSettings.classList.replace('general-settings-change-blue', 'general-settings-blue');
+        }
+        if (generalSettings.className.includes("general-settings-change-white")) {
+            generalSettings.classList.replace('general-settings-change-white', 'general-settings-white');
+        }
     }
 });
 //hacer una funcion genérica para implementar el scroll
@@ -98,7 +106,12 @@ navbarJDCode.addEventListener('click', () => {
 });
 //funcion de scroll para la sección acerca de mí
 navbarAboutMe.addEventListener('click', () => {
-    scrollToSection(".about-me");
+    const aboutme = ".about-me";
+    const aboutmeBlue = ".about-me-blue";
+    const aboutmeWhite = ".about-me-white";
+    scrollToSection(aboutme);
+    scrollToSection(aboutmeBlue);
+    scrollToSection(aboutmeWhite);
     toggleButtonBurguer();
 });
 //funcion de scroll para la sección proyectos
@@ -126,17 +139,52 @@ headerContact.addEventListener('click', () => {
 });
 const headerSettings = document.getElementById('header-settings');
 const navbarSettings = document.getElementById('navbar-settings');
+let generalSettingToggle = false;
+const toggleHeaderColorButtons = (firstNavbarHeader, secondNavbarHeader) => {
+    (generalSettingToggle === false) ? (generalSettingToggle = true) : (generalSettingToggle = false);
+    if (generalSettingToggle === true) {
+        generalSettings.classList.remove(firstNavbarHeader);
+        //general-settings
+        generalSettings.classList.add(secondNavbarHeader);
+        //general-settings-change
+    }
+    else {
+        generalSettings.classList.remove(secondNavbarHeader);
+        //general-settings-change
+        generalSettings.classList.add(firstNavbarHeader);
+    }
+};
 const toggleGear = (globalSettings, gear, gearClassName, globalSettingsClassName) => {
     const nabvarListSettings = {
-        navbarGlobalSettings: document.querySelector(globalSettings),
+        generalSettings: document.querySelector(globalSettings),
         navbarGear: document.querySelector(gear)
     };
-    const { navbarGear, navbarGlobalSettings } = nabvarListSettings;
+    const { navbarGear, generalSettings } = nabvarListSettings;
     navbarGear.classList.toggle(gearClassName);
-    navbarGlobalSettings.classList.toggle(globalSettingsClassName);
+    if (typeof globalSettingsClassName === "string") {
+        generalSettings.classList.toggle(globalSettingsClassName);
+    }
+};
+const toggleGearHeader = (globalSettings, gear, gearClassName) => {
+    const generalListSettings = {
+        generalSettings: document.querySelector(globalSettings),
+        navbarGear: document.querySelector(gear)
+    };
+    const { generalSettings, navbarGear } = generalListSettings;
+    navbarGear.classList.toggle(gearClassName);
+    console.log(generalSettings.className);
+    if (generalSettings.className === "general-settings" || generalSettings.className === "general-settings-change") {
+        toggleHeaderColorButtons('general-settings', 'general-settings-change');
+    }
+    if (generalSettings.className === "general-settings-blue" || generalSettings.className === "general-settings-change-blue") {
+        toggleHeaderColorButtons('general-settings-blue', 'general-settings-change-blue');
+    }
+    if (generalSettings.className === "general-settings-white" || generalSettings.className === "general-settings-change-white") {
+        toggleHeaderColorButtons('general-settings-white', 'general-settings-change-white');
+    }
 };
 headerSettings.addEventListener('click', () => {
-    toggleGear('#general-settings', '#header-settings-gear', 'header-settings-gear-change', 'general-settings-change');
+    toggleGearHeader('#general-settings', '#header-settings-gear', 'header-settings-gear-change');
 });
 navbarSettings.addEventListener('click', () => {
     toggleGear('#navbar-global-settings', '#navbar-gear', 'navbar-gear-change', 'navbar-global-settings-change');
@@ -184,7 +232,6 @@ const projectMovementStates = () => {
 const projectCardMovement = (event) => {
     //detectar al nodo que esta activando el evento
     let nodeEevent = event.target;
-    console.log(nodeEevent.id);
     switch (nodeEevent.id) {
         case "project-carousel-left":
             touchMovement = touchMovement - 1;

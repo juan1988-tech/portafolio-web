@@ -14,6 +14,7 @@ let itemsTheme = {
     ],
     contactIcon: document.querySelector('.contact-li img'),
     navbar: document.querySelector('#navbar'),
+    generalSettings: document.querySelector('#general-settings'),
     introduction: {
         firstGreeting: document.getElementById('first-greeting'),
         nameLabel: document.getElementById('name-label'),
@@ -51,13 +52,14 @@ export const addBodyTheme = (mainBg, secondBg, thirdBg) => {
     bodyLayout.classList.replace(thirdBg, mainBg);
 };
 //funcion para modificar los colores del header
-export const { header, themesLi, themesLiHeader, contactIcon, navbar, introduction, aboutMe, projects } = itemsTheme;
+export const { header, themesLi, themesLiHeader, contactIcon, navbar, generalSettings, introduction, aboutMe, projects } = itemsTheme;
 const addheaderTheme = (mainColor, secondColor, thirdColor, contactIconImg) => {
     //header.classList.replace('header-blue','header');
     header.classList.replace(secondColor, mainColor);
     header.classList.replace(thirdColor, mainColor);
     contactIcon.src = contactIconImg;
 };
+/*aplicar estilos tanto al navbar en cellphone como al navbar en header */
 export const addNavbarTheme = (bgColor) => {
     if (bgColor === "purple") {
         navbar.classList.replace("navbar-change-blue", "navbar-change");
@@ -70,6 +72,20 @@ export const addNavbarTheme = (bgColor) => {
     if (bgColor === "white") {
         navbar.classList.replace("navbar-change", "navbar-change-white");
         navbar.classList.replace("navbar-change-blue", "navbar-change-white");
+    }
+};
+const addGeneralSettingsTheme = (bgColor) => {
+    if (bgColor === "purple") {
+        generalSettings.classList.replace("general-settings-change-blue", "general-settings-change");
+        generalSettings.classList.replace("general-settings-change-white", "general-settings-change");
+    }
+    if (bgColor === "blue") {
+        generalSettings.classList.replace("general-settings-change", "general-settings-change-blue");
+        generalSettings.classList.replace("general-settings-change-white", "general-settings-change-blue");
+    }
+    if (bgColor === "white") {
+        generalSettings.classList.replace("general-settings-change", "general-settings-change-white");
+        generalSettings.classList.replace("general-settings-change-blue", "general-settings-change-white");
     }
 };
 const addIntroductionTheme = (bgColor) => {
@@ -222,6 +238,7 @@ export function addThemeLayout(bgColor) {
             addBodyTheme('body', 'body-blue', 'body-white');
             addheaderTheme('header', 'header-blue', 'header-white', './assets/icons/new-icons/phone-enabled-sharp-blue.svg');
             addNavbarTheme(bgColor);
+            addGeneralSettingsTheme(bgColor);
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
             addProjectTheme(bgColor);
@@ -230,6 +247,7 @@ export function addThemeLayout(bgColor) {
             addBodyTheme('body-blue', 'body', 'body-white');
             addheaderTheme('header-blue', 'header', 'header-white', "./assets/icons/new-icons/phone-enabled-sharp-green.svg");
             addNavbarTheme(bgColor);
+            addGeneralSettingsTheme(bgColor);
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
             addProjectTheme(bgColor);
@@ -238,6 +256,7 @@ export function addThemeLayout(bgColor) {
             addBodyTheme('body-white', 'body-blue', 'body');
             addheaderTheme('header-white', 'header', 'header-blue', './assets/icons/new-icons/phone-enabled-sharp-blue.svg');
             addNavbarTheme(bgColor);
+            addGeneralSettingsTheme(bgColor);
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
             addProjectTheme(bgColor);
