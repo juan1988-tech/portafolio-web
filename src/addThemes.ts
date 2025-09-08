@@ -6,6 +6,7 @@ interface theme{
     themesLiHeader: HTMLLIElement[];
     contactIcon: HTMLImageElement;
     navbar: HTMLDivElement;
+    generalSettings: HTMLDivElement;
     introduction:{
         firstGreeting:HTMLTitleElement,
         nameLabel:HTMLTitleElement,
@@ -52,6 +53,7 @@ let itemsTheme: theme ={
     ],
     contactIcon: document.querySelector('.contact-li img') as HTMLImageElement,
     navbar: document.querySelector('#navbar') as HTMLDivElement,
+    generalSettings: document.querySelector('#general-settings') as HTMLDivElement,
     introduction:{
         firstGreeting: document.getElementById('first-greeting') as HTMLTitleElement,
         nameLabel: document.getElementById('name-label') as HTMLTitleElement,
@@ -92,7 +94,7 @@ export const addBodyTheme = (mainBg:string,secondBg:string,thirdBg:string):void 
 }
 
 //funcion para modificar los colores del header
-export const { header,themesLi,themesLiHeader,contactIcon,navbar,introduction,aboutMe,projects } = itemsTheme; 
+export const { header,themesLi,themesLiHeader,contactIcon,navbar,generalSettings,introduction,aboutMe,projects } = itemsTheme; 
 
 const addheaderTheme = (mainColor:string,secondColor:string,thirdColor:string,contactIconImg:string):void =>{
     //header.classList.replace('header-blue','header');
@@ -102,6 +104,7 @@ const addheaderTheme = (mainColor:string,secondColor:string,thirdColor:string,co
     contactIcon.src = contactIconImg;
 }
 
+/*aplicar estilos tanto al navbar en cellphone como al navbar en header */
 export const addNavbarTheme = (bgColor:string):void =>{
     if(bgColor==="purple"){
         navbar.classList.replace("navbar-change-blue","navbar-change")
@@ -114,6 +117,21 @@ export const addNavbarTheme = (bgColor:string):void =>{
     if(bgColor==="white"){
         navbar.classList.replace("navbar-change","navbar-change-white")
         navbar.classList.replace("navbar-change-blue","navbar-change-white")
+    }
+}
+
+const addGeneralSettingsTheme = (bgColor:string):void =>{
+    if(bgColor==="purple"){
+        generalSettings.classList.replace("general-settings-change-blue","general-settings-change")
+        generalSettings.classList.replace("general-settings-change-white","general-settings-change")  
+    }
+    if(bgColor==="blue"){
+        generalSettings.classList.replace("general-settings-change","general-settings-change-blue")
+        generalSettings.classList.replace("general-settings-change-white","general-settings-change-blue")      
+    }
+    if(bgColor==="white"){
+        generalSettings.classList.replace("general-settings-change","general-settings-change-white")
+        generalSettings.classList.replace("general-settings-change-blue","general-settings-change-white")
     }
 }
 
@@ -320,6 +338,7 @@ export function addThemeLayout(bgColor:string){
             addBodyTheme('body','body-blue','body-white');
             addheaderTheme('header','header-blue','header-white','./assets/icons/new-icons/phone-enabled-sharp-blue.svg');
             addNavbarTheme(bgColor);
+            addGeneralSettingsTheme(bgColor);
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
             addProjectTheme(bgColor);
@@ -328,14 +347,16 @@ export function addThemeLayout(bgColor:string){
             addBodyTheme('body-blue','body','body-white');
             addheaderTheme('header-blue','header','header-white',"./assets/icons/new-icons/phone-enabled-sharp-green.svg");
             addNavbarTheme(bgColor);
+            addGeneralSettingsTheme(bgColor);
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
             addProjectTheme(bgColor);
             break;
         case "white":
             addBodyTheme('body-white','body-blue','body');
-            addheaderTheme( 'header-white','header','header-blue','./assets/icons/new-icons/phone-enabled-sharp-blue.svg');
+            addheaderTheme('header-white','header','header-blue','./assets/icons/new-icons/phone-enabled-sharp-blue.svg');
             addNavbarTheme(bgColor);
+            addGeneralSettingsTheme(bgColor);
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
             addProjectTheme(bgColor);

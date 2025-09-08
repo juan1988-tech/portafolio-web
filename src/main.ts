@@ -1,11 +1,11 @@
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
-import { addThemeLayout,themesLi,themesLiHeader,bodyLayout } from "./addThemes.js";
+import { addThemeLayout,themesLi,themesLiHeader,bodyLayout, generalSettings } from "./addThemes.js";
 //variable global que identifica al elemento body
 //const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
 
 /*funciones para ver las posiciones del navbar */
 type toggleYearElements ={
-    navbarGlobalSettings: HTMLDivElement,
+    generalSettings: HTMLDivElement,
     navbarGear: HTMLButtonElement, 
 }
 
@@ -80,12 +80,12 @@ themesLiHeader[2].addEventListener('click',()=>{
 
 const { firstLine, secondLine ,thirdLine, navbar } = buttonBurguerTrigger;
 
-let purpleToggle:boolean = false;
+let navbarToggle:boolean = false;
 
 const toggleColorButtons = (firstNavbar:string,secondNavbar:string) =>{
-    (purpleToggle===false)?(purpleToggle=true):(purpleToggle=false);
+    (navbarToggle===false)?(navbarToggle=true):(navbarToggle=false);
     
-    if(purpleToggle===true){
+    if(navbarToggle===true){
         navbar.classList.add(secondNavbar);
         navbar.classList.remove(firstNavbar);
     }else{
@@ -95,7 +95,6 @@ const toggleColorButtons = (firstNavbar:string,secondNavbar:string) =>{
 }
 
 const toggleButtonBurguer = ():void =>{
-    console.log(navbar.className);
     firstLine.classList.toggle('first-line-change');
     secondLine.classList.toggle('second-line-change');
     thirdLine.classList.toggle('third-line-change');
@@ -104,11 +103,13 @@ const toggleButtonBurguer = ():void =>{
     if(navbar.className==="navbar" || navbar.className==="navbar-change"){
         toggleColorButtons('navbar','navbar-change')
     }   
-   
+    
+    /*cambio para si es azul*/
     if(navbar.className==="navbar-blue" || navbar.className==="navbar-change-blue"){
         toggleColorButtons('navbar-blue','navbar-change-blue')
     }
 
+    /*cambio para si es blanco*/
     if(navbar.className==='navbar-white' || navbar.className==="navbar-change-white"){
         toggleColorButtons('navbar-white',"navbar-change-white")
     }
@@ -121,13 +122,20 @@ buttonBurguer.addEventListener('click',()=>{
 const firstScrollY:number =  window.scrollY;
 
 //cambiar el estado del botón si hacemos scroll en el home
-window.addEventListener('scroll',(event:Event)=>{
-    console.log(firstScrollY)
-    const  navbarGlobalSettings:HTMLDivElement = document.querySelector('#general-settings') as HTMLDivElement;
+window.addEventListener('scroll',()=>{
+    const  generalSettings:HTMLDivElement = document.querySelector('#general-settings') as HTMLDivElement;
     let secondScrollY:number =  window.scrollY;
     
     if(secondScrollY>firstScrollY){
-        navbarGlobalSettings.classList.replace('general-settings-change','general-settings');
+        if(generalSettings.className.includes("general-settings-change")){
+            generalSettings.classList.replace('general-settings-change','general-settings');
+        }
+        if(generalSettings.className.includes("general-settings-change-blue")){
+            generalSettings.classList.replace('general-settings-change-blue','general-settings-blue');
+        }
+        if(generalSettings.className.includes("general-settings-change-white")){
+            generalSettings.classList.replace('general-settings-change-white','general-settings-white');
+        }
     }
 })
 
@@ -152,9 +160,18 @@ navbarJDCode.addEventListener('click',()=>{
     toggleButtonBurguer();
 })
 
+type aboutmeVariants = ""|"-blue"|"-white";
+type aboutmeClassVariants =  `.about-me${aboutmeVariants}`
+
 //funcion de scroll para la sección acerca de mí
 navbarAboutMe.addEventListener('click',()=>{
-    scrollToSection(".about-me");
+    const aboutme:aboutmeClassVariants = ".about-me";
+    const aboutmeBlue:aboutmeClassVariants = ".about-me-blue";
+    const aboutmeWhite:aboutmeClassVariants = ".about-me-white" 
+     
+    scrollToSection(aboutme);
+    scrollToSection(aboutmeBlue);
+    scrollToSection(aboutmeWhite);
     toggleButtonBurguer();
 })
 
@@ -190,20 +207,63 @@ const headerSettings: HTMLElement = document.getElementById('header-settings') a
 
 const navbarSettings: HTMLElement = document.getElementById('navbar-settings') as HTMLElement;
 
-const toggleGear = (globalSettings:string,gear:string,gearClassName:string,globalSettingsClassName:string ):void =>{
+let generalSettingToggle:boolean = false;
+
+const toggleHeaderColorButtons = (firstNavbarHeader:string,secondNavbarHeader:string) =>{
+    (generalSettingToggle===false)?(generalSettingToggle=true):(generalSettingToggle=false);
+
+
+    if(generalSettingToggle===true){
+        generalSettings.classList.remove(firstNavbarHeader);
+        //general-settings
+        generalSettings.classList.add(secondNavbarHeader);
+        //general-settings-change
+    }else{
+        generalSettings.classList.remove(secondNavbarHeader);
+        //general-settings-change
+        generalSettings.classList.add(firstNavbarHeader);
+    }
+}
+
+const toggleGear = (globalSettings:string,gear:string,gearClassName:string,globalSettingsClassName?:unknown ):void =>{
      const nabvarListSettings:toggleYearElements = {
-        navbarGlobalSettings: document.querySelector(globalSettings) as HTMLDivElement,
+        generalSettings: document.querySelector(globalSettings) as HTMLDivElement,
         navbarGear: document.querySelector(gear) as HTMLButtonElement
      }
 
-     const { navbarGear, navbarGlobalSettings } = nabvarListSettings
+     const { navbarGear, generalSettings } = nabvarListSettings
 
-     navbarGear.classList.toggle(gearClassName)
-     navbarGlobalSettings.classList.toggle(globalSettingsClassName)
+     navbarGear.classList.toggle(gearClassName);
+
+    if(typeof globalSettingsClassName==="string"){
+        generalSettings.classList.toggle(globalSettingsClassName)
+     }
+}
+
+const toggleGearHeader = (globalSettings:string,gear:string,gearClassName:string):void =>{
+     const generalListSettings:toggleYearElements = {
+        generalSettings: document.querySelector(globalSettings) as HTMLDivElement,
+        navbarGear: document.querySelector(gear) as HTMLButtonElement
+     }
+
+     const { generalSettings,navbarGear } = generalListSettings;
+
+     navbarGear.classList.toggle(gearClassName);
+
+     console.log(generalSettings.className);
+     if(generalSettings.className==="general-settings" || generalSettings.className==="general-settings-change"){
+        toggleHeaderColorButtons('general-settings','general-settings-change')
+     }
+     if(generalSettings.className==="general-settings-blue" || generalSettings.className==="general-settings-change-blue"){
+        toggleHeaderColorButtons('general-settings-blue','general-settings-change-blue')
+     }
+      if(generalSettings.className==="general-settings-white" || generalSettings.className==="general-settings-change-white"){
+        toggleHeaderColorButtons('general-settings-white','general-settings-change-white')
+     }
 }
 
 headerSettings.addEventListener('click',()=>{
-    toggleGear('#general-settings','#header-settings-gear','header-settings-gear-change','general-settings-change');
+    toggleGearHeader('#general-settings','#header-settings-gear','header-settings-gear-change');
 })
 
 navbarSettings.addEventListener('click',()=>{
@@ -269,8 +329,6 @@ const projectCardMovement = (event:MouseEvent):void =>{
     //detectar al nodo que esta activando el evento
     let nodeEevent:HTMLImageElement = event.target as HTMLImageElement;
     
-    console.log(nodeEevent.id)
-
     switch (nodeEevent.id) {
         case "project-carousel-left":
             touchMovement = touchMovement - 1;
