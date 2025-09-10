@@ -118,7 +118,9 @@
 }
 
 /*services*/
-.services h1{
+.services-title,
+.services-title-blue,
+.services-title-white{
     font-size: 3.6rem;
 }
 

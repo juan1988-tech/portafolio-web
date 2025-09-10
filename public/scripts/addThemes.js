@@ -74,6 +74,13 @@ let itemsTheme = {
                 image: document.getElementById('trello')
             },
         ]
+    },
+    services: {
+        servicesTitle: document.querySelector("#services-title"),
+        serviceContainers: [
+            document.querySelector("#service-target-first"),
+            document.querySelector("#service-target-second"),
+        ]
     }
 };
 //función para modificar el body
@@ -84,7 +91,7 @@ export const addBodyTheme = (mainBg, secondBg, thirdBg) => {
     bodyLayout.classList.replace(thirdBg, mainBg);
 };
 //funcion para modificar los colores del header
-export const { header, themesLi, themesLiHeader, contactIcon, navbar, generalSettings, introduction, aboutMe, projects, stack } = itemsTheme;
+export const { header, themesLi, themesLiHeader, contactIcon, navbar, generalSettings, introduction, aboutMe, projects, stack, services } = itemsTheme;
 const addheaderTheme = (mainColor, secondColor, thirdColor, contactIconImg) => {
     //header.classList.replace('header-blue','header');
     header.classList.replace(secondColor, mainColor);
@@ -293,7 +300,6 @@ const addStackTheme = (bgColor) => {
             const imageNode = stackContainerGrid[i].image;
             const imageAttribute = stackContainerList[i];
             imageNode.setAttribute("src", imageAttribute);
-            console.log(imageNode.getAttribute("src"));
         }
     };
     switch (bgColor) {
@@ -314,6 +320,32 @@ const addStackTheme = (bgColor) => {
             break;
     }
 };
+const addServicesTheme = (bgColor) => {
+    const { servicesTitle, serviceContainers } = services;
+    console.log(serviceContainers);
+    function* iterateContainers() {
+        for (let container of serviceContainers) {
+            yield container;
+        }
+    }
+    const servirContainerFirst = iterateContainers().next().value;
+    const servirContainerSecond = iterateContainers().next().value;
+    console.log(servirContainerFirst, servirContainerSecond);
+    switch (bgColor) {
+        case "purple":
+            servicesTitle.classList.replace("services-title-blue", "services-title");
+            servicesTitle.classList.replace("services-title-white", "services-title");
+            break;
+        case "blue":
+            servicesTitle.classList.replace("services-title", "services-title-blue");
+            servicesTitle.classList.replace("services-title-white", "services-title-blue");
+            break;
+        case "white":
+            servicesTitle.classList.replace("services-title", "services-title-white");
+            servicesTitle.classList.replace("services-title-blue", "services-title-white");
+            break;
+    }
+};
 export function addThemeLayout(bgColor) {
     switch (bgColor) {
         case "purple":
@@ -325,6 +357,7 @@ export function addThemeLayout(bgColor) {
             addboutMeTheme(bgColor);
             addProjectTheme(bgColor);
             addStackTheme(bgColor);
+            addServicesTheme(bgColor);
             break;
         case "blue":
             addBodyTheme('body-blue', 'body', 'body-white');
@@ -335,6 +368,7 @@ export function addThemeLayout(bgColor) {
             addboutMeTheme(bgColor);
             addProjectTheme(bgColor);
             addStackTheme(bgColor);
+            addServicesTheme(bgColor);
             break;
         case "white":
             addBodyTheme('body-white', 'body-blue', 'body');
@@ -345,6 +379,7 @@ export function addThemeLayout(bgColor) {
             addboutMeTheme(bgColor);
             addProjectTheme(bgColor);
             addStackTheme(bgColor);
+            addServicesTheme(bgColor);
             break;
     }
     return bgColor;
