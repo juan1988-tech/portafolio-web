@@ -63,14 +63,16 @@
     align-items: center;
 }
 
-.introduction .introduction-links{
+.introduction-links{
     grid-area: introduction-links;
     display: flex;
     align-items: center;
 }
 
 
-.introduction .cv-downloader{
+.cv-downloader,
+.cv-downloader-blue,
+.cv-downloader-white{
     margin: 0;
 }
 
@@ -87,6 +89,12 @@
     justify-self: center;
 }
 
+.cv-downloader-blue,
+.cv-downloader-white{
+    margin-top: 0;
+}
+
+
 /*about me*/
 
 .about-me-title,
@@ -100,7 +108,9 @@
     width: 52rem;
 }
 
-.projects-title{
+.projects-title,
+.projects-title-blue,
+.projects-title-white{
     padding-top: 1.6rem;
 }
 
@@ -148,7 +158,9 @@
 
 
 /*stack*/
-.stack .stack-container-delay{
+.stack .stack-container-delay,
+.stack-blue .stack-container-delay,
+.stack-white .stack-container-delay{
     width: 100%;
 }
 
