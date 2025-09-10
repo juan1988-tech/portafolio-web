@@ -42,6 +42,38 @@ let itemsTheme = {
             projectCarouselLeftImg: document.getElementById('project-carousel-left-img'),
             projectCarouselRightimg: document.getElementById('project-carousel-right-img')
         }
+    },
+    stack: {
+        stackBackground: document.querySelector("#stack"),
+        stackContainerGrid: [
+            {
+                image: document.getElementById('mongo-db')
+            },
+            {
+                image: document.getElementById('express')
+            },
+            {
+                image: document.getElementById('react')
+            },
+            {
+                image: document.getElementById('node')
+            },
+            {
+                image: document.getElementById('typescript')
+            },
+            {
+                image: document.getElementById('photoshop')
+            },
+            {
+                image: document.getElementById('illustrator')
+            },
+            {
+                image: document.getElementById('figma')
+            },
+            {
+                image: document.getElementById('trello')
+            },
+        ]
     }
 };
 //función para modificar el body
@@ -52,7 +84,7 @@ export const addBodyTheme = (mainBg, secondBg, thirdBg) => {
     bodyLayout.classList.replace(thirdBg, mainBg);
 };
 //funcion para modificar los colores del header
-export const { header, themesLi, themesLiHeader, contactIcon, navbar, generalSettings, introduction, aboutMe, projects } = itemsTheme;
+export const { header, themesLi, themesLiHeader, contactIcon, navbar, generalSettings, introduction, aboutMe, projects, stack } = itemsTheme;
 const addheaderTheme = (mainColor, secondColor, thirdColor, contactIconImg) => {
     //header.classList.replace('header-blue','header');
     header.classList.replace(secondColor, mainColor);
@@ -227,8 +259,58 @@ const addProjectTheme = (bgColor) => {
             projectCarouselLeft.classList.replace("project-carousel-button-blue", "project-carousel-button-white");
             projectCarouselRight.classList.replace("project-carousel-button", "project-carousel-button-white");
             projectCarouselRight.classList.replace("project-carousel-button-blue", "project-carousel-button-white");
-            projectCarouselLeftImg.src = '../public/assets/icons/new-icons/light-screen-icons/ep_arrow-left-bold-black.svg';
-            projectCarouselRightimg.src = '../public/assets/icons/new-icons/light-screen-icons/ep_arrow-rigtht-bold-black.svg';
+            projectCarouselLeftImg.src = './assets/icons/new-icons/light-screen-icons/ep_arrow-left-bold-black.svg';
+            projectCarouselRightimg.src = './assets/icons/new-icons/light-screen-icons/ep_arrow-rigtht-bold-black.svg';
+            break;
+    }
+};
+const addStackTheme = (bgColor) => {
+    const lightIconsStackUrls = [
+        "./assets/icons/new-icons/dark-screen-icons/devicon-plain_mongodb-wordmark.svg",
+        "./assets/icons/new-icons/dark-screen-icons/simple-icons_express.svg",
+        "./assets/icons/new-icons/dark-screen-icons/uil_react.svg",
+        "./assets/icons/new-icons/dark-screen-icons/fa-brands_node.svg",
+        "./assets/icons/new-icons/dark-screen-icons/catppuccin_typescript.svg",
+        "./assets/icons/new-icons/dark-screen-icons/streamline-logos_adobe-photoshop-logo-solid.svg",
+        "./assets/icons/new-icons/dark-screen-icons/streamline-logos_adobe-illustrator-logo-solid.svg",
+        "./assets/icons/new-icons/dark-screen-icons/solar_figma-broken.svg",
+        "./assets/icons/new-icons/dark-screen-icons/devicon-plain_trello-wordmark.svg"
+    ];
+    const darkIconStackUrls = [
+        "./assets/icons/new-icons/light-screen-icons/devicon-plain_mongodb-wordmark.svg",
+        "./assets/icons/new-icons/light-screen-icons/simple-icons_express.svg",
+        "./assets/icons/new-icons/light-screen-icons/uil_react.svg",
+        "./assets/icons/new-icons/light-screen-icons/fa-brands_node.svg",
+        "./assets/icons/new-icons/light-screen-icons/catppuccin_typescript.svg",
+        "./assets/icons/new-icons/light-screen-icons/streamline-logos_adobe-photoshop-logo-solid.svg",
+        "./assets/icons/new-icons/light-screen-icons/streamline-logos_adobe-illustrator-logo-solid.svg",
+        "./assets/icons/new-icons/light-screen-icons/solar_figma-broken.svg",
+        "./assets/icons/new-icons/light-screen-icons/devicon-plain_trello-wordmark.svg"
+    ];
+    const { stackBackground, stackContainerGrid } = stack;
+    const addSetImages = (stackContainerList) => {
+        for (let i = 0; i < stackContainerGrid.length; i++) {
+            const imageNode = stackContainerGrid[i].image;
+            const imageAttribute = stackContainerList[i];
+            imageNode.setAttribute("src", imageAttribute);
+            console.log(imageNode.getAttribute("src"));
+        }
+    };
+    switch (bgColor) {
+        case "purple":
+            stackBackground.classList.replace("stack-blue", "stack");
+            stackBackground.classList.replace("stack-white", "stack");
+            addSetImages(lightIconsStackUrls);
+            break;
+        case "blue":
+            stackBackground.classList.replace("stack", "stack-blue");
+            stackBackground.classList.replace("stack-white", "stack-blue");
+            addSetImages(lightIconsStackUrls);
+            break;
+        case "white":
+            stackBackground.classList.replace("stack", "stack-white");
+            stackBackground.classList.replace("stack-blue", "stack-white");
+            addSetImages(darkIconStackUrls);
             break;
     }
 };
@@ -242,6 +324,7 @@ export function addThemeLayout(bgColor) {
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
             addProjectTheme(bgColor);
+            addStackTheme(bgColor);
             break;
         case "blue":
             addBodyTheme('body-blue', 'body', 'body-white');
@@ -251,6 +334,7 @@ export function addThemeLayout(bgColor) {
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
             addProjectTheme(bgColor);
+            addStackTheme(bgColor);
             break;
         case "white":
             addBodyTheme('body-white', 'body-blue', 'body');
@@ -260,6 +344,7 @@ export function addThemeLayout(bgColor) {
             addIntroductionTheme(bgColor);
             addboutMeTheme(bgColor);
             addProjectTheme(bgColor);
+            addStackTheme(bgColor);
             break;
     }
     return bgColor;

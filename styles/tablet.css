@@ -188,33 +188,45 @@
 }
 
 /*stack*/
-.stack{
+.stack,
+.stack-blue,
+.stack-white{
     margin-top: 13.6rem;
     height: 18.2rem;
 }
 
-.stack .stack-container{
+.stack .stack-container,
+.stack-blue .stack-container,
+.stack-white .stack-container{
     padding: 0;
 }
 
 
-.stack .stack-container-grid{
+.stack .stack-container-grid,
+.stack-blue .stack-container-grid,
+.stack-white .stack-container-grid{
     height: 9rem;
 }
 
-.stack h1{
+.stack h1,
+.stack-blue h1,
+.stack-white h1{
     font-size: 2.8rem;
     padding-top: 2rem;
 }
 
 
-.stack img:first-child{
+.stack img:first-child,
+.stack-blue img:first-child,
+.stack-white img:first-child{
     margin-left: 0;
     width: 9rem;
     height: 9rem;
 }
 
-.stack img:not(:first-child){
+.stack img:not(:first-child),
+.stack-blue img:not(:first-child),
+.stack-white img:not(:first-child){
     margin-left: 0;
     width: 9rem;
     height: 8rem;

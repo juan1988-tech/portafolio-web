@@ -1375,6 +1375,18 @@ html{
     margin-top: 1.6rem;
 }
 
+.stack-blue{
+    background: var(--main-second-background-blue);
+    margin: 1.6rem auto;
+    margin-top: 1.6rem;
+}
+
+.stack-white{
+    background: var(--main-buttons-white);
+    margin: 1.6rem auto;
+    margin-top: 1.6rem;
+}
+
 .stack h1{
     font-size: 2.4rem;
     font-weight: 500;
@@ -1382,7 +1394,23 @@ html{
     text-align: center;
 }
 
-.stack .stack-container{
+.stack-blue h1{
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--font-principal-title-blue);
+    text-align: center;
+}
+
+.stack-white h1{
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--font-principal-title-white);
+    text-align: center;
+}
+
+.stack .stack-container,
+.stack-blue .stack-container,
+.stack-white .stack-container{
     width: 85%;
     margin: 0 auto;
     padding: 2.4rem 1.6rem;
@@ -1400,14 +1428,43 @@ html{
     mask-image: linear-gradient(to right, transparent, var(--main-second-background) 5%, var(--main-second-background) 95%, transparent);
 }
 
-.stack .stack-container-grid{
+.stack-blue .stack-container-delay{
+    width: 19.3rem;
+    height: 8rem;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 1.2rem;
+
+     /* Difuminado en los lados */
+    -webkit-mask-image: linear-gradient(to right, transparent, var(--main-second-background-blue) 5%, var(--main-second-background-blue) 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, var(--main-second-background-blue) 5%, var(--main-second-background-blue) 95%, transparent);
+}
+
+.stack-white .stack-container-delay{
+    width: 19.3rem;
+    height: 8rem;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 1.2rem;
+
+     /* Difuminado en los lados */
+    -webkit-mask-image: linear-gradient(to right, transparent, var(--main-buttons-white) 5%, var(--main-buttons-white) 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, var(--main-buttons-white) 5%, var(--main-buttons-white) 95%, transparent);
+}
+
+
+.stack .stack-container-grid,
+.stack-blue .stack-container-grid,
+.stack-white .stack-container-grid{
     display: flex;
     width: 157.4rem;
     justify-content: space-between;
     animation: onleftmove 18s linear infinite;
 }
 
-.stack img:not(:first-child){
+.stack img:not(:first-child),
+.stack-blue img:not(:first-child),
+.stack-white img:not(:first-child){
     margin-left: 3.2rem;
 }
 
@@ -1421,7 +1478,9 @@ html{
     }
 }
 
-.stack img{
+.stack img,
+.stack-blue img,
+.stack-white img{
     width: 8rem;
     height: 8rem;
 }

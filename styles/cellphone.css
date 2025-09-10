@@ -158,7 +158,9 @@
 
 
 /*stack*/
-.stack .stack-container-delay{
+.stack .stack-container-delay,
+.stack-blue .stack-container-delay,
+.stack-white .stack-container-delay{
     width: 100%;
 }
 
