@@ -237,6 +237,12 @@
     width: 69.4rem;
 }
 
+.services-title,
+.services-title-blue,
+.services-title-white{
+    font-size: 2.8rem;
+}
+
 .services .service-target-container{
     width: 100%;
     height: 34rem;

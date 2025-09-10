@@ -1486,15 +1486,31 @@ html{
 }
 
 /*services*/
-.services .services-container{
+.services .services-container,
+.services-blue .services-container,
+.services-white .services-container{
     width: 85%;
     margin: 0 auto;
 }
 
-.services h1{
+.services-title{
     font-size: 2.4rem;
     font-weight: 500;
     color: var(--font-principal-title);
+    text-align: center;
+}
+
+.services-title-blue{
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--font-principal-title-blue);
+    text-align: center;
+}
+
+.services-title-white{
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--font-principal-title-white);
     text-align: center;
 }
 
@@ -1525,7 +1541,7 @@ html{
     transition-timing-function: ease-in;
 }
 
-.services .service-target{
+.service-target{
     width: 100%;
     background: var(--main-second-background);
     border-radius: .6rem;
@@ -1534,7 +1550,25 @@ html{
     margin-top: 1.6rem;
 }
 
-.services-container h2{
+.service-target-blue{
+    width: 100%;
+    background: var(--main-second-background-blue);
+    border-radius: .6rem;
+    padding: 2rem;
+    width: 27rem;
+    margin-top: 1.6rem;
+}
+
+.service-target-white{
+    width: 100%;
+    background: var(--main-buttons-white);
+    border-radius: .6rem;
+    padding: 2rem;
+    width: 27rem;
+    margin-top: 1.6rem;
+}
+
+.services-second-title{
     font-size: 2rem;
     font-weight: 500;
     color: var(--font-principal-title);
@@ -1543,7 +1577,24 @@ html{
     margin-top: 1.6rem;
 }
 
-.services-container h2 + p{
+.services-second-title{
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--font-principal-title-blue);
+    width: 21.6rem;
+    text-align: center;
+    margin-top: 1.6rem;
+}
+
+.services-second-white{
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--font-principal-title-white);
+    width: 21.6rem;
+    text-align: center;
+    margin-top: 1.6rem;
+}
+.services-second-title + p{
     font-size: 1.6rem;
     text-align: center;
     margin-top: 1.6rem;
