@@ -182,13 +182,17 @@
     width: 210%;
 }
 
-.services-container h2{
+.services-skill-title,
+.services-skill-title-blue,
+.services-skill-title-white{
     width: 100%;
     margin-top: .8rem;
     font-size: 2rem;
 }
 
-.services-container h2 + p{
+.services-skill-title +  p,
+.services-skill-title-blue + p,
+.services-skill-title-white + p{
     margin-top: .4rem;
 }
 

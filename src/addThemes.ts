@@ -51,7 +51,9 @@ interface theme{
     },
     services: {
         servicesTitle: HTMLTitleElement,
-        serviceContainers: HTMLDivElement[]
+        serviceContainers: HTMLDivElement[],
+        serviceContainersTitle: HTMLTitleElement[],
+        servicContainerImages: HTMLImageElement[],
     }
 }
 
@@ -137,7 +139,16 @@ let itemsTheme: theme ={
         serviceContainers: [
             document.querySelector("#service-target-first") as HTMLDivElement,
             document.querySelector("#service-target-second") as HTMLDivElement,
+        ],
+        serviceContainersTitle:[
+            document.querySelector("#services-skill-title-first") as HTMLTitleElement,
+            document.querySelector("#services-skill-title-second") as HTMLTitleElement,
+        ],
+        servicContainerImages:[
+            document.querySelector("#coding-skill") as HTMLImageElement,
+            document.querySelector("#ux-ui-skill") as HTMLImageElement
         ]
+
     }
 }
 
@@ -446,31 +457,59 @@ const addStackTheme = (bgColor:string):void =>{
 }
 
 const addServicesTheme = (bgColor:string):void =>{    
-    const { servicesTitle,serviceContainers } = services;
-    console.log(serviceContainers); 
+    const { servicesTitle,serviceContainers,serviceContainersTitle,servicContainerImages } = services;
+    
+    const darkSkillsImages:string[] =[
+        "./assets/icons/new-icons/dark-screen-icons/coding.skill.svg",
+        "./assets/icons/new-icons/dark-screen-icons/ux-ui-skill.svg"
+    ]  
+    
+    const lightSkillsImages:string[] =[
+        "./assets/icons/new-icons/light-screen-icons/coding.skill.svg",
+        "./assets/icons/new-icons/light-screen-icons/ux-ui-skill.svg"
+    ]
 
-    function* iterateContainers(){
-        for(let container of serviceContainers){
-            yield container
+    function setSkillsImages(skillsImages:string[]){
+        for(let i=0;i<servicContainerImages.length;i++){
+            const imageSkill = servicContainerImages[i];
+            imageSkill.setAttribute("src",skillsImages[i])
+        }
+    }
+
+    function changeColorContainers(elements:HTMLDivElement[]|HTMLTitleElement[],mainColor:string,secondColor:string,thirdColor:string){
+        for(let element of elements){
+            element.classList.replace(secondColor,mainColor)    
+            element.classList.replace(thirdColor,mainColor)
         }
     }
     
-    const servirContainerFirst = iterateContainers().next().value;
-    const servirContainerSecond = iterateContainers().next().value;
-    console.log(servirContainerFirst,servirContainerSecond);
-
     switch (bgColor) {
         case "purple":
-            servicesTitle.classList.replace("services-title-blue","services-title")
-            servicesTitle.classList.replace("services-title-white","services-title")    
+            servicesTitle.classList.replace("services-title-blue","services-title");
+            servicesTitle.classList.replace("services-title-white","services-title");
+
+            changeColorContainers(serviceContainers,"service-target","service-target-blue","service-target-white");
+            changeColorContainers(serviceContainersTitle,"services-skill-title","services-skill-title-blue","services-skill-title-white");
+
+            setSkillsImages(darkSkillsImages);
             break;
         case "blue":
-            servicesTitle.classList.replace("services-title","services-title-blue")
-            servicesTitle.classList.replace("services-title-white","services-title-blue")    
+            servicesTitle.classList.replace("services-title","services-title-blue");
+            servicesTitle.classList.replace("services-title-white","services-title-blue");
+
+            changeColorContainers(serviceContainers,"service-target-blue","service-target","service-target-white");
+            changeColorContainers(serviceContainersTitle,"services-skill-title-blue","services-skill-title","services-skill-title-white");
+
+            setSkillsImages(darkSkillsImages);
             break;
         case "white":
-            servicesTitle.classList.replace("services-title","services-title-white")
-            servicesTitle.classList.replace("services-title-blue","services-title-white")    
+            servicesTitle.classList.replace("services-title","services-title-white");
+            servicesTitle.classList.replace("services-title-blue","services-title-white");    
+
+            changeColorContainers(serviceContainers,"service-target-white","service-target","service-target-blue");
+            changeColorContainers(serviceContainersTitle,"services-skill-title-white","services-skill-title","services-skill-title-blue");
+
+            setSkillsImages(lightSkillsImages);
             break;
     }
 }
