@@ -215,7 +215,6 @@
     padding-top: 2rem;
 }
 
-
 .stack img:first-child,
 .stack-blue img:first-child,
 .stack-white img:first-child{
@@ -292,11 +291,15 @@
 }
 
 /*footer*/
-.footer-section .footer-initial-label h1{
+.footer-section .footer-initial-label h1,
+.footer-section-blue .footer-initial-label h1,
+.footer-section-white .footer-initial-label h1{
     font-size: 2.8rem;
 }
 
-.footer-section .footer-initial-label h1 + p{
+.footer-section .footer-initial-label h1 + p,
+.footer-section-blue .footer-initial-label h1 + p,
+.footer-section-white .footer-initial-label h1 + p{
     font-size: 2rem;
     width: 41.1rem;
     margin: 0 auto;
@@ -341,22 +344,32 @@
 } 
 
 .footer-section .footer-main-form input[type="text"],
-.footer-section .footer-main-form input[type="tel"]{
+.footer-section-blue .footer-main-form input[type="text"],
+.footer-section-white .footer-main-form input[type="text"],
+.footer-section .footer-main-form input[type="tel"],
+.footer-section-blue .footer-main-form input[type="tel"],
+.footer-section-white .footer-main-form input[type="tel"]{
     font-size: 2rem;
     height: 3.6rem;
 }
 
-.footer-section .footer-main-form label{
+.footer-section .footer-main-form label,
+.footer-section-blue .footer-main-form label,
+.footer-section-white .footer-main-form label{
     height: 7.4rem;
 }
 
-.footer-section .footer-label-credits{
+.footer-section .footer-label-credits,
+.footer-section-blue .footer-label-credits,
+.footer-section-whirew .footer-label-credits{
     width: 29rem;
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
 }
 
-.footer-section .footer-main-form button[type="submit"]{
+.footer-section .footer-main-form button[type="submit"],
+.footer-section-blue .footer-main-form button[type="submit"],
+.footer-section-white .footer-main-form button[type="submit"]{
     height: 3.6rem;
 }

@@ -170,7 +170,9 @@
     height: 20rem;
 }
 
-.services-container .service-target{
+.services-container .service-target,
+.services-container .service-target-blue,
+.services-container .service-target-white{
     width: 36rem;
     height: 20rem;
     padding: 1rem 1.6rem;
@@ -197,7 +199,9 @@
 }
 
 /*footer*/
-.footer-section .footer-initial-label h1{
+.footer-section .footer-initial-label h1,
+.footer-section-blue .footer-initial-label h1,
+.footer-section-white .footer-initial-label h1{
     font-size: 2rem;
 }
 

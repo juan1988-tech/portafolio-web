@@ -372,7 +372,8 @@ serviceTargetContainer.addEventListener('touchmove', (event) => {
         touchServiceMatrix = matrixTouch;
     }
 });
-serviceTargetContainer.addEventListener('touchend', () => {
+//crear una funcion de movimiento para los botones
+const serviceTargetsMovement = (outlinedButton, indicatorButton) => {
     if (bodyLayout.clientWidth <= 743) {
         const { initTouchX, secondTouchX } = touchServiceMatrix;
         if (initTouchX > secondTouchX) {
@@ -391,18 +392,30 @@ serviceTargetContainer.addEventListener('touchend', () => {
             case 0:
                 //cambio de estilos para la tarjeta de servicios
                 serviceTargetGrid.classList.replace(serviceContainerDelay[1], serviceContainerDelay[0]);
-                serviceCarouselCircles[0].classList.replace('service-indicator', 'service-outlined');
-                serviceCarouselCircles[1].classList.replace('service-outlined', 'service-indicator');
+                serviceCarouselCircles[0].classList.replace(indicatorButton, outlinedButton);
+                serviceCarouselCircles[1].classList.replace(outlinedButton, indicatorButton);
                 break;
             case 1:
                 //cambio de estilos para la tarjeta de servicios
                 serviceTargetGrid.classList.replace(serviceContainerDelay[0], serviceContainerDelay[1]);
-                serviceCarouselCircles[0].classList.replace('service-outlined', 'service-indicator');
-                serviceCarouselCircles[1].classList.replace('service-indicator', 'service-outlined');
+                serviceCarouselCircles[0].classList.replace(outlinedButton, indicatorButton);
+                serviceCarouselCircles[1].classList.replace(indicatorButton, outlinedButton);
                 break;
             default:
                 0;
                 break;
         }
+    }
+};
+serviceTargetContainer.addEventListener('touchend', () => {
+    console.log(bodyLayout.className);
+    if (bodyLayout.className === "body") {
+        serviceTargetsMovement('service-outlined', 'service-indicator');
+    }
+    if (bodyLayout.className === "body-blue") {
+        serviceTargetsMovement("service-outlined-blue", "service-indicator-blue");
+    }
+    if (bodyLayout.className === "body-white") {
+        serviceTargetsMovement("service-outlined-white", "service-indicator-white");
     }
 });

@@ -1236,8 +1236,6 @@ html{
     height: 6.6rem;
 }
 
-
-
 .projects .project-performance-description{
     font-size: 1.6rem;
     color: var(--font-principal-letter)
@@ -1309,16 +1307,8 @@ html{
     transition-duration: .6s;
 }
 
-.project-carousel-indicator .outlined,
-.service-outlined{
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    border: 1px solid var(--font-principal-letter);
-    background: var(--main-second-background);
-    transform: scale(1.2); 
-    transition-duration: .6s;
-}
+
+
 
 .project-carousel-arrows{
     width: 12rem;
@@ -1641,12 +1631,62 @@ html{
     justify-content: space-between;
 }
 
-.services .service-indicator{
+.service-outlined{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid var(--font-principal-letter);
+    background: var(--main-second-background);
+    transform: scale(1.2); 
+    transition-duration: .6s;
+}
+
+.service-outlined-blue{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid var(--font-principal-letter);
+    background: var(--main-second-background-blue);
+    transform: scale(1.2); 
+    transition-duration: .6s;
+}
+
+.service-outlined-white{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid var(--font-principal-letter-white);
+    background: var(--main-buttons-white);
+    transform: scale(1.2); 
+    transition-duration: .6s;
+}
+
+.service-indicator{
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
     border: 1px solid var(--medium-dark-gray);
-    background: var(--main-body-background);
+    background: var(--main-second-background);
+    transform: scale(1); 
+    transition-duration: .6s;
+}
+
+.service-indicator-blue{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid var(--medium-dark-gray);
+    background: var(--main-second-background-blue);
+    transform: scale(1); 
+    transition-duration: .6s;
+}
+
+.service-indicator-white{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid var(--font-principal-letter-white);
+    background: var(--main-buttons-white);
     transform: scale(1); 
     transition-duration: .6s;
 }
@@ -1657,20 +1697,46 @@ html{
     margin-top: 1.6rem;
 }
 
-.footer-section .footer-section-container{
+.footer-section-blue{
+    background: var(--main-second-background-blue);
+    margin-top: 1.6rem;
+}
+
+.footer-section-white{
+    background: var(--main-buttons-white);
+    margin-top: 1.6rem;
+}
+
+.footer-section-container{
     width: 85%;
     margin: 0 auto;
     padding-top: 1.6rem;
 }
 
-.footer-section .footer-initial-label h1{
+.footer-initial-label h1{
    font-size: 2.4rem;
    font-weight: 500;
    color: var(--font-principal-title);
    text-align: center;    
 }
 
-.footer-section .footer-initial-label h1 + p{
+.footer-initial-label-blue h1{
+   font-size: 2.4rem;
+   font-weight: 500;
+   color: var(--font-principal-title-blue);
+   text-align: center;    
+}
+
+.footer-initial-label-white h1{
+   font-size: 2.4rem;
+   font-weight: 500;
+   color: var(--font-principal-title-white);
+   text-align: center;
+}
+
+.footer-initial-label h1 + p,
+.footer-initial-label-blue h1 + p,
+.footer-initial-label-white h1 + p{
    margin-top: .8rem;
    text-align: center;
    font-size: 1.6rem; 
@@ -1701,7 +1767,7 @@ html{
     color: var(--font-principal-letter);
 }
 
-.footer-section-links ul .footer-section-icon{
+.footer-section-icon{
     width: 4.2rem;
     height: 4.2rem;
     border-radius: 50%;
@@ -1711,7 +1777,18 @@ html{
     justify-content: center;
 }
 
-.footer-section-links ul .footer-section-icon img{
+.footer-section-icon-white{
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    border: 1px solid var(--font-principal-letter-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-section-icon img,
+.footer-section-icon-white img{
     width: 2.4rem;
     height: 2.4rem;
 }
@@ -1720,7 +1797,7 @@ html{
     margin-left: 1.2rem;
 }
 
-.footer-section .footer-main-form{
+.footer-main-form{
     width: 100%;
     border: 1px solid var(--soft-gray);
     border-radius: .6rem;
@@ -1729,19 +1806,19 @@ html{
     margin-top: 2.4rem;
 }
 
-.footer-section .footer-main-form label{
+.footer-main-form label{
     margin-top: 1.6rem;
     height: 6.4rem;
     display: flex;
     flex-direction: column;
 }
 
-.footer-section .footer-main-form p{
+.footer-main-form p{
     font-size: 1.6rem;
 }
 
-.footer-section .footer-main-form input[type="text"],
-.footer-section .footer-main-form input[type="tel"]{
+.footer-main-form input[type="text"],
+.footer-main-form input[type="tel"]{
     width: 100%;
     background: var(--main-second-background);
     height: 3.2rem;
@@ -1752,7 +1829,7 @@ html{
     padding: 0 1.6rem;
 }
 
-.footer-section .footer-main-form button[type="submit"]{
+.footer-main-form button[type="submit"]{
     width: 19.2rem;
     height: 3.2rem;
     border-radius: .6rem;
@@ -1766,24 +1843,23 @@ html{
     font-size: 1.6rem;
 }
 
-.footer-section .footer-final-credits{
+.footer-final-credits{
     border-top: 1px solid var(--font-principal-letter);
     margin-top: 2.4rem;
 }
 
-.footer-section .footer-final-credits p:first-child{
+.footer-final-credits p:first-child{
     text-align: center;
     font-size: 1.6rem;
     margin-top: 2rem;
 }
 
-.footer-section .footer-final-credits p:first-child + p{
+.footer-final-credits p:first-child + p{
     text-align: center;
     font-size: 1.6rem;
     color: var(--font-principal-title);
     margin-top: 1.6rem;
 }
-
 
 .footer-section .footer-main-form label:first-child{
     margin-top: 0;

@@ -88,6 +88,31 @@ let itemsTheme = {
         servicContainerImages: [
             document.querySelector("#coding-skill"),
             document.querySelector("#ux-ui-skill")
+        ],
+        serviceCarouselIndicator: [
+            document.querySelector("#service-first-button"),
+            document.querySelector("#service-second-button"),
+        ]
+    },
+    footer: {
+        footerSection: document.getElementById("footer-section"),
+        footerIconsList: [
+            {
+                figure: document.querySelector("#footer-figure-whatsapp"),
+                image: document.querySelector("#whatsapp-footer")
+            },
+            {
+                figure: document.querySelector("#footer-figure-linkedin"),
+                image: document.querySelector("#linkedin-footer")
+            },
+            {
+                figure: document.querySelector("#footer-figure-git-hub"),
+                image: document.querySelector("#git-hub-footer")
+            },
+            {
+                figure: document.querySelector("#footer-figure-email"),
+                image: document.querySelector("#email-footer")
+            }
         ]
     }
 };
@@ -99,7 +124,7 @@ export const addBodyTheme = (mainBg, secondBg, thirdBg) => {
     bodyLayout.classList.replace(thirdBg, mainBg);
 };
 //funcion para modificar los colores del header
-export const { header, themesLi, themesLiHeader, contactIcon, navbar, generalSettings, introduction, aboutMe, projects, stack, services } = itemsTheme;
+export const { header, themesLi, themesLiHeader, contactIcon, navbar, generalSettings, introduction, aboutMe, projects, stack, services, footer } = itemsTheme;
 const addheaderTheme = (mainColor, secondColor, thirdColor, contactIconImg) => {
     //header.classList.replace('header-blue','header');
     header.classList.replace(secondColor, mainColor);
@@ -329,7 +354,7 @@ const addStackTheme = (bgColor) => {
     }
 };
 const addServicesTheme = (bgColor) => {
-    const { servicesTitle, serviceContainers, serviceContainersTitle, servicContainerImages } = services;
+    const { servicesTitle, serviceContainers, serviceContainersTitle, servicContainerImages, serviceCarouselIndicator } = services;
     const darkSkillsImages = [
         "./assets/icons/new-icons/dark-screen-icons/coding.skill.svg",
         "./assets/icons/new-icons/dark-screen-icons/ux-ui-skill.svg"
@@ -357,6 +382,10 @@ const addServicesTheme = (bgColor) => {
             changeColorContainers(serviceContainers, "service-target", "service-target-blue", "service-target-white");
             changeColorContainers(serviceContainersTitle, "services-skill-title", "services-skill-title-blue", "services-skill-title-white");
             setSkillsImages(darkSkillsImages);
+            serviceCarouselIndicator[0].classList.replace("service-outlined-blue", "service-outlined");
+            serviceCarouselIndicator[0].classList.replace("service-outlined-white", "service-outlined");
+            serviceCarouselIndicator[1].classList.replace("service-indicator-blue", "service-indicator");
+            serviceCarouselIndicator[1].classList.replace("service-indicator-white", "service-indicator");
             break;
         case "blue":
             servicesTitle.classList.replace("services-title", "services-title-blue");
@@ -364,6 +393,10 @@ const addServicesTheme = (bgColor) => {
             changeColorContainers(serviceContainers, "service-target-blue", "service-target", "service-target-white");
             changeColorContainers(serviceContainersTitle, "services-skill-title-blue", "services-skill-title", "services-skill-title-white");
             setSkillsImages(darkSkillsImages);
+            serviceCarouselIndicator[0].classList.replace("service-outlined", "service-outlined-blue");
+            serviceCarouselIndicator[0].classList.replace("service-outlined-white", "service-outlined-blue");
+            serviceCarouselIndicator[1].classList.replace("service-indicator", "service-indicator-blue");
+            serviceCarouselIndicator[1].classList.replace("service-indicator-white", "service-indicator-blue");
             break;
         case "white":
             servicesTitle.classList.replace("services-title", "services-title-white");
@@ -371,6 +404,28 @@ const addServicesTheme = (bgColor) => {
             changeColorContainers(serviceContainers, "service-target-white", "service-target", "service-target-blue");
             changeColorContainers(serviceContainersTitle, "services-skill-title-white", "services-skill-title", "services-skill-title-blue");
             setSkillsImages(lightSkillsImages);
+            serviceCarouselIndicator[0].classList.replace("service-outlined", "service-outlined-white");
+            serviceCarouselIndicator[0].classList.replace("service-outlined-blue", "service-outlined-white");
+            serviceCarouselIndicator[1].classList.replace("service-indicator", "service-indicator-white");
+            serviceCarouselIndicator[1].classList.replace("service-indicator-blue", "service-indicator-white");
+            break;
+    }
+};
+const addFooterTheme = (bgColor) => {
+    const { footerSection, footerIconsList } = footer;
+    console.log(footerIconsList);
+    switch (bgColor) {
+        case "purple":
+            footerSection.classList.replace("footer-section-blue", "footer-section");
+            footerSection.classList.replace("footer-section-white", "footer-section");
+            break;
+        case "blue":
+            footerSection.classList.replace("footer-section", "footer-section-blue");
+            footerSection.classList.replace("footer-section-white", "footer-section-blue");
+            break;
+        case "white":
+            footerSection.classList.replace("footer-section", "footer-section-white");
+            footerSection.classList.replace("footer-section-blue", "footer-section-white");
             break;
     }
 };
@@ -386,6 +441,7 @@ export function addThemeLayout(bgColor) {
             addProjectTheme(bgColor);
             addStackTheme(bgColor);
             addServicesTheme(bgColor);
+            addFooterTheme(bgColor);
             break;
         case "blue":
             addBodyTheme('body-blue', 'body', 'body-white');
@@ -397,6 +453,7 @@ export function addThemeLayout(bgColor) {
             addProjectTheme(bgColor);
             addStackTheme(bgColor);
             addServicesTheme(bgColor);
+            addFooterTheme(bgColor);
             break;
         case "white":
             addBodyTheme('body-white', 'body-blue', 'body');
@@ -408,6 +465,7 @@ export function addThemeLayout(bgColor) {
             addProjectTheme(bgColor);
             addStackTheme(bgColor);
             addServicesTheme(bgColor);
+            addFooterTheme(bgColor);
             break;
     }
     return bgColor;
