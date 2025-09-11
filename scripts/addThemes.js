@@ -80,6 +80,14 @@ let itemsTheme = {
         serviceContainers: [
             document.querySelector("#service-target-first"),
             document.querySelector("#service-target-second"),
+        ],
+        serviceContainersTitle: [
+            document.querySelector("#services-skill-title-first"),
+            document.querySelector("#services-skill-title-second"),
+        ],
+        servicContainerImages: [
+            document.querySelector("#coding-skill"),
+            document.querySelector("#ux-ui-skill")
         ]
     }
 };
@@ -321,28 +329,48 @@ const addStackTheme = (bgColor) => {
     }
 };
 const addServicesTheme = (bgColor) => {
-    const { servicesTitle, serviceContainers } = services;
-    console.log(serviceContainers);
-    function* iterateContainers() {
-        for (let container of serviceContainers) {
-            yield container;
+    const { servicesTitle, serviceContainers, serviceContainersTitle, servicContainerImages } = services;
+    const darkSkillsImages = [
+        "./assets/icons/new-icons/dark-screen-icons/coding.skill.svg",
+        "./assets/icons/new-icons/dark-screen-icons/ux-ui-skill.svg"
+    ];
+    const lightSkillsImages = [
+        "./assets/icons/new-icons/light-screen-icons/coding.skill.svg",
+        "./assets/icons/new-icons/light-screen-icons/ux-ui-skill.svg"
+    ];
+    function setSkillsImages(skillsImages) {
+        for (let i = 0; i < servicContainerImages.length; i++) {
+            const imageSkill = servicContainerImages[i];
+            imageSkill.setAttribute("src", skillsImages[i]);
         }
     }
-    const servirContainerFirst = iterateContainers().next().value;
-    const servirContainerSecond = iterateContainers().next().value;
-    console.log(servirContainerFirst, servirContainerSecond);
+    function changeColorContainers(elements, mainColor, secondColor, thirdColor) {
+        for (let element of elements) {
+            element.classList.replace(secondColor, mainColor);
+            element.classList.replace(thirdColor, mainColor);
+        }
+    }
     switch (bgColor) {
         case "purple":
             servicesTitle.classList.replace("services-title-blue", "services-title");
             servicesTitle.classList.replace("services-title-white", "services-title");
+            changeColorContainers(serviceContainers, "service-target", "service-target-blue", "service-target-white");
+            changeColorContainers(serviceContainersTitle, "services-skill-title", "services-skill-title-blue", "services-skill-title-white");
+            setSkillsImages(darkSkillsImages);
             break;
         case "blue":
             servicesTitle.classList.replace("services-title", "services-title-blue");
             servicesTitle.classList.replace("services-title-white", "services-title-blue");
+            changeColorContainers(serviceContainers, "service-target-blue", "service-target", "service-target-white");
+            changeColorContainers(serviceContainersTitle, "services-skill-title-blue", "services-skill-title", "services-skill-title-white");
+            setSkillsImages(darkSkillsImages);
             break;
         case "white":
             servicesTitle.classList.replace("services-title", "services-title-white");
             servicesTitle.classList.replace("services-title-blue", "services-title-white");
+            changeColorContainers(serviceContainers, "service-target-white", "service-target", "service-target-blue");
+            changeColorContainers(serviceContainersTitle, "services-skill-title-white", "services-skill-title", "services-skill-title-blue");
+            setSkillsImages(lightSkillsImages);
             break;
     }
 };

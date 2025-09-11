@@ -270,7 +270,9 @@
     width: 6rem;
 }
 
-.services-container h2{
+.services-skill-title,
+.services-skill-title-blue,
+.services-skill-title-white{
     font-size: 2.4rem;
     width: 17rem;
     height: 6rem;
@@ -278,7 +280,9 @@
     margin-top: .8rem;
 }
 
-.services-container h2 + p{
+.services-skill-title + p,
+.services-skill-title-blue + p,
+.services-skill-title-white + p{
     font-size: 2rem;
     margin-top: 1.2rem;
 }

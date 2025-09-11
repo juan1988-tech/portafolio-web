@@ -1568,7 +1568,7 @@ html{
     margin-top: 1.6rem;
 }
 
-.services-second-title{
+.services-skill-title{
     font-size: 2rem;
     font-weight: 500;
     color: var(--font-principal-title);
@@ -1577,7 +1577,7 @@ html{
     margin-top: 1.6rem;
 }
 
-.services-second-title{
+.services-skill-title-blue{
     font-size: 2rem;
     font-weight: 500;
     color: var(--font-principal-title-blue);
@@ -1586,7 +1586,7 @@ html{
     margin-top: 1.6rem;
 }
 
-.services-second-white{
+.services-skill-title-white{
     font-size: 2rem;
     font-weight: 500;
     color: var(--font-principal-title-white);
@@ -1594,7 +1594,11 @@ html{
     text-align: center;
     margin-top: 1.6rem;
 }
-.services-second-title + p{
+
+
+.services-skill-title + p,
+.services-skill-title-blue + p,
+.services-skill-title-white + p{
     font-size: 1.6rem;
     text-align: center;
     margin-top: 1.6rem;
