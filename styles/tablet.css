@@ -232,7 +232,8 @@
 }
 
 /*services*/
-.services .services-container{
+
+ .services-container{
     width: 69.4rem;
 }
 
@@ -247,13 +248,15 @@
     height: 34rem;
 }
 
-.services .service-target-grid-first{
+.service-target-grid-first{
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.services-container .service-target{
+.service-target,
+.service-target-blue,
+.service-target-white{
     width: 32rem;
     height: 32rem;
     padding: 2rem;
@@ -306,20 +309,22 @@
     margin-top: 2rem;
 }
 
-.footer-section-links ul .footer-section-icon{
+.footer-section-icon,
+.footer-section-icon-white{
     width: 5.6rem;
     height: 5.6rem;
 }
 
-.footer-section-links ul .footer-section-icon + p{
+.footer-section-icon + p,
+.footer-section-icon-white + p{
     font-size: 2rem;
 }
 
-.footer-section-links ul .footer-section-icon img{
+.footer-section-icon img,
+.footer-section-icon-white img{
     width: 3.2rem;
     height: 3.2rem;
 }
-
 
 .footer-section-links ul li a{
     height: 5.6rem;
@@ -329,7 +334,9 @@
     height: 16.6rem;
 }
 
-.footer-section .footer-main-form{
+.footer-main-form,
+.footer-main-form-blue,
+.footer-main-form-white{
     width: 44.4rem;
     margin: 0 auto;
     margin-top: 3.2rem;
@@ -343,33 +350,33 @@
     justify-content: space-between;
 } 
 
-.footer-section .footer-main-form input[type="text"],
-.footer-section-blue .footer-main-form input[type="text"],
-.footer-section-white .footer-main-form input[type="text"],
-.footer-section .footer-main-form input[type="tel"],
-.footer-section-blue .footer-main-form input[type="tel"],
-.footer-section-white .footer-main-form input[type="tel"]{
+.footer-main-form input[type="text"],
+.footer-main-form-blue input[type="text"],
+.footer-main-form-white input[type="text"],
+.footer-main-form input[type="tel"],
+.footer-main-form-blue input[type="tel"],
+.footer-main-form-white input[type="tel"]{
     font-size: 2rem;
     height: 3.6rem;
 }
 
-.footer-section .footer-main-form label,
-.footer-section-blue .footer-main-form label,
-.footer-section-white .footer-main-form label{
+.footer-main-form label,
+.footer-main-form-blue label,
+.footer-main-form-white label{
     height: 7.4rem;
 }
 
 .footer-section .footer-label-credits,
 .footer-section-blue .footer-label-credits,
-.footer-section-whirew .footer-label-credits{
+.footer-section-white .footer-label-credits{
     width: 29rem;
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
 }
 
-.footer-section .footer-main-form button[type="submit"],
-.footer-section-blue .footer-main-form button[type="submit"],
-.footer-section-white .footer-main-form button[type="submit"]{
+.footer-main-form button[type="submit"],
+.footer-main-form-blue button[type="submit"],
+.footer-main-form-white button[type="submit"]{
     height: 3.6rem;
 }
