@@ -1,6 +1,5 @@
 let itemsTheme = {
     body: document.body,
-    /*header*/
     header: document.getElementById('header'),
     themesLi: [
         document.querySelector('#add-violet-theme'),
@@ -96,6 +95,7 @@ let itemsTheme = {
     },
     footer: {
         footerSection: document.getElementById("footer-section"),
+        footerInitialTitle: document.getElementById("footer-initial-title"),
         footerIconsList: [
             {
                 figure: document.querySelector("#footer-figure-whatsapp"),
@@ -113,7 +113,8 @@ let itemsTheme = {
                 figure: document.querySelector("#footer-figure-email"),
                 image: document.querySelector("#email-footer")
             }
-        ]
+        ],
+        footerMainForm: document.getElementById("footer-main-form")
     }
 };
 //función para modificar el body
@@ -411,21 +412,60 @@ const addServicesTheme = (bgColor) => {
             break;
     }
 };
+const addSetIcons = (footerIcon, firstColor = "footer-section-icon-white", secondCOlor = "footer-section-icon") => {
+    const darkIconImages = [
+        "./assets/icons/new-icons/dark-screen-icons/bxl_whatsapp.svg",
+        "./assets/icons/new-icons/dark-screen-icons/la_linkedin-in.svg",
+        "./assets/icons/new-icons/dark-screen-icons/line-md_github.svg",
+        "./assets/icons/new-icons/dark-screen-icons/mdi_email-outline.svg"
+    ];
+    const lightIconImages = [
+        "./assets/icons/new-icons/light-screen-icons/bxl_whatsapp.svg",
+        "./assets/icons/new-icons/light-screen-icons/la_linkedin-in.svg",
+        "./assets/icons/new-icons/light-screen-icons/line-md_github.svg",
+        "./assets/icons/new-icons/light-screen-icons/mdi_email-outline.svg"
+    ];
+    footerIcon.forEach((icon, index) => {
+        const { figure, image } = icon;
+        figure.classList.replace(firstColor, secondCOlor);
+        if (firstColor === "footer-section-icon-white") {
+            image.setAttribute("src", darkIconImages[index]);
+        }
+        else {
+            image.setAttribute("src", lightIconImages[index]);
+        }
+    });
+};
 const addFooterTheme = (bgColor) => {
-    const { footerSection, footerIconsList } = footer;
-    console.log(footerIconsList);
+    const { footerSection, footerIconsList, footerInitialTitle, footerMainForm } = footer;
+    console.log(footerMainForm);
     switch (bgColor) {
         case "purple":
+            footerInitialTitle.classList.replace("footer-initial-title-blue", "footer-initial-title");
+            footerInitialTitle.classList.replace("footer-initial-title-white", "footer-initial-title");
             footerSection.classList.replace("footer-section-blue", "footer-section");
             footerSection.classList.replace("footer-section-white", "footer-section");
+            addSetIcons(footerIconsList);
+            footerMainForm.classList.replace("footer-main-form-blue", "footer-main-form");
+            footerMainForm.classList.replace("footer-main-form-white", "footer-main-form");
             break;
         case "blue":
+            footerInitialTitle.classList.replace("footer-initial-title", "footer-initial-title-blue");
+            footerInitialTitle.classList.replace("footer-initial-title-white", "footer-initial-title-blue");
             footerSection.classList.replace("footer-section", "footer-section-blue");
             footerSection.classList.replace("footer-section-white", "footer-section-blue");
+            addSetIcons(footerIconsList);
+            footerMainForm.classList.replace("footer-main-form", "footer-main-form-blue");
+            footerMainForm.classList.replace("footer-main-form-white", "footer-main-form-blue");
             break;
         case "white":
+            footerInitialTitle.classList.replace("footer-initial-title", "footer-initial-title-white");
+            footerInitialTitle.classList.replace("footer-initial-title-blue", "footer-initial-title-white");
             footerSection.classList.replace("footer-section", "footer-section-white");
             footerSection.classList.replace("footer-section-blue", "footer-section-white");
+            addSetIcons(footerIconsList, "footer-section-icon", "footer-section-icon-white");
+            footerMainForm.classList.replace("footer-main-form", "footer-main-form-white");
+            footerMainForm.classList.replace("footer-main-form-blue", "footer-main-form-white");
             break;
     }
 };

@@ -190,17 +190,17 @@ navbarContact.addEventListener('click',()=>{
 /*funciones en el nabvar: media query desktop*/
 //funcion de scroll para la sección acerca de mí
 headerAboutMe.addEventListener('click',()=>{
-    scrollToSection(".about-me");
+    scrollToSection("#about-me");
 })
 
 //funcion de scroll para la sección proyectos
 headerProjects.addEventListener('click',()=>{
-    scrollToSection(".projects");
+    scrollToSection("#projects");
 })
 
 //funcion de scroll para la sección contacto
 headerContact.addEventListener('click',()=>{
-    scrollToSection(".footer-section")
+    scrollToSection("#footer-section")
 })
 
 const headerSettings: HTMLElement = document.getElementById('header-settings') as HTMLElement;

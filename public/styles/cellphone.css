@@ -170,16 +170,16 @@
     height: 20rem;
 }
 
-.services-container .service-target,
-.services-container .service-target-blue,
-.services-container .service-target-white{
+.service-target,
+.service-target-blue,
+.service-target-white{
     width: 36rem;
     height: 20rem;
     padding: 1rem 1.6rem;
 }
 
-.services .service-target-grid-first,
-.services .service-target-grid-second{
+.service-target-grid-first,
+.service-target-grid-second{
     margin-top: 0;
     width: 210%;
 }
@@ -199,11 +199,6 @@
 }
 
 /*footer*/
-.footer-section .footer-initial-label h1,
-.footer-section-blue .footer-initial-label h1,
-.footer-section-white .footer-initial-label h1{
-    font-size: 2rem;
-}
 
 .footer-section-links ul{
     padding: 0;
@@ -217,7 +212,9 @@
 }
 
 
-.footer-section .footer-main-form input[type="tel"]{
+.footer-main-form input[type="tel"],
+.footer-main-form-blue input[type="tel"],
+.footer-main-form-white input[type="tel"]{
     width: 50%;
     text-align: center;
     padding: 0 1.6rem; 
