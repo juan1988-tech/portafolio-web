@@ -549,7 +549,6 @@ const serviceTargetsMovement = (outlinedButton:string,indicatorButton:string) =>
 }
 
 
-
 serviceTargetContainer.addEventListener('touchend',()=>{
     console.log(bodyLayout.className)
     if(bodyLayout.className==="body"){

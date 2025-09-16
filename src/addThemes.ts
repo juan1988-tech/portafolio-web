@@ -67,6 +67,10 @@ interface theme{
         footerInitialTitle: HTMLTitleElement,
         footerIconsList: foooterIconsType[],
         footerMainForm: HTMLFormElement,
+        footerFinalCredits:{
+            footerFinalContainer: HTMLDivElement,
+            footerLabelnameDev: HTMLTitleElement,
+        }
     }
 }
 
@@ -186,7 +190,11 @@ let itemsTheme: theme ={
                 image: document.querySelector("#email-footer") as HTMLImageElement
             }
         ],
-        footerMainForm: document.getElementById("footer-main-form") as HTMLFormElement
+        footerMainForm: document.getElementById("footer-main-form") as HTMLFormElement,
+        footerFinalCredits:{
+            footerFinalContainer: document.getElementById("footer-final-credits") as HTMLDivElement,
+            footerLabelnameDev: document.getElementById("footer-label-name-dev") as HTMLTitleElement
+        }
     }
 }
 
@@ -600,9 +608,9 @@ const addSetIcons = (footerIcon:foooterIconsType[],firstColor:string="footer-sec
 
 
 const addFooterTheme = (bgColor:string):void =>{
-    const { footerSection,footerIconsList,footerInitialTitle,footerMainForm } = footer;
+    const { footerSection,footerIconsList,footerInitialTitle,footerMainForm,footerFinalCredits } = footer;
 
-    console.log(footerMainForm);
+    const { footerFinalContainer, footerLabelnameDev } = footerFinalCredits;
 
     switch (bgColor) {
         case "purple":
@@ -616,6 +624,9 @@ const addFooterTheme = (bgColor:string):void =>{
 
             footerMainForm.classList.replace("footer-main-form-blue","footer-main-form");
             footerMainForm.classList.replace("footer-main-form-white","footer-main-form");
+            
+            footerFinalContainer.classList.replace("footer-final-credits-blue","footer-final-credits");
+            footerFinalContainer.classList.replace("footer-final-credits-white","footer-final-credits");
             break;
         case "blue":
             footerInitialTitle.classList.replace("footer-initial-title","footer-initial-title-blue");
@@ -628,6 +639,9 @@ const addFooterTheme = (bgColor:string):void =>{
 
             footerMainForm.classList.replace("footer-main-form","footer-main-form-blue");
             footerMainForm.classList.replace("footer-main-form-white","footer-main-form-blue");
+
+            footerFinalContainer.classList.replace("footer-final-credits-white","footer-final-credits-blue");
+            footerFinalContainer.classList.replace("footer-final-credits","footer-final-credits-blue");
             break;
         case "white":
             footerInitialTitle.classList.replace("footer-initial-title","footer-initial-title-white");
@@ -640,6 +654,9 @@ const addFooterTheme = (bgColor:string):void =>{
             
             footerMainForm.classList.replace("footer-main-form","footer-main-form-white");
             footerMainForm.classList.replace("footer-main-form-blue","footer-main-form-white");
+
+            footerFinalContainer.classList.replace("footer-final-credits","footer-final-credits-white");
+            footerFinalContainer.classList.replace("footer-final-credits-blue","footer-final-credits-white");
             break;
     }
 }
