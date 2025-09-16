@@ -114,7 +114,11 @@ let itemsTheme = {
                 image: document.querySelector("#email-footer")
             }
         ],
-        footerMainForm: document.getElementById("footer-main-form")
+        footerMainForm: document.getElementById("footer-main-form"),
+        footerFinalCredits: {
+            footerFinalContainer: document.getElementById("footer-final-credits"),
+            footerLabelnameDev: document.getElementById("footer-label-name-dev")
+        }
     }
 };
 //función para modificar el body
@@ -437,8 +441,8 @@ const addSetIcons = (footerIcon, firstColor = "footer-section-icon-white", secon
     });
 };
 const addFooterTheme = (bgColor) => {
-    const { footerSection, footerIconsList, footerInitialTitle, footerMainForm } = footer;
-    console.log(footerMainForm);
+    const { footerSection, footerIconsList, footerInitialTitle, footerMainForm, footerFinalCredits } = footer;
+    const { footerFinalContainer, footerLabelnameDev } = footerFinalCredits;
     switch (bgColor) {
         case "purple":
             footerInitialTitle.classList.replace("footer-initial-title-blue", "footer-initial-title");
@@ -448,6 +452,8 @@ const addFooterTheme = (bgColor) => {
             addSetIcons(footerIconsList);
             footerMainForm.classList.replace("footer-main-form-blue", "footer-main-form");
             footerMainForm.classList.replace("footer-main-form-white", "footer-main-form");
+            footerFinalContainer.classList.replace("footer-final-credits-blue", "footer-final-credits");
+            footerFinalContainer.classList.replace("footer-final-credits-white", "footer-final-credits");
             break;
         case "blue":
             footerInitialTitle.classList.replace("footer-initial-title", "footer-initial-title-blue");
@@ -457,6 +463,8 @@ const addFooterTheme = (bgColor) => {
             addSetIcons(footerIconsList);
             footerMainForm.classList.replace("footer-main-form", "footer-main-form-blue");
             footerMainForm.classList.replace("footer-main-form-white", "footer-main-form-blue");
+            footerFinalContainer.classList.replace("footer-final-credits-white", "footer-final-credits-blue");
+            footerFinalContainer.classList.replace("footer-final-credits", "footer-final-credits-blue");
             break;
         case "white":
             footerInitialTitle.classList.replace("footer-initial-title", "footer-initial-title-white");
@@ -466,6 +474,8 @@ const addFooterTheme = (bgColor) => {
             addSetIcons(footerIconsList, "footer-section-icon", "footer-section-icon-white");
             footerMainForm.classList.replace("footer-main-form", "footer-main-form-white");
             footerMainForm.classList.replace("footer-main-form-blue", "footer-main-form-white");
+            footerFinalContainer.classList.replace("footer-final-credits", "footer-final-credits-white");
+            footerFinalContainer.classList.replace("footer-final-credits-blue", "footer-final-credits-white");
             break;
     }
 };

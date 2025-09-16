@@ -342,7 +342,9 @@
     margin-top: 3.2rem;
 }
 
-.footer-section .footer-final-credits{
+.footer-final-credits,
+.footer-final-credits-blue,
+.footer-final-credits-white{
     display: flex;
     width: 60rem;
     margin: 0 auto;
@@ -366,9 +368,7 @@
     height: 7.4rem;
 }
 
-.footer-section .footer-label-credits,
-.footer-section-blue .footer-label-credits,
-.footer-section-white .footer-label-credits{
+.footer-label-credits{
     width: 29rem;
     display: flex;
     margin: 0 auto;

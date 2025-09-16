@@ -1928,23 +1928,51 @@ html{
     font-size: 1.6rem;
 }
 
-.footer-final-credits{
+.footer-final-credits,
+.footer-final-credits-blue{
     border-top: 1px solid var(--font-principal-letter);
     margin-top: 2.4rem;
+    padding-bottom: 1.6rem;
+    max-width: 61rem;
 }
 
-.footer-final-credits p:first-child{
+.footer-final-credits-white{
+    border-top: 1px solid var(--font-principal-letter-white);
+    margin-top: 2.4rem;
+    padding-bottom: 1.6rem;
+    max-width: 61rem;
+}
+
+.footer-final-credits p:first-child,
+.footer-final-credits-blue p:first-child,
+.footer-final-credits-white p:first-child{  
     text-align: center;
     font-size: 1.6rem;
-    margin-top: 2rem;
+    margin-top: .8rem;
 }
 
 .footer-final-credits p:first-child + p{
     text-align: center;
     font-size: 1.6rem;
     color: var(--font-principal-title);
-    margin-top: 1.6rem;
+    margin-top: .8rem;
 }
+
+
+.footer-final-credits-blue p:first-child + p{
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--font-principal-title-blue);
+    margin-top: .8rem;
+}
+
+.footer-final-credits-white p:first-child + p{
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--font-principal-title-white);
+    margin-top: .8rem;
+}
+
 
 .footer-main-form label:first-child,
 .footer-main-form-blue label:first-child,
@@ -1952,20 +1980,9 @@ html{
     margin-top: 0;
 }
 
-.footer-section .footer-final-credits p:first-child,
-.footer-section-blue .footer-final-credits p:first-child,
-.footer-section-white .footer-final-credits p:first-child{
+.footer-final-credits p:first-child + p,
+.footer-final-credits-blue p:first-child + p,
+.footer-final-credits-white p:first-child + p{
     margin-top: .8rem;
 }
 
-.footer-section .footer-final-credits p:first-child + p,
-.footer-section-blue .footer-final-credits p:first-child + p,
-.footer-section-white .footer-final-credits p:first-child + p{
-    margin-top: .8rem;
-}
-
-.footer-section .footer-final-credits,
-.footer-section-blue .footer-final-credits,
-.footer-section-white .footer-final-credits{
-    padding-bottom: 1.6rem;
-}
