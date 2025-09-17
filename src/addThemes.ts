@@ -1,8 +1,5 @@
-//hacer un tipo personalizado para los íconos del footer
-type foooterIconsType ={
-    figure: HTMLDivElement,
-    image: HTMLImageElement
-}
+//importar tipos para las secciones
+import { Introduction,AboutMe,Projects,Stack,Services,Footer,foooterIconsType } from "./sections/sections";
 
 //definir el objeto para los nombres de estilo del primer componente: header, por cada layout
 interface theme{
@@ -13,65 +10,12 @@ interface theme{
     contactIcon: HTMLImageElement;
     navbar: HTMLDivElement;
     generalSettings: HTMLDivElement;
-    introduction:{
-        firstGreeting:HTMLTitleElement,
-        nameLabel:HTMLTitleElement,
-        availableToWork: HTMLDivElement,
-        lightButton: HTMLSpanElement,
-        cvDownloader: HTMLButtonElement,
-        socialMedia: HTMLDivElement;
-    },
-    aboutMe:{
-        aboutMeBg: HTMLDivElement,
-        aboutMeTitle: HTMLTitleElement,
-        aboutMeRole: HTMLTitleElement,
-    } 
-    projects:{
-        projectsTitle: HTMLTitleElement
-        projectPerformance:{
-            footballLegends: HTMLDivElement,
-            todoSevale: HTMLDivElement,
-            sienna: HTMLDivElement,
-            montannaMagica: HTMLDivElement
-        }
-        projectCarouselButtons:{
-            projectCarouselLeft: HTMLButtonElement,
-            projectCarouselRight: HTMLButtonElement,
-            projectCarouselLeftImg: HTMLImageElement,
-            projectCarouselRightimg: HTMLImageElement
-        }
-    }
-    stack: {
-        stackBackground: HTMLDivElement,
-        stackContainerGrid: [
-            { image: HTMLImageElement },
-            { image: HTMLImageElement },
-            { image: HTMLImageElement },
-            { image: HTMLImageElement },
-            { image: HTMLImageElement },
-            { image: HTMLImageElement },
-            { image: HTMLImageElement },
-            { image: HTMLImageElement },
-            { image: HTMLImageElement },
-        ]
-    },
-    services: {
-        servicesTitle: HTMLTitleElement,
-        serviceContainers: HTMLDivElement[],
-        serviceContainersTitle: HTMLTitleElement[],
-        servicContainerImages: HTMLImageElement[],
-        serviceCarouselIndicator: HTMLButtonElement[];
-    }
-    footer:{
-        footerSection: HTMLDivElement,
-        footerInitialTitle: HTMLTitleElement,
-        footerIconsList: foooterIconsType[],
-        footerMainForm: HTMLFormElement,
-        footerFinalCredits:{
-            footerFinalContainer: HTMLDivElement,
-            footerLabelnameDev: HTMLTitleElement,
-        }
-    }
+    introduction: Introduction,
+    aboutMe:AboutMe,
+    projects:Projects,
+    stack: Stack,
+    services: Services
+    footer:Footer
 }
 
 let itemsTheme: theme ={
