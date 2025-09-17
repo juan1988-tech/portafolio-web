@@ -355,6 +355,9 @@
 .footer-main-form input[type="text"],
 .footer-main-form-blue input[type="text"],
 .footer-main-form-white input[type="text"],
+.footer-main-form input[type="email"],
+.footer-main-form-blue input[type="email"],
+.footer-main-form-white input[type="email"],
 .footer-main-form input[type="tel"],
 .footer-main-form-blue input[type="tel"],
 .footer-main-form-white input[type="tel"]{

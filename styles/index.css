@@ -1851,7 +1851,8 @@ html{
 }
 
 .footer-main-form input[type="text"],
-.footer-main-form input[type="tel"]{
+.footer-main-form input[type="tel"],
+.footer-main-form input[type="email"]{
     width: 100%;
     background: var(--main-second-background);
     height: 3.2rem;
@@ -1863,7 +1864,8 @@ html{
 }
 
 .footer-main-form-blue input[type="text"],
-.footer-main-form-blue input[type="tel"]{
+.footer-main-form-blue input[type="tel"],
+.footer-main-form-blue input[type="email"]{
     width: 100%;
     background: var(--main-second-background-blue);
     height: 3.2rem;
@@ -1875,7 +1877,8 @@ html{
 }
 
 .footer-main-form-white input[type="text"],
-.footer-main-form-white input[type="tel"]{
+.footer-main-form-white input[type="tel"],
+.footer-main-form-white input[type="email"]{
     width: 100%;
     background: var(--main-buttons-white);
     height: 3.2rem;
