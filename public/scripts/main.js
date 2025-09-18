@@ -1,5 +1,6 @@
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
 import { addThemeLayout, themesLi, themesLiHeader, bodyLayout, generalSettings } from "./addThemes.js";
+import { formConfiguration } from "./formConfiguration.js";
 const buttonBurguer = document.querySelector('#button-burguer');
 /*funciones del nabvar scrollIntoView()*/
 const titleLogo = document.querySelector('.title-logo');
@@ -418,4 +419,11 @@ serviceTargetContainer.addEventListener('touchend', () => {
     if (bodyLayout.className === "body-white") {
         serviceTargetsMovement("service-outlined-white", "service-indicator-white");
     }
+});
+/*funciones de captar y enviar datos para formulario 📝📝*/
+const footerMainForm = document.querySelector('#footer-main-form');
+console.log(footerMainForm);
+footerMainForm.addEventListener('submit', (event) => {
+    console.log(formConfiguration(event));
+    formConfiguration(event);
 });

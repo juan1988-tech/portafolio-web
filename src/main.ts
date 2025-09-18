@@ -1,7 +1,7 @@
+
 /*comando para inicailzar proyecto:  tsc -p tsconfig.json*/
 import { addThemeLayout,themesLi,themesLiHeader,bodyLayout, generalSettings } from "./addThemes.js";
-//variable global que identifica al elemento body
-//const bodyLayout:HTMLBodyElement = document.body as HTMLBodyElement;
+import { formConfiguration } from "./formConfiguration.js";
 
 /*funciones para ver las posiciones del navbar */
 type toggleYearElements ={
@@ -504,7 +504,6 @@ serviceTargetContainer.addEventListener('touchmove',(event:TouchEvent)=>{
     }
 });
 
-
 //crear una funcion de movimiento para los botones
 const serviceTargetsMovement = (outlinedButton:string,indicatorButton:string) =>{
         if(bodyLayout.clientWidth<=743){
@@ -548,7 +547,6 @@ const serviceTargetsMovement = (outlinedButton:string,indicatorButton:string) =>
     }
 }
 
-
 serviceTargetContainer.addEventListener('touchend',()=>{
     console.log(bodyLayout.className)
     if(bodyLayout.className==="body"){
@@ -560,5 +558,12 @@ serviceTargetContainer.addEventListener('touchend',()=>{
     if(bodyLayout.className==="body-white"){
         serviceTargetsMovement("service-outlined-white","service-indicator-white")
     }
-    
+})
+
+/*funciones de captar y enviar datos para formulario 📝📝*/
+const footerMainForm: HTMLFormElement = document.querySelector('#footer-main-form') as HTMLFormElement;
+
+footerMainForm.addEventListener('submit',(event:SubmitEvent)=>{
+    console.log(formConfiguration(event))
+    formConfiguration(event)
 })
