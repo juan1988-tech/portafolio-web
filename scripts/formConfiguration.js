@@ -14,6 +14,12 @@ export const formConfiguration = (event) => {
         };
         formAllValues.push(NodeValue);
     }
-    console.log('formulario enviado');
+    //hacer la configuración del envío del mensaje a whatsapp
+    const formInputMessage = formAllValues.map((item) => {
+        return item.value;
+    });
+    const whatsAppMessage = `https://wa.me/573142366069?text=Hola,%2C%20mi%20nombre%20es${formInputMessage[0]}%20📲🚀,y%20soy%20${formInputMessage[1]},
+                                    vi%20tu%20portafolio%20y%20me%20gustaría%20tener%20una%20conversación✅%20acerca%20de%20tu%20perfil,mi%20numero%20es${formInputMessage[3]}`;
+    window.open(whatsAppMessage, "_blank");
     return formAllValues;
 };

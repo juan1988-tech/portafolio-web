@@ -422,7 +422,6 @@ serviceTargetContainer.addEventListener('touchend', () => {
 });
 /*funciones de captar y enviar datos para formulario 📝📝*/
 const footerMainForm = document.querySelector('#footer-main-form');
-console.log(footerMainForm);
 footerMainForm.addEventListener('submit', (event) => {
     console.log(formConfiguration(event));
     formConfiguration(event);
